@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import BenefitsPage from "@/components/benefits-page"
 import WellnessSection from "@/components/wellness-section"
 import ConvenienceSection from "@/components/convenience-section"
@@ -43,6 +44,7 @@ const features = [
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -59,6 +61,9 @@ export default function HomePage() {
 
   const handleCategoryClick = (category: string) => {
     console.log(`[v0] Clicked on ${category} category`)
+    if (category === "ed") {
+      router.push("/erectile-dysfunction")
+    }
   }
 
   const currentContent = contentSets[currentIndex]
