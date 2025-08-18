@@ -21,12 +21,16 @@ export default function ConvenienceSection() {
     const interval = setInterval(() => {
       if (messageIndex < additionalMessages.length) {
         setChatMessages((prev) => {
-          const newMessages = [...prev, additionalMessages[messageIndex]]
-          return newMessages.length > 6 ? newMessages.slice(-6) : newMessages
+          const currentMessages = Array.isArray(prev) ? prev : []
+          const newMessage = additionalMessages[messageIndex]
+          if (newMessage && newMessage.type && newMessage.text) {
+            const newMessages = [...currentMessages, newMessage]
+            return newMessages.length > 6 ? newMessages.slice(-6) : newMessages
+          }
+          return currentMessages
         })
         messageIndex++
       } else {
-        // Reset conversation
         setChatMessages([
           { type: "doctor", text: "Hello! How can I help with your health concerns today?" },
           { type: "patient", text: "I need guidance on my medication." },
@@ -75,17 +79,22 @@ export default function ConvenienceSection() {
 
                 {/* Chat Messages */}
                 <div className="p-4 h-48 overflow-y-auto">
-                  {chatMessages.map((message, index) => (
-                    <div key={index} className={`mb-3 ${message.type === "doctor" ? "text-left" : "text-right"}`}>
-                      <div
-                        className={`inline-block px-3 py-2 rounded-2xl max-w-44 text-xs leading-tight ${
-                          message.type === "doctor" ? "bg-gray-100 text-gray-800" : "bg-amber-600 text-white"
-                        }`}
-                      >
-                        {message.text}
-                      </div>
-                    </div>
-                  ))}
+                  {Array.isArray(chatMessages) &&
+                    chatMessages.map((message, index) => {
+                      if (!message || !message.type || !message.text) return null
+
+                      return (
+                        <div key={index} className={`mb-3 ${message.type === "doctor" ? "text-left" : "text-right"}`}>
+                          <div
+                            className={`inline-block px-3 py-2 rounded-2xl max-w-44 text-xs leading-tight ${
+                              message.type === "doctor" ? "bg-gray-100 text-gray-800" : "bg-amber-600 text-white"
+                            }`}
+                          >
+                            {message.text}
+                          </div>
+                        </div>
+                      )
+                    })}
                 </div>
 
                 {/* Chat Input */}
