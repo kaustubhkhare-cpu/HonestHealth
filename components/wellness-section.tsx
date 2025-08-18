@@ -166,25 +166,17 @@ export default function WellnessSection() {
               </p>
               <div className="flex justify-center my-5">
                 <div
-                  className="w-28 h-20 rounded-2xl relative flex items-center justify-center text-white/90"
+                  className="w-48 h-32 rounded-2xl relative flex items-center justify-center overflow-hidden shadow-lg"
                   style={{
                     background: "linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%)",
                     animation: "interface-glow 3s ease-in-out infinite",
                   }}
                 >
-                  <div
-                    className="absolute inset-0 rounded-2xl"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(107, 142, 125, 0.7) 0%, rgba(74, 107, 93, 0.7) 100%)",
-                    }}
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2018%2C%202025%2C%2005_46_47%20PM-BiMWLSWFa8h8A2ItAs7Az6XNV5gMeh.png"
+                    alt="Professional medical team of doctors"
+                    className="w-full h-full object-cover rounded-2xl"
                   />
-                  <div className="relative z-10 flex items-center gap-2 text-2xl">👩‍⚕️ 💬</div>
-                  <div
-                    className="absolute -bottom-2 -right-2 w-6 h-6 bg-[#c49b61] rounded-full flex items-center justify-center text-sm"
-                    style={{ animation: "chat-bounce 2s ease-in-out infinite" }}
-                  >
-                    💬
-                  </div>
                 </div>
               </div>
               <button
