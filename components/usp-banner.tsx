@@ -120,7 +120,7 @@ export default function USPBanner() {
           ref={sliderRef}
           className="banner-slider flex gap-15 px-10"
           style={{
-            animation: "slideUSP 18s linear infinite",
+            animation: "slideUSP 30s linear infinite",
             minWidth: "fit-content",
           }}
         >
