@@ -133,17 +133,18 @@ export default function WellnessSection() {
               </p>
               <div className="flex justify-center my-5">
                 <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-3xl text-white relative shadow-lg"
+                  className="w-32 h-32 rounded-2xl flex items-center justify-center relative shadow-lg overflow-hidden"
                   style={{
                     background: "linear-gradient(135deg, #c49b61 0%, #a67c52 100%)",
                     animation: "wellness-float 3s ease-in-out infinite",
                     boxShadow: "0 8px 20px rgba(196, 155, 97, 0.3)",
                   }}
                 >
-                  👨‍⚕️
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-white/90 rounded-full flex items-center justify-center text-sm">
-                    🌱
-                  </div>
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2018%2C%202025%2C%2005_35_37%20PM-166mE5iGmSNaqLMmoruhWfTEwmA9WS.png"
+                    alt="Professional healthcare doctor"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                 </div>
               </div>
               <button
