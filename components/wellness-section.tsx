@@ -11,21 +11,36 @@ export default function WellnessSection() {
       title: "How do you want to improve your health?",
       description:
         "Choose your wellness focus area and get personalized recommendations from our healthcare professionals.",
-      icons: ["💪", "🧘", "🥗", "💤"],
+      icons: [
+        "muscle strength fitness",
+        "meditation mindfulness wellness",
+        "healthy food nutrition",
+        "sleep rest recovery",
+      ],
       buttonText: "Take assessment",
     },
     {
       title: "Track your wellness progress effectively",
       description:
         "Monitor your health improvements with professional guidance and regular check-ins with certified healthcare providers.",
-      icons: ["📊", "📅", "🎯", "✅"],
+      icons: [
+        "muscle strength fitness",
+        "meditation mindfulness wellness",
+        "healthy food nutrition",
+        "sleep rest recovery",
+      ],
       buttonText: "Start tracking",
     },
     {
       title: "Personalized health recommendations",
       description:
         "Receive customized wellness plans based on your health assessment and goals, created by experienced healthcare professionals.",
-      icons: ["👨‍⚕️", "📋", "🎨", "🌟"],
+      icons: [
+        "muscle strength fitness",
+        "meditation mindfulness wellness",
+        "healthy food nutrition",
+        "sleep rest recovery",
+      ],
       buttonText: "Get recommendations",
     },
   ]
@@ -75,23 +90,25 @@ export default function WellnessSection() {
             {/* Hero visual */}
             <div className="flex justify-center my-10">
               <div
-                className="w-48 h-36 rounded-2xl border-3 border-white/20 flex items-center justify-center text-sm text-white/80 relative"
+                className="w-48 h-36 rounded-2xl border-3 border-white/20 flex items-center justify-center text-sm text-white/80 relative overflow-hidden"
                 style={{
                   background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
                   animation: "heartbeat 3s ease-in-out infinite",
                 }}
               >
-                👥 Happy Couple
+                <img
+                  src="/happy-couple-healthcare.png"
+                  alt="Happy couple"
+                  className="w-full h-full object-cover rounded-xl"
+                />
                 <div
                   className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center"
                   style={{
                     animation: "pulse 2s ease-in-out infinite",
-                    backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35"><path d="M17.5 5 C14 5 11 8 11 12 C11 16 17.5 25 17.5 25 S24 16 24 12 C24 8 21 5 17.5 5 Z" fill="%23e74c3c"/></svg>')`,
-                    backgroundSize: "60%",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
                   }}
-                />
+                >
+                  <img src="/red-heart-icon.png" alt="Heart" className="w-5 h-5" />
+                </div>
               </div>
             </div>
           </div>
@@ -126,9 +143,9 @@ export default function WellnessSection() {
                     boxShadow: "0 8px 20px rgba(196, 155, 97, 0.3)",
                   }}
                 >
-                  👨‍⚕️
+                  <img src="/healthcare-professional.png" alt="Doctor" className="w-10 h-10" />
                   <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-white/90 rounded-full flex items-center justify-center text-sm">
-                    🌱
+                    <img src="/green-plant-wellness-growth.png" alt="Wellness" className="w-4 h-4" />
                   </div>
                 </div>
               </div>
@@ -163,12 +180,15 @@ export default function WellnessSection() {
                       background: "linear-gradient(135deg, rgba(107, 142, 125, 0.7) 0%, rgba(74, 107, 93, 0.7) 100%)",
                     }}
                   />
-                  <span className="relative z-10 text-lg">👩‍⚕️💬</span>
+                  <div className="relative z-10 flex items-center gap-2">
+                    <img src="/female-doctor-healthcare-professional.png" alt="Doctor" className="w-6 h-6" />
+                    <img src="/chat-bubble-conversation.png" alt="Chat" className="w-6 h-6" />
+                  </div>
                   <div
                     className="absolute -bottom-2 -right-2 w-6 h-6 bg-[#c49b61] rounded-full flex items-center justify-center text-xs"
                     style={{ animation: "chat-bounce 2s ease-in-out infinite" }}
                   >
-                    💬
+                    <img src="/chat-message-icon.png" alt="Message" className="w-4 h-4" />
                   </div>
                 </div>
               </div>
@@ -209,7 +229,11 @@ export default function WellnessSection() {
                           e.target.style.transform = "scale(1)"
                         }}
                       >
-                        {icon}
+                        <img
+                          src={`/abstract-geometric-shapes.png?key=sejmc&height=20&width=20&query=${icon}`}
+                          alt={icon}
+                          className="w-5 h-5"
+                        />
                       </div>
                     ))}
                   </div>
