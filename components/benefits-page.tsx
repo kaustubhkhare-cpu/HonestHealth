@@ -10,7 +10,7 @@ const dynamicContents = [
     visual: (
       <div className="flex items-center justify-center my-5">
         <div className="relative w-20 h-20 bg-gradient-to-br from-[#c49b61] to-[#a67c52] rounded-full flex items-center justify-center text-4xl text-white shadow-lg">
-          <img src="/professional-doctor-healthcare.png" alt="Doctor" className="w-20 h-20 object-cover" />
+          <img src="/placeholder-lxohq.png" alt="Doctor" className="w-12 h-12 rounded-full object-cover" />
           <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#8b6914] rounded-full animate-ping"></div>
         </div>
       </div>
@@ -86,9 +86,9 @@ export default function BenefitsPage() {
 
               <div className="flex justify-center my-10">
                 <div className="relative w-35 h-40 rounded-2xl bg-gradient-to-br from-white/15 to-white/5 border-3 border-white/20 flex items-center justify-center animate-doctorFloat overflow-hidden">
-                  <img src="/professional-doctor-healthcare.png" alt="Doctor" className="w-20 h-20 object-cover" />
+                  <img src="/placeholder-1aaud.png" alt="Doctor" className="w-24 h-24 rounded-xl object-cover" />
                   <div className="absolute bottom-2 right-2 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center text-lg animate-pulse">
-                    <img src="/placeholder-wm3bb.png" alt="Stethoscope" className="w-5 h-5" />
+                    <img src="/medical-stethoscope-icon.png" alt="Stethoscope" className="w-5 h-5" />
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export default function BenefitsPage() {
                 <div className="relative w-20 h-20 bg-gradient-to-br from-[#d4a574] to-[#b8956a] rounded-2xl flex items-center justify-center text-4xl text-white animate-pulse shadow-lg">
                   <img src="/person-running-fitness.png" alt="Running" className="w-8 h-8" />
                   <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#8b6914] rounded-full animate-bounce flex items-center justify-center">
-                    <img src="/fitness-star-achievement.png" alt="Achievement" className="w-3 h-3" />
+                    <img src="/gold-star-achievement.png" alt="Achievement" className="w-3 h-3" />
                   </div>
                 </div>
               </div>
@@ -133,24 +133,24 @@ export default function BenefitsPage() {
               </p>
               <div className="grid grid-cols-4 gap-2 my-5">
                 {[
-                  { food: "fresh salad healthy greens", alt: "Salad" },
+                  { food: "fresh green salad", alt: "Salad" },
                   { food: "red apple fruit", alt: "Apple" },
-                  { food: "orange carrot vegetable", alt: "Carrot" },
-                  { food: "green avocado healthy fat", alt: "Avocado" },
-                  { food: "blueberries antioxidants", alt: "Blueberries" },
-                  { food: "broccoli green vegetable", alt: "Broccoli" },
-                  { food: "orange citrus fruit", alt: "Orange" },
-                  { food: "cucumber green vegetable", alt: "Cucumber" },
+                  { food: "orange carrot", alt: "Carrot" },
+                  { food: "green avocado", alt: "Avocado" },
+                  { food: "blueberries", alt: "Blueberries" },
+                  { food: "green broccoli", alt: "Broccoli" },
+                  { food: "orange citrus", alt: "Orange" },
+                  { food: "green cucumber", alt: "Cucumber" },
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8b6914] to-[#6b4e03] flex items-center justify-center text-2xl text-white shadow-lg animate-foodFloat"
+                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8b6914] to-[#6b4e03] flex items-center justify-center shadow-lg animate-foodFloat p-1"
                     style={{ animationDelay: `${index * 0.5}s` }}
                   >
                     <img
-                      src={`/abstract-geometric-shapes.png?key=7k5ka&height=24&width=24&query=${item.food}`}
+                      src={`/abstract-geometric-shapes.png?key=8v4ss&height=32&width=32&query=${item.food}`}
                       alt={item.alt}
-                      className="w-6 h-6"
+                      className="w-8 h-8 rounded-lg"
                     />
                   </div>
                 ))}
