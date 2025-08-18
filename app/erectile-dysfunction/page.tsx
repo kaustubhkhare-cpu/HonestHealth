@@ -120,6 +120,27 @@ export default function ErectileDysfunctionPage() {
         </section>
       </div>
 
+      <section className="bg-[#f8f6f3] py-32 text-center relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 relative">
+          {/* Large Background Text */}
+          <div
+            className="text-[clamp(4rem,12vw,12rem)] font-light text-[#c4956c] leading-[0.9] tracking-[-0.02em] opacity-80 lowercase relative z-10"
+            style={{ letterSpacing: "-0.02em" }}
+          >
+            you are not alone
+          </div>
+
+          {/* Overlay Card */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-[10px] rounded-3xl p-10 md:p-16 shadow-[0_20px_60px_rgba(0,0,0,0.1)] border border-[#c4956c]/20 z-20 max-w-4xl w-[90%]">
+            <div className="text-[clamp(2rem,5vw,3rem)] font-bold text-[#c4956c] mb-4">6 out of 10 men</div>
+            <div className="text-[clamp(1.2rem,3vw,1.8rem)] text-[#1a1a1a] font-normal leading-relaxed mb-5">
+              in India experience erectile dysfunction challenges at some point in their lives
+            </div>
+            <div className="text-base text-[#666] italic">- Indian Medical Research Studies</div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-5">
           {/* Section Header */}
