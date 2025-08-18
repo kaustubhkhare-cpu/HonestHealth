@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Merriweather } from "next/font/google"
 import "./globals.css"
+import GlobalHeader from "@/components/global-header"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   title: "Honest Health - Confidential Healthcare Solutions",
   description:
     "Science-backed health solutions with doctor-guided care and complete discretion. Private consultations for ED, weight management, and diabetes support.",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -30,7 +31,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable} antialiased`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <GlobalHeader />
+        {children}
+      </body>
     </html>
   )
 }
