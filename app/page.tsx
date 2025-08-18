@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import BenefitsPage from "@/components/benefits-page"
 
 const contentSets = [
   {
@@ -163,6 +164,9 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+
+      {/* Benefits Section */}
+      <BenefitsPage />
 
       <style jsx>{`
         @keyframes slideFeatures {
