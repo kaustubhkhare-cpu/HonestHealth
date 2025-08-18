@@ -304,68 +304,63 @@ export default function ErectileDysfunctionPage() {
         </div>
       </section>
 
-      {/* Educational Treatment Options Section */}
-      <section className="py-20 bg-gradient-to-br from-[#f5f7fa] to-[#c3cfe2]">
+      {/* How ED Treatments Work Section */}
+      <section className="py-20 bg-[#f8fcff]">
         <div className="max-w-6xl mx-auto px-5">
-          <div className="bg-white rounded-3xl p-16 shadow-2xl">
-            <div className="text-center mb-16">
-              <div className="text-sm font-semibold text-[#4a90e2] uppercase tracking-wider mb-4">MEDICAL INSIGHTS</div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#2c3e50] mb-6 leading-tight">
-                Understanding Erectile Dysfunction Treatment Options
-              </h2>
-              <p className="text-xl text-[#6c757d] max-w-3xl mx-auto leading-relaxed">
-                Explore the different therapeutic approaches available to restore sexual health and confidence.
+          <div className="text-center mb-16">
+            <div className="text-sm font-semibold text-[#64748b] uppercase tracking-[3px] mb-5">THE SCIENCE</div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#1e293b] mb-6 leading-tight">
+              How do ED treatments work?
+            </h2>
+            <p className="text-xl text-[#64748b] max-w-2xl mx-auto leading-relaxed">
+              Here's the breakdown of what happens in your body to restore natural function.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Oral Medication Card */}
+            <div className="bg-white rounded-2xl p-10 shadow-lg border border-[#e2e8f0] hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#3b82f6] to-[#1d4ed8] rounded-2xl flex items-center justify-center text-2xl text-white mb-6">
+                💊
+              </div>
+              <h3 className="text-xl font-bold text-[#1e293b] mb-4 leading-tight">
+                Oral medication enhances natural response
+              </h3>
+              <p className="text-[#475569] leading-relaxed">
+                When you take our ED medication, the active ingredients work by inhibiting specific enzymes in your
+                body. This allows blood vessels to remain relaxed longer, supporting the natural physiological process
+                that occurs during arousal.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Oral Medications */}
-              <div className="bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl p-10 text-center text-white relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center text-3xl">
-                    💊
-                  </div>
-                  <h3 className="text-2xl font-bold mb-5 leading-tight">Oral Medications for ED</h3>
-                  <p className="text-base leading-relaxed opacity-95">
-                    Phosphodiesterase type 5 (PDE5) inhibitors like sildenafil, tadalafil, and vardenafil work by
-                    relaxing smooth muscle tissue in blood vessels. This allows increased blood circulation to penile
-                    arteries, facilitating natural erectile response when combined with sexual arousal.
-                  </p>
-                </div>
+            {/* Blood Flow Card */}
+            <div className="bg-white rounded-2xl p-10 shadow-lg border border-[#e2e8f0] hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#06b6d4] to-[#0891b2] rounded-2xl flex items-center justify-center text-2xl text-white mb-6">
+                🩸
               </div>
+              <h3 className="text-xl font-bold text-[#1e293b] mb-4 leading-tight">
+                Improved blood flow supports firmness
+              </h3>
+              <p className="text-[#475569] leading-relaxed">
+                The medication helps maintain increased blood circulation to penile tissue by preventing the breakdown
+                of chemicals that keep blood vessels open. This sustained blood flow is essential for achieving and
+                maintaining quality erections.
+              </p>
+            </div>
 
-              {/* Injectable Therapy */}
-              <div className="bg-gradient-to-br from-[#f093fb] to-[#f5576c] rounded-2xl p-10 text-center text-white relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center text-3xl">
-                    🔬
-                  </div>
-                  <h3 className="text-2xl font-bold mb-5 leading-tight">Injectable Therapy Solutions</h3>
-                  <p className="text-base leading-relaxed opacity-95">
-                    Intracavernosal injections deliver vasodilating medications directly into penile tissue. These
-                    treatments bypass systemic circulation, creating localized vasodilation that produces reliable
-                    erections independent of oral medication effectiveness or underlying health conditions.
-                  </p>
-                </div>
+            {/* Performance Card */}
+            <div className="bg-white rounded-2xl p-10 shadow-lg border border-[#e2e8f0] hover:transform hover:-translate-y-1 transition-all duration-300 hover:shadow-xl">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#10b981] to-[#059669] rounded-2xl flex items-center justify-center text-2xl text-white mb-6">
+                ⚡
               </div>
-
-              {/* Advanced Medical Devices */}
-              <div className="bg-gradient-to-br from-[#4facfe] to-[#00f2fe] rounded-2xl p-10 text-center text-white relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center text-3xl">
-                    ⚡
-                  </div>
-                  <h3 className="text-2xl font-bold mb-5 leading-tight">Advanced Medical Devices</h3>
-                  <p className="text-base leading-relaxed opacity-95">
-                    Vacuum erection devices and penile implants offer mechanical solutions for severe erectile
-                    dysfunction. These FDA-approved treatments provide reliable results through either external vacuum
-                    pressure or surgically placed inflatable systems for long-term sexual function restoration.
-                  </p>
-                </div>
-              </div>
+              <h3 className="text-xl font-bold text-[#1e293b] mb-4 leading-tight">
+                Reliable results restore confidence
+              </h3>
+              <p className="text-[#475569] leading-relaxed">
+                Our treatments work with your body's natural mechanisms to provide consistent, dependable results. Most
+                patients experience improved performance within 30-60 minutes, lasting several hours for enhanced
+                intimacy and renewed confidence.
+              </p>
             </div>
           </div>
         </div>
@@ -436,7 +431,7 @@ export default function ErectileDysfunctionPage() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[400px] bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 text-center hover:transform hover:scale-105 transition-all duration-300"
+                className="flex-shrink-0 w-[400px] bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/20 text-center hover:transform hover:scale-105 transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
