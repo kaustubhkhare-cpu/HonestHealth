@@ -8,7 +8,6 @@ import ConvenienceSection from "@/components/convenience-section"
 import ExperienceSection from "@/components/experience-section"
 import USPBanner from "@/components/usp-banner"
 import FAQSection from "@/components/faq-section"
-import Footer from "@/components/footer"
 
 const contentSets = [
   {
@@ -262,8 +261,6 @@ export default function HomePage() {
 
       {/* FAQ Section */}
       <FAQSection />
-
-      <Footer />
 
       <style jsx>{`
         @keyframes slideFeatures {
