@@ -92,21 +92,17 @@ export default function WellnessSection() {
             {/* Hero visual */}
             <div className="flex justify-center my-10">
               <div
-                className="w-48 h-36 rounded-2xl border-3 border-white/20 flex items-center justify-center text-6xl text-white/90 relative overflow-hidden"
+                className="w-80 h-64 rounded-2xl border-3 border-white/20 flex items-center justify-center relative overflow-hidden"
                 style={{
                   background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
                   animation: "heartbeat 3s ease-in-out infinite",
                 }}
               >
-                👫
-                <div
-                  className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center text-lg"
-                  style={{
-                    animation: "pulse 2s ease-in-out infinite",
-                  }}
-                >
-                  ❤️
-                </div>
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2018%2C%202025%2C%2005_13_56%20PM-JfAjWtltgC26dz7Y7VkRr4GupYdTpp.png"
+                  alt="Happy customer with HONEST HEALTH supplement bottle"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
               </div>
             </div>
           </div>
