@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import BenefitsPage from "@/components/benefits-page"
+import WellnessSection from "@/components/wellness-section"
 
 const contentSets = [
   {
@@ -164,6 +165,9 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+
+      {/* Wellness Section */}
+      <WellnessSection />
 
       {/* Benefits Section */}
       <BenefitsPage />
