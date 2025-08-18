@@ -2,123 +2,224 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-16">
+    <footer className="bg-slate-800 text-slate-200 pt-16 pb-0 mt-auto">
       <div className="max-w-6xl mx-auto px-5">
-        <div className="flex justify-center mb-10">
-          {/* Social Media Icons Section */}
-          <div className="flex gap-4 mt-5">
-            <a
-              href="#"
-              className="w-9 h-9 bg-gray-700 rounded-full flex items-center justify-center text-white no-underline transition-colors duration-300 hover:bg-orange-500"
-            >
-              📘
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-12 border-b border-slate-600">
+          <div className="lg:col-span-2 max-w-sm">
+            <a href="/" className="text-2xl font-bold text-blue-500 no-underline mb-5 block">
+              HonestHealth
             </a>
-            <a
-              href="#"
-              className="w-9 h-9 bg-gray-700 rounded-full flex items-center justify-center text-white no-underline transition-colors duration-300 hover:bg-orange-500"
-            >
-              🐦
-            </a>
-            <a
-              href="#"
-              className="w-9 h-9 bg-gray-700 rounded-full flex items-center justify-center text-white no-underline transition-colors duration-300 hover:bg-orange-500"
-            >
-              📷
-            </a>
-            <a
-              href="#"
-              className="w-9 h-9 bg-gray-700 rounded-full flex items-center justify-center text-white no-underline transition-colors duration-300 hover:bg-orange-500"
-            >
-              🎵
-            </a>
+            <p className="text-slate-400 leading-relaxed mb-6">
+              Providing safe, effective, and discreet online healthcare solutions. Licensed physicians delivering
+              personalized treatment plans from the comfort of your home.
+            </p>
+            <div className="flex gap-4 mb-5">
+              <a
+                href="#"
+                className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center text-slate-400 no-underline transition-all duration-300 hover:bg-blue-500 hover:text-white hover:-translate-y-0.5"
+                aria-label="Facebook"
+              >
+                📘
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center text-slate-400 no-underline transition-all duration-300 hover:bg-blue-500 hover:text-white hover:-translate-y-0.5"
+                aria-label="Twitter"
+              >
+                🐦
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center text-slate-400 no-underline transition-all duration-300 hover:bg-blue-500 hover:text-white hover:-translate-y-0.5"
+                aria-label="Instagram"
+              >
+                📷
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center text-slate-400 no-underline transition-all duration-300 hover:bg-blue-500 hover:text-white hover:-translate-y-0.5"
+                aria-label="LinkedIn"
+              >
+                💼
+              </a>
+            </div>
+            <div className="bg-slate-900 border border-slate-600 rounded-lg p-4 text-center">
+              <div className="text-xs text-slate-400 mb-1">HIPAA COMPLIANT</div>
+              <div className="text-sm text-green-400 font-semibold">✓ Secure & Private</div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-slate-100 mb-5">Treatments</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="/erectile-dysfunction"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Erectile Dysfunction
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/premature-ejaculation"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Premature Ejaculation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/hair-loss"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Hair Loss Treatment
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/testosterone"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Testosterone Therapy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/weight-management"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Weight Management
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-slate-100 mb-5">Company</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="/about"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/how-it-works"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  How It Works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/our-doctors"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Our Doctors
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/reviews"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Patient Reviews
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/blog"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Health Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold text-slate-100 mb-5">Support</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="/contact"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/faq"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/patient-portal"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Patient Portal
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/prescription-refills"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Refill Prescription
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/insurance"
+                  className="text-slate-400 no-underline transition-colors duration-300 hover:text-blue-500"
+                >
+                  Insurance Info
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8 pb-8 flex justify-between items-center flex-wrap gap-5">
-          <div className="flex items-center gap-5">
-            <a href="https://www.drmorepenhome.com/" className="flex items-center no-underline text-white">
-              <div
-                className="w-10 h-10 rounded-full mr-3 relative flex items-center justify-center"
-                style={{
-                  background: "conic-gradient(from 0deg, #ff6b35, #ff8c42, #ff6b35)",
-                }}
-              >
-                <div className="absolute w-8 h-8 bg-gray-900 rounded-full"></div>
-                <div
-                  className="absolute w-5 h-5 rounded-full z-10"
-                  style={{
-                    background: "linear-gradient(45deg, #ff6b35, #ff8c42)",
-                  }}
-                ></div>
-              </div>
-              <span className="text-blue-600 text-lg font-semibold">Dr. Morepen HOME</span>
-            </a>
-            <div className="text-2xl font-light text-gray-500 tracking-wider">honest health</div>
+        <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-5">
+          <div className="text-slate-500 text-sm">
+            © 2025 HonestHealth. All rights reserved. Licensed healthcare provider.
           </div>
-
-          <div className="flex gap-8 flex-wrap">
+          <div className="flex flex-wrap gap-8 justify-center md:justify-end">
             <a
-              href="#"
-              className="text-gray-300 no-underline text-xs transition-colors duration-300 hover:text-orange-500"
-            >
-              Terms & Conditions
-            </a>
-            <a
-              href="#"
-              className="text-gray-300 no-underline text-xs transition-colors duration-300 hover:text-orange-500"
+              href="/privacy-policy"
+              className="text-slate-500 no-underline text-sm transition-colors duration-300 hover:text-blue-500"
             >
               Privacy Policy
             </a>
             <a
-              href="#"
-              className="text-gray-300 no-underline text-xs transition-colors duration-300 hover:text-orange-500"
+              href="/terms-of-service"
+              className="text-slate-500 no-underline text-sm transition-colors duration-300 hover:text-blue-500"
             >
-              Women
+              Terms of Service
             </a>
             <a
-              href="#"
-              className="text-gray-300 no-underline text-xs transition-colors duration-300 hover:text-orange-500"
+              href="/accessibility"
+              className="text-slate-500 no-underline text-sm transition-colors duration-300 hover:text-blue-500"
             >
-              Telehealth Consent & Care Payment
+              Accessibility
             </a>
             <a
-              href="#"
-              className="text-gray-300 no-underline text-xs transition-colors duration-300 hover:text-orange-500"
+              href="/do-not-sell"
+              className="text-slate-500 no-underline text-sm transition-colors duration-300 hover:text-blue-500"
             >
-              Consumer Health Data Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-gray-300 no-underline text-xs transition-colors duration-300 hover:text-orange-500"
-            >
-              Your privacy choices
+              Do Not Sell My Info
             </a>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .footer-bottom {
-            flex-direction: column;
-            text-align: center;
-            gap: 15px;
-          }
-          
-          .logo-section {
-            flex-direction: column;
-            gap: 15px;
-          }
-          
-          .footer-links {
-            justify-content: center;
-          }
-          
-          .honest-health {
-            font-size: 24px;
-          }
-        }
-      `}</style>
     </footer>
   )
 }
