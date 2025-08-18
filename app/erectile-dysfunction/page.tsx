@@ -158,7 +158,7 @@ export default function ErectileDysfunctionPage() {
           <div className="mb-20">
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Exygra Tablets */}
-              <div className="bg-gradient-to-br from-[#f8f6f3] to-white rounded-3xl p-8 shadow-lg border border-[#f1ede6] relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#f8f6f3] to-white rounded-3xl p-8 shadow-lg border border-[#f1ede6] relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
                 <div className="absolute top-4 right-4 bg-[#c4956c] text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Prescription Required
                 </div>
@@ -190,7 +190,7 @@ export default function ErectileDysfunctionPage() {
               </div>
 
               {/* Exygra Spray */}
-              <div className="bg-gradient-to-br from-[#f8f6f3] to-white rounded-3xl p-8 shadow-lg border border-[#f1ede6] relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#f8f6f3] to-white rounded-3xl p-8 shadow-lg border border-[#f1ede6] relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
                 <div className="absolute top-4 right-4 bg-[#c4956c] text-white text-xs font-semibold px-3 py-1 rounded-full">
                   Prescription Required
                 </div>
@@ -300,6 +300,73 @@ export default function ErectileDysfunctionPage() {
               expert medical review. Results may vary, and our doctors will recommend the most suitable option for your
               individual needs.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Educational Treatment Options Section */}
+      <section className="py-20 bg-gradient-to-br from-[#f5f7fa] to-[#c3cfe2]">
+        <div className="max-w-6xl mx-auto px-5">
+          <div className="bg-white rounded-3xl p-16 shadow-2xl">
+            <div className="text-center mb-16">
+              <div className="text-sm font-semibold text-[#4a90e2] uppercase tracking-wider mb-4">MEDICAL INSIGHTS</div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-[#2c3e50] mb-6 leading-tight">
+                Understanding Erectile Dysfunction Treatment Options
+              </h2>
+              <p className="text-xl text-[#6c757d] max-w-3xl mx-auto leading-relaxed">
+                Explore the different therapeutic approaches available to restore sexual health and confidence.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Oral Medications */}
+              <div className="bg-gradient-to-br from-[#667eea] to-[#764ba2] rounded-2xl p-10 text-center text-white relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center text-3xl">
+                    💊
+                  </div>
+                  <h3 className="text-2xl font-bold mb-5 leading-tight">Oral Medications for ED</h3>
+                  <p className="text-base leading-relaxed opacity-95">
+                    Phosphodiesterase type 5 (PDE5) inhibitors like sildenafil, tadalafil, and vardenafil work by
+                    relaxing smooth muscle tissue in blood vessels. This allows increased blood circulation to penile
+                    arteries, facilitating natural erectile response when combined with sexual arousal.
+                  </p>
+                </div>
+              </div>
+
+              {/* Injectable Therapy */}
+              <div className="bg-gradient-to-br from-[#f093fb] to-[#f5576c] rounded-2xl p-10 text-center text-white relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center text-3xl">
+                    🔬
+                  </div>
+                  <h3 className="text-2xl font-bold mb-5 leading-tight">Injectable Therapy Solutions</h3>
+                  <p className="text-base leading-relaxed opacity-95">
+                    Intracavernosal injections deliver vasodilating medications directly into penile tissue. These
+                    treatments bypass systemic circulation, creating localized vasodilation that produces reliable
+                    erections independent of oral medication effectiveness or underlying health conditions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Advanced Medical Devices */}
+              <div className="bg-gradient-to-br from-[#4facfe] to-[#00f2fe] rounded-2xl p-10 text-center text-white relative overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 hover:shadow-2xl">
+                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center text-3xl">
+                    ⚡
+                  </div>
+                  <h3 className="text-2xl font-bold mb-5 leading-tight">Advanced Medical Devices</h3>
+                  <p className="text-base leading-relaxed opacity-95">
+                    Vacuum erection devices and penile implants offer mechanical solutions for severe erectile
+                    dysfunction. These FDA-approved treatments provide reliable results through either external vacuum
+                    pressure or surgically placed inflatable systems for long-term sexual function restoration.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
