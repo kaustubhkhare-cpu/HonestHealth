@@ -6,6 +6,7 @@ import WellnessSection from "@/components/wellness-section"
 import ConvenienceSection from "@/components/convenience-section"
 import ExperienceSection from "@/components/experience-section"
 import USPBanner from "@/components/usp-banner"
+import FAQSection from "@/components/faq-section"
 
 const contentSets = [
   {
@@ -252,6 +253,9 @@ export default function HomePage() {
 
       {/* USP Banner */}
       <USPBanner />
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       <style jsx>{`
         @keyframes slideFeatures {
