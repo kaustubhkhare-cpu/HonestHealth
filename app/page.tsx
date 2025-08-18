@@ -54,17 +54,18 @@ export default function HomePage() {
 
   const handleCategoryClick = (category: string) => {
     console.log(`[v0] Clicked on ${category} category`)
-    // Add navigation logic here
   }
 
   const currentContent = contentSets[currentIndex]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%)" }}>
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
+      <header className="bg-white shadow-lg sticky top-0 z-50" style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
         <div className="max-w-6xl mx-auto flex justify-between items-center px-5 py-4">
-          <div className="text-3xl font-bold text-blue-700">HonestHealth</div>
+          <div className="text-3xl font-bold" style={{ color: "#2c5aa0" }}>
+            HonestHealth
+          </div>
 
           {/* Features Slider */}
           <div className="hidden md:flex items-center overflow-hidden whitespace-nowrap w-96 lg:w-[600px] relative">
@@ -78,7 +79,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          <button className="bg-blue-700 text-white px-5 py-2.5 rounded-md font-medium hover:bg-blue-800 transition-colors">
+          <button
+            className="text-white px-5 py-2.5 rounded-md font-medium hover:opacity-90 transition-all"
+            style={{ background: "#2c5aa0" }}
+          >
             Log in
           </button>
         </div>
@@ -96,17 +100,19 @@ export default function HomePage() {
         </h1>
 
         <h2
-          className={`text-6xl font-light text-gray-800 mb-7.5 transition-all duration-700 ${
+          className={`text-6xl font-light mb-7.5 transition-all duration-700 ${
             isTransitioning ? "opacity-0 translate-y-5" : "opacity-100 translate-y-0"
           }`}
+          style={{ color: "#333" }}
         >
           {currentContent.mainTitle}
         </h2>
 
         <p
-          className={`text-lg text-gray-600 mb-15 transition-all duration-700 ${
+          className={`text-lg mb-15 transition-all duration-700 ${
             isTransitioning ? "opacity-0 translate-y-5" : "opacity-100 translate-y-0"
           }`}
+          style={{ color: "#666" }}
         >
           {currentContent.subtitle}
         </p>
@@ -115,51 +121,114 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7.5 mt-10">
           {/* Weight Management Card */}
           <div
-            className="bg-white rounded-2xl p-10 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group"
+            className="bg-white rounded-2xl p-10 text-center cursor-pointer group relative overflow-hidden transition-all duration-300 hover:-translate-y-2"
+            style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
             onClick={() => handleCategoryClick("weight")}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.15)"
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)"
+            }}
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-red-400 to-red-500 flex items-center justify-center text-4xl transition-all duration-500 group-hover:scale-110">
+            <div
+              className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-4xl transition-all duration-500 group-hover:scale-110"
+              style={{ background: "linear-gradient(135deg, #ff6b6b, #ff8e8e)" }}
+            >
               💊
             </div>
-            <div className="text-xl font-semibold mb-2 text-gray-800">
-              Weight <span className="text-red-400">management</span>
+            <div className="text-xl font-semibold mb-2" style={{ color: "#333" }}>
+              Weight <span style={{ color: "#ff6b6b" }}>management</span>
             </div>
-            <div className="text-gray-600 mb-5">Effective weight loss solutions</div>
-            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white mx-auto group-hover:bg-blue-700 group-hover:scale-110 transition-all duration-300">
+            <div className="mb-5" style={{ color: "#666" }}>
+              Effective weight loss solutions
+            </div>
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white mx-auto transition-all duration-300 group-hover:scale-110"
+              style={{ background: "#333" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#2c5aa0"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#333"
+              }}
+            >
               →
             </div>
           </div>
 
           {/* ED Treatment Card */}
           <div
-            className="bg-white rounded-2xl p-10 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group"
+            className="bg-white rounded-2xl p-10 text-center cursor-pointer group relative overflow-hidden transition-all duration-300 hover:-translate-y-2"
+            style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
             onClick={() => handleCategoryClick("ed")}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.15)"
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)"
+            }}
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-teal-300 to-teal-400 flex items-center justify-center text-4xl transition-all duration-500 group-hover:scale-110">
+            <div
+              className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-4xl transition-all duration-500 group-hover:scale-110"
+              style={{ background: "linear-gradient(135deg, #a8e6cf, #7fcdcd)" }}
+            >
               🧪
             </div>
-            <div className="text-xl font-semibold mb-2 text-gray-800">
-              Erectile <span className="text-teal-300">dysfunction</span>
+            <div className="text-xl font-semibold mb-2" style={{ color: "#333" }}>
+              Erectile <span style={{ color: "#a8e6cf" }}>dysfunction</span>
             </div>
-            <div className="text-gray-600 mb-5">Discreet & proven treatments</div>
-            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white mx-auto group-hover:bg-blue-700 group-hover:scale-110 transition-all duration-300">
+            <div className="mb-5" style={{ color: "#666" }}>
+              Discreet & proven treatments
+            </div>
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white mx-auto transition-all duration-300 group-hover:scale-110"
+              style={{ background: "#333" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#2c5aa0"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#333"
+              }}
+            >
               →
             </div>
           </div>
 
           {/* Diabetes Care Card */}
           <div
-            className="bg-white rounded-2xl p-10 text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group"
+            className="bg-white rounded-2xl p-10 text-center cursor-pointer group relative overflow-hidden transition-all duration-300 hover:-translate-y-2"
+            style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
             onClick={() => handleCategoryClick("diabetes")}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.15)"
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)"
+            }}
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center text-4xl transition-all duration-500 group-hover:scale-110">
+            <div
+              className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center text-4xl transition-all duration-500 group-hover:scale-110"
+              style={{ background: "linear-gradient(135deg, #4ecdc4, #44a08d)" }}
+            >
               ⚕️
             </div>
-            <div className="text-xl font-semibold mb-2 text-gray-800">
-              Diabetes <span className="text-emerald-400">care</span>
+            <div className="text-xl font-semibold mb-2" style={{ color: "#333" }}>
+              Diabetes <span style={{ color: "#4ecdc4" }}>care</span>
             </div>
-            <div className="text-gray-600 mb-5">Complete diabetes management</div>
-            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white mx-auto group-hover:bg-blue-700 group-hover:scale-110 transition-all duration-300">
+            <div className="mb-5" style={{ color: "#666" }}>
+              Complete diabetes management
+            </div>
+            <div
+              className="w-10 h-10 rounded-full flex items-center justify-center text-white mx-auto transition-all duration-300 group-hover:scale-110"
+              style={{ background: "#333" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#2c5aa0"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#333"
+              }}
+            >
               →
             </div>
           </div>
@@ -176,6 +245,25 @@ export default function HomePage() {
         @keyframes slideFeatures {
           0% { transform: translateX(0); }
           100% { transform: translateX(-100%); }
+        }
+        
+        @media (max-width: 768px) {
+          .hero-section {
+            padding: 40px 20px;
+          }
+          
+          h1 {
+            font-size: 48px !important;
+          }
+          
+          h2 {
+            font-size: 48px !important;
+          }
+          
+          .categories-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
         }
       `}</style>
     </div>
