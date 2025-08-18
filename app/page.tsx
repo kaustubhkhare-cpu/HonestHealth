@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import BenefitsPage from "@/components/benefits-page"
 import WellnessSection from "@/components/wellness-section"
 import ConvenienceSection from "@/components/convenience-section"
+import ExperienceSection from "@/components/experience-section"
 
 const contentSets = [
   {
@@ -244,6 +245,9 @@ export default function HomePage() {
 
       {/* Convenience Section */}
       <ConvenienceSection />
+
+      {/* Experience Section */}
+      <ExperienceSection />
 
       <style jsx>{`
         @keyframes slideFeatures {
