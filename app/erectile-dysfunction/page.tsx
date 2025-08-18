@@ -283,6 +283,82 @@ export default function ErectileDysfunctionPage() {
         </div>
       </section>
 
+      <section className="py-16 bg-gradient-to-br from-[#f8f6f3] to-white overflow-hidden">
+        <div className="relative">
+          <div
+            className="flex gap-8 items-center"
+            style={{
+              animation: "trustSlide 25s linear infinite",
+              width: "calc(400px * 10)", // 10 items * 400px each
+            }}
+          >
+            {/* Trust Items */}
+            {[
+              {
+                icon: "🛡️",
+                title: "Trusted",
+                description: "Regulated by leading healthcare authorities and quality commissions.",
+              },
+              {
+                icon: "⚕️",
+                title: "Licensed Professionals",
+                description: "Medications prescribed by qualified licensed clinicians.",
+              },
+              {
+                icon: "📦",
+                title: "Free, discreet delivery",
+                description: "No names, no logos, no delivery fee. Complete privacy guaranteed.",
+              },
+              {
+                icon: "🩺",
+                title: "Ongoing clinical support",
+                description: "Access expert clinicians and medical advice whenever you need it.",
+              },
+              {
+                icon: "🔒",
+                title: "100% Confidential",
+                description: "Your privacy and personal information are completely secure with us.",
+              },
+              {
+                icon: "⚡",
+                title: "Fast & Effective",
+                description: "Quick consultation process with proven, effective treatments.",
+              },
+              // Duplicate items for seamless loop
+              {
+                icon: "🛡️",
+                title: "Trusted",
+                description: "Regulated by leading healthcare authorities and quality commissions.",
+              },
+              {
+                icon: "⚕️",
+                title: "Licensed Professionals",
+                description: "Medications prescribed by qualified licensed clinicians.",
+              },
+              {
+                icon: "📦",
+                title: "Free, discreet delivery",
+                description: "No names, no logos, no delivery fee. Complete privacy guaranteed.",
+              },
+              {
+                icon: "🩺",
+                title: "Ongoing clinical support",
+                description: "Access expert clinicians and medical advice whenever you need it.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[400px] bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 text-center hover:transform hover:scale-105 transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+                <p className="text-[#666] text-sm leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <style jsx>{`
         @keyframes moveUp {
           0% {
@@ -290,6 +366,15 @@ export default function ErectileDysfunctionPage() {
           }
           100% {
             transform: translateY(-50%);
+          }
+        }
+        
+        @keyframes trustSlide {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-400px * 6));
           }
         }
       `}</style>
