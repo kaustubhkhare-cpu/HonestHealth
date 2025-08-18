@@ -4,10 +4,15 @@ import { useState, useEffect } from "react"
 
 export default function ErectileDysfunctionPage() {
   const [isVisible, setIsVisible] = useState(false)
+  const [activeFaq, setActiveFaq] = useState<number | null>(null)
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index)
+  }
 
   const floatingCards = [
     // Column 1 cards
@@ -101,7 +106,6 @@ export default function ErectileDysfunctionPage() {
                       animationDelay: columnIndex === 0 ? "0s" : "-10s",
                     }}
                   >
-                    {/* Duplicate cards for seamless loop */}
                     {[...column, ...column].map((card, cardIndex) => (
                       <div
                         key={cardIndex}
@@ -443,6 +447,81 @@ export default function ErectileDysfunctionPage() {
         </div>
       </section>
 
+      {/* ED Treatment FAQ Section */}
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="max-w-4xl mx-auto px-5">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-[#3b82f6] text-white px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-5">
+              FREQUENTLY ASKED
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#1e293b] mb-6 leading-tight">ED Treatment Questions</h2>
+            <p className="text-xl text-[#64748b] max-w-2xl mx-auto leading-relaxed">
+              Get answers to the most common questions about erectile dysfunction treatment, safety, and effectiveness.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: "What causes erectile dysfunction and who does it affect?",
+                answer:
+                  "Erectile dysfunction affects millions of men worldwide and can be caused by physical factors like diabetes, heart disease, or hormonal imbalances, as well as psychological factors including stress and anxiety. It's a common condition that becomes more prevalent with age, but can affect men of all ages.",
+              },
+              {
+                question: "How effective are oral ED medications?",
+                answer:
+                  "Oral ED medications like sildenafil, tadalafil, and vardenafil are highly effective for most men, with success rates of 70-85%. These medications work by increasing blood flow to the penis during sexual arousal. Results can vary based on individual health factors and the underlying cause of ED.",
+              },
+              {
+                question: "Are there any side effects I should be aware of?",
+                answer:
+                  "Common side effects are generally mild and may include headaches, flushing, nasal congestion, or upset stomach. Serious side effects are rare but can include prolonged erections or sudden vision/hearing loss. Always consult with a healthcare provider about your medical history and current medications to ensure safe treatment.",
+              },
+              {
+                question: "How long do ED medications take to work?",
+                answer:
+                  "Most oral ED medications begin working within 30-60 minutes after taking them. Sildenafil and vardenafil typically last 4-6 hours, while tadalafil can remain effective for up to 36 hours. Taking the medication on an empty stomach may help it work faster.",
+              },
+              {
+                question: "Can I take ED medication with other prescriptions?",
+                answer:
+                  "ED medications can interact with certain drugs, particularly nitrates used for heart conditions, which can cause dangerous drops in blood pressure. Blood pressure medications, alpha-blockers, and some antifungals may also interact. Always provide a complete list of your medications during consultation to ensure safe compatibility.",
+              },
+              {
+                question: "Is online ED treatment as effective as in-person visits?",
+                answer:
+                  "Online ED treatment can be equally effective when conducted through licensed telemedicine platforms with qualified physicians. The key is thorough medical screening, proper dosing, and ongoing monitoring. Many patients prefer the convenience and privacy of online consultations while receiving the same quality of care.",
+              },
+              {
+                question: "Will ED medication work if I have diabetes or heart disease?",
+                answer:
+                  "ED medications can often be used safely by men with diabetes or stable heart disease, though effectiveness may vary. These conditions can affect blood flow and nerve function, potentially impacting treatment results. Close medical supervision is important to adjust dosing and monitor for any complications with underlying health conditions.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden hover:shadow-lg transition-all duration-300"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-[#f8fafc] transition-colors duration-300"
+                >
+                  <span className="text-lg font-semibold text-[#1e293b] pr-4">{faq.question}</span>
+                  <div
+                    className={`w-6 h-6 rounded-full bg-[#3b82f6] text-white flex items-center justify-center text-sm font-bold transition-all duration-300 flex-shrink-0 ${activeFaq === index ? "rotate-45 bg-[#10b981]" : ""}`}
+                  >
+                    +
+                  </div>
+                </button>
+                {activeFaq === index && (
+                  <div className="px-6 pb-6 text-[#475569] leading-relaxed animate-fadeIn">{faq.answer}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-gradient-to-br from-[#f8f6f3] to-white overflow-hidden">
         <div className="relative">
           <div
@@ -536,6 +615,21 @@ export default function ErectileDysfunctionPage() {
           100% {
             transform: translateX(calc(-400px * 6));
           }
+        }
+
+        @keyframes fadeIn {
+          from { 
+            opacity: 0; 
+            transform: translateY(-10px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease;
         }
       `}</style>
     </div>
