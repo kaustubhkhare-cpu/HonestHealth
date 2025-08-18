@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 export default function WellnessSection() {
+  const router = useRouter()
   const [currentContentIndex, setCurrentContentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
@@ -115,7 +117,10 @@ export default function WellnessSection() {
               <button className="bg-white text-[#6b8e7d] px-8 py-4 rounded-xl font-semibold text-base hover:transform hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300">
                 Book consultation
               </button>
-              <button className="bg-transparent text-white px-8 py-4 border-2 border-white/30 rounded-xl font-semibold text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300">
+              <button
+                className="bg-transparent text-white px-8 py-4 border-2 border-white/30 rounded-xl font-semibold text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                onClick={() => router.push("/erectile-dysfunction")}
+              >
                 Explore wellness programs
               </button>
             </div>
