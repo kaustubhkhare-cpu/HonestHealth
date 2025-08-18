@@ -371,13 +371,13 @@ export default function ErectileDysfunctionPage() {
       </section>
 
       {/* Treatment Journey Timeline Section */}
-      <section className="py-20 bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white">
+      <section className="py-20 bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white min-h-screen">
         <div className="max-w-6xl mx-auto px-5">
           <div className="mb-16">
             <div className="inline-block bg-[#00d4aa] text-white px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-5">
               HOW IT WORKS
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">Your treatment journey</h2>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight">Your treatment journey</h1>
           </div>
 
           <div className="relative mt-12">
@@ -387,7 +387,7 @@ export default function ErectileDysfunctionPage() {
             </div>
 
             {/* Timeline Steps */}
-            <div className="grid lg:grid-cols-4 gap-10 lg:gap-8 relative z-20">
+            <div className="flex flex-wrap justify-between gap-10 lg:gap-8 relative z-20">
               {[
                 {
                   tag: "START HERE",
@@ -418,9 +418,9 @@ export default function ErectileDysfunctionPage() {
                     "Access ongoing support through secure messaging and telehealth consultations. Automatic refills ensure you never run out of medication.",
                 },
               ].map((step, index) => (
-                <div key={index} className="text-left lg:text-left relative">
+                <div key={index} className="text-left relative flex-1 min-w-[250px] max-w-[300px]">
                   {/* Timeline Dot */}
-                  <div className="absolute top-[80px] left-[35px] w-3 h-3 bg-[#00d4aa] rounded-full border-[3px] border-white z-30 hidden lg:block"></div>
+                  <div className="absolute top-[80px] left-1/2 transform -translate-x-1/2 w-3 h-3 bg-[#00d4aa] rounded-full border-[3px] border-white z-30 hidden lg:block"></div>
 
                   <div className="inline-block bg-[#00d4aa] text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase mb-5">
                     {step.tag}
@@ -432,7 +432,7 @@ export default function ErectileDysfunctionPage() {
 
                   <h3 className="text-xl lg:text-2xl font-bold mb-4 leading-tight">{step.title}</h3>
 
-                  <p className="text-base opacity-90 leading-relaxed max-w-[300px]">{step.description}</p>
+                  <p className="text-base opacity-90 leading-relaxed">{step.description}</p>
                 </div>
               ))}
             </div>
