@@ -120,6 +120,169 @@ export default function ErectileDysfunctionPage() {
         </section>
       </div>
 
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-5">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="text-sm font-semibold text-[#c4956c] uppercase tracking-wider mb-4">Our Solutions</div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-6">
+              Effective treatments for your confidence
+            </h2>
+            <p className="text-lg text-[#666] max-w-3xl mx-auto leading-relaxed">
+              Clinically proven solutions designed to help you regain control and confidence in your intimate life.
+            </p>
+          </div>
+
+          {/* Main Prescription Products */}
+          <div className="mb-20">
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Exygra Tablets */}
+              <div className="bg-gradient-to-br from-[#f8f6f3] to-white rounded-3xl p-8 shadow-lg border border-[#f1ede6] relative overflow-hidden">
+                <div className="absolute top-4 right-4 bg-[#c4956c] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  Prescription Required
+                </div>
+                <div className="text-6xl mb-6 text-center">💊</div>
+                <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Exygra Tablets</h3>
+                <p className="text-[#666] mb-6 leading-relaxed">
+                  Fast-acting oral medication for reliable performance when you need it most.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Works within 30-60 minutes",
+                    "Clinically proven effectiveness",
+                    "Long-lasting results up to 4-6 hours",
+                    "Discreet packaging and delivery",
+                  ].map((benefit, index) => (
+                    <li key={index} className="flex items-center text-[#2d2d2d]">
+                      <div className="w-2 h-2 bg-[#c4956c] rounded-full mr-3 flex-shrink-0"></div>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://wa.me/your-number"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2d2d2d] to-[#1a1a1a] text-white px-6 py-3 rounded-full font-semibold hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg"
+                >
+                  <div className="w-4 h-4 bg-[#25d366] rounded-full flex items-center justify-center text-xs">💬</div>
+                  Get Started
+                </a>
+              </div>
+
+              {/* Exygra Spray */}
+              <div className="bg-gradient-to-br from-[#f8f6f3] to-white rounded-3xl p-8 shadow-lg border border-[#f1ede6] relative overflow-hidden">
+                <div className="absolute top-4 right-4 bg-[#c4956c] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  Prescription Required
+                </div>
+                <div className="flex justify-center mb-6">
+                  <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="35" y="25" width="20" height="50" fill="#2d2d2d" rx="3" />
+                    <rect x="37" y="20" width="16" height="8" fill="#2d2d2d" rx="2" />
+                    <line x1="55" y1="22" x2="75" y2="18" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
+                    <line x1="55" y1="25" x2="78" y2="23" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
+                    <line x1="55" y1="28" x2="75" y2="28" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
+                    <line x1="55" y1="31" x2="72" y2="33" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
+                    <line x1="55" y1="34" x2="70" y2="38" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Exygra Spray</h3>
+                <p className="text-[#666] mb-6 leading-relaxed">
+                  Topical spray solution for quick absorption and rapid onset of action.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Faster absorption than tablets",
+                    "Easy to use application",
+                    "Reduced side effects",
+                    "Convenient and portable",
+                  ].map((benefit, index) => (
+                    <li key={index} className="flex items-center text-[#2d2d2d]">
+                      <div className="w-2 h-2 bg-[#c4956c] rounded-full mr-3 flex-shrink-0"></div>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://wa.me/your-number"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2d2d2d] to-[#1a1a1a] text-white px-6 py-3 rounded-full font-semibold hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg"
+                >
+                  <div className="w-4 h-4 bg-[#25d366] rounded-full flex items-center justify-center text-xs">💬</div>
+                  Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Supporting Products */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-[#1a1a1a] mb-4">Natural Support & Wellness</h3>
+              <p className="text-[#666] max-w-2xl mx-auto">
+                Complement your treatment with natural supplements for overall vitality
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {/* Testo Boost */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#f1ede6] text-center hover:transform hover:-translate-y-2 transition-all duration-300">
+                <div className="text-4xl mb-4">⚡</div>
+                <h4 className="text-xl font-bold text-[#1a1a1a] mb-3">Testo Boost</h4>
+                <p className="text-[#666] text-sm mb-6 leading-relaxed">
+                  Natural testosterone support supplement to enhance energy, stamina, and overall male vitality.
+                </p>
+                <a
+                  href="https://wa.me/your-number"
+                  className="text-[#c4956c] font-semibold hover:text-[#a67c52] transition-colors"
+                >
+                  Learn More
+                </a>
+              </div>
+
+              {/* Shilajit Capsules */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#f1ede6] text-center hover:transform hover:-translate-y-2 transition-all duration-300">
+                <div className="text-4xl mb-4">🌿</div>
+                <h4 className="text-xl font-bold text-[#1a1a1a] mb-3">Shilajit Capsules</h4>
+                <p className="text-[#666] text-sm mb-6 leading-relaxed">
+                  Pure Himalayan Shilajit in convenient capsule form for improved energy and sexual wellness.
+                </p>
+                <a
+                  href="https://wa.me/your-number"
+                  className="text-[#c4956c] font-semibold hover:text-[#a67c52] transition-colors"
+                >
+                  Learn More
+                </a>
+              </div>
+
+              {/* Shilajit Resin */}
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-[#f1ede6] text-center hover:transform hover:-translate-y-2 transition-all duration-300">
+                <div className="text-4xl mb-4">🏔️</div>
+                <h4 className="text-xl font-bold text-[#1a1a1a] mb-3">Shilajit Resin</h4>
+                <p className="text-[#666] text-sm mb-6 leading-relaxed">
+                  Premium quality raw Shilajit resin for maximum potency and traditional wellness benefits.
+                </p>
+                <a
+                  href="https://wa.me/your-number"
+                  className="text-[#c4956c] font-semibold hover:text-[#a67c52] transition-colors"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Professional Disclaimer */}
+          <div className="bg-gradient-to-br from-[#f8f6f3] to-[#f1ede6] rounded-3xl p-8 text-center max-w-4xl mx-auto">
+            <div className="text-5xl mb-4">👨‍⚕️</div>
+            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Professional Medical Consultation</h3>
+            <p className="text-[#666] leading-relaxed">
+              All treatments are prescribed following a comprehensive health assessment by our licensed medical
+              professionals. Your personalized treatment plan will be determined based on your consultation form and
+              expert medical review. Results may vary, and our doctors will recommend the most suitable option for your
+              individual needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <style jsx>{`
         @keyframes moveUp {
           0% {
