@@ -148,7 +148,7 @@ export default function BenefitsPage() {
                     style={{ animationDelay: `${index * 0.5}s` }}
                   >
                     <img
-                      src={`/abstract-geometric-shapes.png?key=8v4ss&height=32&width=32&query=${item.food}`}
+                      src={`/abstract-geometric-shapes.png?key=aff3f&height=32&width=32&query=${item.food}`}
                       alt={item.alt}
                       className="w-8 h-8 rounded-lg"
                     />
