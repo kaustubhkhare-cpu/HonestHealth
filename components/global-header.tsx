@@ -40,8 +40,8 @@ export default function GlobalHeader() {
             <div className="absolute w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-white rounded-full"></div>
             <div className="absolute w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 bg-gradient-to-br from-[#ff6b35] to-[#ff8c42] rounded-full z-10"></div>
           </div>
-          <span className="text-[#2c5aa0] hidden sm:inline">Dr. Morepen HOME</span>
-          <span className="text-[#2c5aa0] sm:hidden">Dr. Morepen</span>
+          <span className="text-[#2c5aa0] hidden sm:inline">HonestHealth</span>
+          <span className="text-[#2c5aa0] sm:hidden">HonestHealth</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-6 lg:gap-10">
