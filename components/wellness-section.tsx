@@ -114,7 +114,7 @@ export default function WellnessSection() {
                 Book consultation
               </button>
               <button
-                className="bg-transparent text-white px-8 py-4 border-2 border-white/30 rounded-xl font-semibold text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+                className="bg-white text-[#6b8e7d] px-8 py-4 border-2 border-white/30 rounded-xl font-semibold text-base hover:bg-white/90 hover:border-white/50 transition-all duration-300"
                 onClick={() => router.push("/erectile-dysfunction")}
               >
                 Explore wellness programs
@@ -147,12 +147,7 @@ export default function WellnessSection() {
                   />
                 </div>
               </div>
-              <button
-                className="px-6 py-3 rounded-lg font-semibold text-sm text-white hover:transform hover:-translate-y-0.5 transition-all duration-300"
-                style={{ background: "#c49b61" }}
-                onMouseEnter={(e) => (e.target.style.background = "#a67c52")}
-                onMouseLeave={(e) => (e.target.style.background = "#c49b61")}
-              >
+              <button className="px-6 py-3 rounded-lg font-semibold text-sm bg-white text-[#6b8e7d] hover:transform hover:-translate-y-0.5 hover:bg-white/90 transition-all duration-300">
                 Start wellness journey
               </button>
             </div>
@@ -179,12 +174,7 @@ export default function WellnessSection() {
                   />
                 </div>
               </div>
-              <button
-                className="px-6 py-3 rounded-lg font-semibold text-sm text-white hover:transform hover:-translate-y-0.5 transition-all duration-300"
-                style={{ background: "#c49b61" }}
-                onMouseEnter={(e) => (e.target.style.background = "#a67c52")}
-                onMouseLeave={(e) => (e.target.style.background = "#c49b61")}
-              >
+              <button className="px-6 py-3 rounded-lg font-semibold text-sm bg-white text-[#6b8e7d] hover:transform hover:-translate-y-0.5 hover:bg-white/90 transition-all duration-300">
                 Read reviews
               </button>
             </div>
@@ -206,18 +196,17 @@ export default function WellnessSection() {
                     ].map((item, index) => (
                       <div
                         key={index}
-                        className="w-14 h-10 rounded-lg flex items-center justify-center text-2xl text-white cursor-pointer transition-all duration-300 hover:scale-110 relative overflow-hidden"
+                        className="w-14 h-10 rounded-lg bg-white flex items-center justify-center text-2xl cursor-pointer transition-all duration-300 hover:scale-110 relative overflow-hidden"
                         style={{
-                          background: "linear-gradient(135deg, #8b6914 0%, #6b4e03 100%)",
                           animation: `item-float 4s ease-in-out infinite`,
                           animationDelay: `${index * 0.5}s`,
                         }}
                         onMouseEnter={(e) => {
-                          e.target.style.background = "linear-gradient(135deg, #a67c52 0%, #8b6914 100%)"
+                          e.target.style.background = "rgba(255,255,255,0.9)"
                           e.target.style.transform = "scale(1.1)"
                         }}
                         onMouseLeave={(e) => {
-                          e.target.style.background = "linear-gradient(135deg, #8b6914 0%, #6b4e03 100%)"
+                          e.target.style.background = "white"
                           e.target.style.transform = "scale(1)"
                         }}
                       >
@@ -226,12 +215,7 @@ export default function WellnessSection() {
                     ))}
                   </div>
                 </div>
-                <button
-                  className="px-6 py-3 rounded-lg font-semibold text-sm text-white hover:transform hover:-translate-y-0.5 transition-all duration-300"
-                  style={{ background: "#c49b61" }}
-                  onMouseEnter={(e) => (e.target.style.background = "#a67c52")}
-                  onMouseLeave={(e) => (e.target.style.background = "#c49b61")}
-                >
+                <button className="px-6 py-3 rounded-lg font-semibold text-sm bg-white text-[#6b8e7d] hover:transform hover:-translate-y-0.5 hover:bg-white/90 transition-all duration-300">
                   {currentContent.buttonText}
                 </button>
               </div>
