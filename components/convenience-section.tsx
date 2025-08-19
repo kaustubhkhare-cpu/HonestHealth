@@ -232,10 +232,9 @@ export default function ConvenienceSection() {
             <div className="flex-1 flex flex-col items-center justify-center gap-4">
               <div className="w-24 h-16 bg-gradient-to-br from-amber-700 to-amber-800 rounded-xl shadow-lg flex flex-col items-center justify-center text-white animate-pulse">
                 <div className="text-3xl mb-1">📦</div>
-                <div className="text-xs font-semibold text-center leading-tight">
-                  HonestHealth
-                  <br />
-                  DISCREET PACKAGING
+                <div className="text-xs font-semibold text-center leading-none px-1">
+                  <div>HonestHealth</div>
+                  <div className="mt-0.5">DISCREET PACKAGING</div>
                 </div>
               </div>
 
