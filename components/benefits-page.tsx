@@ -113,8 +113,12 @@ export default function BenefitsPage() {
                 journey safely.
               </p>
               <div className="flex justify-center my-5">
-                <div className="relative w-20 h-20 bg-gradient-to-br from-[#d4a574] to-[#b8956a] rounded-2xl flex items-center justify-center text-4xl text-white animate-pulse shadow-lg">
-                  🏃‍♂️
+                <div className="relative w-32 h-24 rounded-2xl overflow-hidden shadow-lg animate-pulse">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_rh1aryrh1aryrh1a.jpg-V3T5z6yPo8581GoH03mvisbtqZjP9j.jpeg"
+                    alt="Woman jogging outdoors in pink athletic wear"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
                   <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#8b6914] rounded-full animate-bounce flex items-center justify-center text-xs">
                     ⭐
                   </div>
