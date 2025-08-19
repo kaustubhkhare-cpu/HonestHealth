@@ -210,7 +210,13 @@ export default function ErectileDysfunctionPage() {
                 <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-[#c4956c] text-white text-xs font-semibold px-2 sm:px-3 py-1 rounded-full">
                   Prescription Required
                 </div>
-                <div className="text-4xl sm:text-5xl lg:text-6xl mb-4 sm:mb-6 text-center">💊</div>
+                <div className="flex justify-center mb-4 sm:mb-6">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_dwoexqdwoexqdwoe.jpg-5926x631LKK3VM0dFJeJfJ6SzcCG0A.jpeg"
+                    alt="Exygra Tablets - Red triangular ED medication tablets"
+                    className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain rounded-lg"
+                  />
+                </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a1a] mb-3 sm:mb-4">Exygra Tablets</h3>
                 <p className="text-[#666] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                   Fast-acting oral medication for reliable performance when you need it most.
