@@ -124,9 +124,11 @@ export default function BenefitsPage() {
                   </div>
                 </div>
               </div>
-              <button className="bg-[#c49b61] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300">
-                Explore wellness
-              </button>
+              <div className="mt-6 flex justify-center">
+                <button className="bg-[#c49b61] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
+                  Explore wellness
+                </button>
+              </div>
             </div>
 
             {/* Nutrition Card */}
