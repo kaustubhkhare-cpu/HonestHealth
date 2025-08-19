@@ -143,8 +143,8 @@ export default function WellnessSection() {
                   }}
                 >
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2018%2C%202025%2C%2005_35_37%20PM-BiMWLSWFa8h8A2ItAs7Az6XNV5gMeh.png"
-                    alt="Professional healthcare doctor"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_aflwg1aflwg1aflw.jpg-DXXnprgV0BMGFCnouA0R0QSjdSK9yS.jpeg"
+                    alt="Professional healthcare doctor with stethoscope"
                     className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
                   />
                 </div>
