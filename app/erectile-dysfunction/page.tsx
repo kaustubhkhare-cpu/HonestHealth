@@ -432,7 +432,13 @@ export default function ErectileDysfunctionPage() {
                 },
                 {
                   tag: "ONGOING",
-                  icon: "👨‍⚕️",
+                  icon: (
+                    <img
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_glxsx7glxsx7glxs.jpg-5triBZadovlKBJKNdiTUlch7dJySdu.jpeg"
+                      alt="Telemedicine consultation interface showing doctor-patient chat"
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  ),
                   title: "Continuous care",
                   description:
                     "Access ongoing support through secure messaging and telehealth consultations. Automatic refills ensure you never run out of medication.",
