@@ -106,14 +106,14 @@ export default function BenefitsPage() {
 
           <div className="flex flex-col gap-5">
             {/* Fitness Card */}
-            <div className="bg-white p-10 rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1">
+            <div className="bg-white p-12 rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1 min-h-[500px]">
               <h3 className="text-3xl font-bold text-gray-800 mb-4">Stay active with expert guidance</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Get personalized fitness recommendations from certified health professionals to support your wellness
                 journey safely.
               </p>
-              <div className="flex justify-center my-5">
-                <div className="relative w-56 h-56 rounded-2xl overflow-hidden shadow-lg animate-pulse">
+              <div className="flex justify-center my-6">
+                <div className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-lg animate-pulse">
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_rh1aryrh1aryrh1a.jpg-V3T5z6yPo8581GoH03mvisbtqZjP9j.jpeg"
                     alt="Woman jogging outdoors in pink athletic wear"
@@ -124,8 +124,8 @@ export default function BenefitsPage() {
                   </div>
                 </div>
               </div>
-              <div className="mt-6 flex justify-center">
-                <button className="bg-[#c49b61] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <div className="mt-8 flex justify-center">
+                <button className="bg-[#c49b61] text-white px-10 py-5 rounded-lg font-semibold text-lg hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
                   Explore wellness
                 </button>
               </div>
