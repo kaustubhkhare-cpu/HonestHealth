@@ -413,8 +413,8 @@ export default function ErectileDysfunctionPage() {
                   tag: "START HERE",
                   icon: (
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_glxsx7glxsx7glxs.jpg-5triBZadovlKBJKNdiTUlch7dJySdu.jpeg"
-                      alt="Telemedicine consultation interface showing doctor-patient chat"
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_wjcqrawjcqrawjcq.jpg-liftDoSzy1csvCmyiscuPmuL6G1Xbr.jpeg"
+                      alt="Dr. Sunil - Professional healthcare provider for online consultations"
                       className="w-full h-full object-cover rounded-lg"
                     />
                   ),
