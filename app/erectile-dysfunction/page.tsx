@@ -19,8 +19,24 @@ export default function ErectileDysfunctionPage() {
     [
       { icon: "👨‍⚕️", title: "Expert Doctors", text: "Licensed healthcare professionals", type: "doctor" },
       { icon: "💊", title: "FDA Approved", text: "Clinically proven medications", type: "product" },
-      { icon: "😊", title: "Satisfied Customer", text: '"Discreet and professional service"', type: "testimonial" },
-      { icon: "🏥", title: "Dr. Morepen", text: "Trusted healthcare brand", type: "branding" },
+      {
+        icon: (
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_q1jntoq1jntoq1jn.jpg-e59me4bS79nBdqIxAxZXPqUnKxpxmX.jpeg"
+            alt="Satisfied customer - happy man in casual attire"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        ),
+        title: "Satisfied Customer",
+        text: '"Discreet and professional service"',
+        type: "testimonial",
+      },
+      {
+        icon: "",
+        title: "Dr. Morepen",
+        text: "Trusted healthcare brand",
+        type: "branding",
+      },
       { icon: "🚚", title: "Fast Delivery", text: "Discreet packaging guaranteed", type: "product" },
       { icon: "⭐", title: "5-Star Rating", text: '"Quick and effective treatment"', type: "testimonial" },
     ],
@@ -111,7 +127,11 @@ export default function ErectileDysfunctionPage() {
                         key={cardIndex}
                         className={`${getCardStyle(card.type)} rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 shadow-lg backdrop-blur-sm border border-white/20 min-h-[120px] sm:min-h-[140px] lg:min-h-[160px] flex flex-col justify-center items-center text-center`}
                       >
-                        <div className="text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-3">{card.icon}</div>
+                        {card.icon && (
+                          <div className="text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-3">
+                            {typeof card.icon === "string" ? card.icon : card.icon}
+                          </div>
+                        )}
                         <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 leading-tight">{card.title}</div>
                         <div className="text-xs opacity-80 leading-snug max-w-[100px] sm:max-w-[120px] lg:max-w-[140px]">
                           {card.text}
