@@ -198,25 +198,16 @@ export default function ConvenienceSection() {
             </p>
 
             <div className="flex-1 flex flex-col items-center justify-center gap-4">
-              <div className="flex gap-4">
-                {[
-                  { icon: "💊", delay: "0s" },
-                  { icon: "🧪", delay: "0.5s" },
-                  { icon: "⚕️", delay: "1s" },
-                ].map((product, index) => (
-                  <div
-                    key={index}
-                    className="w-16 h-20 bg-gradient-to-br from-amber-700 to-amber-800 rounded-lg shadow-lg flex flex-col items-center justify-between p-2 text-white animate-bounce"
-                    style={{ animationDelay: product.delay, animationDuration: "3s" }}
-                  >
-                    <div className="text-2xl mt-2">{product.icon}</div>
-                    <div className="text-xs font-semibold text-center leading-tight">HonestHealth</div>
-                  </div>
-                ))}
+              <div className="w-40 h-24 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl shadow-lg flex flex-col items-center justify-center text-white animate-pulse">
+                <div className="text-3xl mb-1">🔬</div>
+                <div className="text-xs font-semibold text-center leading-tight px-2">
+                  <div>Science Backed</div>
+                  <div className="mt-0.5">TREATMENT</div>
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-sm font-semibold text-amber-600">HonestHealth</div>
-                <div className="text-xs text-gray-600">Licensed Healthcare Products</div>
+                <div className="text-sm font-semibold text-blue-600">Evidence-Based Medicine</div>
+                <div className="text-xs text-gray-600">Clinically Proven Solutions</div>
               </div>
             </div>
           </div>
