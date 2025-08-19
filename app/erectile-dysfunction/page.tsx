@@ -32,7 +32,13 @@ export default function ErectileDysfunctionPage() {
         type: "testimonial",
       },
       {
-        icon: "",
+        icon: (
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_me9x5eme9x5eme9x.jpg-TRlmGE4NwxdKqYP3uqbyADP0rJzv5B.jpeg"
+            alt="Dr. Morepen - man with HONEST HEALTH badge"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        ),
         title: "Dr. Morepen",
         text: "Trusted healthcare brand",
         type: "branding",
