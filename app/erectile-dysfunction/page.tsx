@@ -389,10 +389,10 @@ export default function ErectileDysfunctionPage() {
       </section>
 
       {/* Treatment Journey Timeline Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#f5f1eb] to-[#e8ddd4] text-[#2d2d2d]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 sm:mb-16">
-            <div className="inline-block bg-[#00d4aa] text-white px-3 sm:px-5 py-1 sm:py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-5">
+            <div className="inline-block bg-[#8b4513] text-white px-3 sm:px-5 py-1 sm:py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-5">
               HOW IT WORKS
             </div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
@@ -402,8 +402,8 @@ export default function ErectileDysfunctionPage() {
 
           <div className="relative mt-8 sm:mt-12">
             {/* Timeline Line - Hidden on mobile */}
-            <div className="absolute top-[100px] sm:top-[120px] left-0 right-0 h-[2px] sm:h-[3px] bg-white/30 z-10 hidden lg:block">
-              <div className="h-full bg-[#00d4aa] w-full rounded-sm"></div>
+            <div className="absolute top-[100px] sm:top-[120px] left-0 right-0 h-[2px] sm:h-[3px] bg-[#8b4513]/30 z-10 hidden lg:block">
+              <div className="h-full bg-[#8b4513] w-full rounded-sm"></div>
             </div>
 
             {/* Timeline Steps */}
@@ -440,26 +440,26 @@ export default function ErectileDysfunctionPage() {
               ].map((step, index) => (
                 <div key={index} className="text-left relative flex-1 min-w-[250px] max-w-[300px] mx-auto lg:mx-0">
                   {/* Timeline Dot - Only visible on desktop */}
-                  <div className="absolute top-[60px] sm:top-[80px] left-1/2 transform -translate-x-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-[#00d4aa] rounded-full border-2 sm:border-[3px] border-white z-30 hidden lg:block"></div>
+                  <div className="absolute top-[60px] sm:top-[80px] left-1/2 transform -translate-x-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-[#8b4513] rounded-full border-2 sm:border-[3px] border-white z-30 hidden lg:block"></div>
 
-                  <div className="inline-block bg-[#00d4aa] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-semibold uppercase mb-4 sm:mb-5">
+                  <div className="inline-block bg-[#8b4513] text-white px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-semibold uppercase mb-4 sm:mb-5">
                     {step.tag}
                   </div>
 
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-white/15 rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6 backdrop-blur-sm border border-white/20">
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-white/80 rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-6 backdrop-blur-sm border border-[#8b4513]/20">
                     {step.icon}
                   </div>
 
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight">{step.title}</h3>
 
-                  <p className="text-sm sm:text-base opacity-90 leading-relaxed">{step.description}</p>
+                  <p className="text-sm sm:text-base opacity-80 leading-relaxed">{step.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="text-center mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-white/20">
-            <div className="inline-flex items-center gap-2 sm:gap-3 text-sm sm:text-base opacity-90">
+          <div className="text-center mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-[#8b4513]/20">
+            <div className="inline-flex items-center gap-2 sm:gap-3 text-sm sm:text-base opacity-80">
               <span className="text-base sm:text-lg">ⓘ</span>
               <span>Cancel or modify your treatment plan at any time</span>
             </div>
