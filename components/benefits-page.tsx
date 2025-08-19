@@ -86,7 +86,7 @@ export default function BenefitsPage() {
               <div className="flex justify-center my-10">
                 <div className="relative w-64 h-48 rounded-2xl bg-gradient-to-br from-white/15 to-white/5 border-3 border-white/20 flex items-center justify-center animate-doctorFloat overflow-hidden">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Website%20banner%201-50uo3MJw9tKT0M9fOAdES23E87meCp.png"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_4vmwm44vmwm44vmw.jpg-oPqoGWXSYG1PFFwJNCVu5pnKHgGqc5.jpeg"
                     alt="Healthcare consultation - man using smartphone for telemedicine"
                     className="w-full h-full object-cover rounded-2xl"
                   />
