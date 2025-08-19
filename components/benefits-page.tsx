@@ -8,8 +8,8 @@ const dynamicContents = [
     description:
       "Connect with qualified doctors through secure video consultations for professional medical advice and health assessments.",
     visual: (
-      <div className="flex items-center justify-center my-5">
-        <div className="relative w-20 h-20 bg-gradient-to-br from-[#c49b61] to-[#a67c52] rounded-full flex items-center justify-center text-4xl text-white shadow-lg animate-ping">
+      <div className="flex items-center justify-center my-4 sm:my-5">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#c49b61] to-[#a67c52] rounded-full flex items-center justify-center text-2xl sm:text-4xl text-white shadow-lg animate-ping">
           👨‍⚕️
         </div>
       </div>
@@ -21,8 +21,8 @@ const dynamicContents = [
     description:
       "We follow strict data protection protocols to ensure your medical information remains confidential and protected.",
     visual: (
-      <div className="flex items-center justify-center my-5">
-        <div className="w-20 h-20 bg-gradient-to-br from-[#d4a574] to-[#b8956a] rounded-2xl flex items-center justify-center text-4xl text-white shadow-lg animate-secure">
+      <div className="flex items-center justify-center my-4 sm:my-5">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#d4a574] to-[#b8956a] rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-4xl text-white shadow-lg animate-secure">
           🔒
         </div>
       </div>
@@ -34,8 +34,8 @@ const dynamicContents = [
     description:
       "Access qualified healthcare professionals for medical guidance and follow-up consultations at your convenience.",
     visual: (
-      <div className="flex items-center justify-center my-5">
-        <div className="relative w-20 h-20 bg-gradient-to-br from-[#8b6914] to-[#6b4e03] rounded-full flex items-center justify-center text-4xl text-white shadow-lg animate-ping">
+      <div className="flex items-center justify-center my-4 sm:my-5">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8b6914] to-[#6b4e03] rounded-full flex items-center justify-center text-2xl sm:text-4xl text-white shadow-lg animate-ping">
           💬
         </div>
       </div>
@@ -63,81 +63,85 @@ export default function BenefitsPage() {
   const currentContent = dynamicContents[currentContentIndex]
 
   return (
-    <div className="bg-[#f8f9ff] px-5 py-15">
+    <div className="bg-[#f8f9ff] px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-5 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
           <div
-            className="p-12 lg:p-15 relative overflow-hidden text-white flex flex-col justify-between min-h-[600px]"
+            className="p-6 sm:p-8 lg:p-12 xl:p-15 relative overflow-hidden text-white flex flex-col justify-between min-h-[500px] sm:min-h-[600px]"
             style={{ background: "linear-gradient(135deg, #c49b61 0%, #a67c52 100%)" }}
           >
             {/* Background decorative elements */}
-            <div className="absolute -top-1/2 -right-1/5 w-75 h-75 bg-white/10 rounded-full"></div>
-            <div className="absolute -bottom-1/3 -left-1/10 w-50 h-50 bg-white/8 rounded-full"></div>
+            <div className="absolute -top-1/2 -right-1/5 w-48 h-48 sm:w-64 sm:h-64 lg:w-75 lg:h-75 bg-white/10 rounded-full"></div>
+            <div className="absolute -bottom-1/3 -left-1/10 w-32 h-32 sm:w-40 sm:h-40 lg:w-50 lg:h-50 bg-white/8 rounded-full"></div>
 
             <div className="relative z-10">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-5">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-5">
                 Consult qualified doctors for personalized healthcare solutions
               </h2>
-              <p className="text-lg opacity-90 mb-10 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-6 sm:mb-8 lg:mb-10 leading-relaxed">
                 Connect with licensed medical professionals for evidence-based treatment recommendations and health
                 guidance
               </p>
 
-              <div className="flex justify-center my-10">
-                <div className="relative w-64 h-48 rounded-2xl bg-gradient-to-br from-white/15 to-white/5 border-3 border-white/20 flex items-center justify-center animate-doctorFloat overflow-hidden">
+              <div className="flex justify-center my-6 sm:my-8 lg:my-10">
+                <div className="relative w-48 h-36 sm:w-56 sm:h-42 lg:w-64 lg:h-48 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/15 to-white/5 border-2 sm:border-3 border-white/20 flex items-center justify-center animate-doctorFloat overflow-hidden">
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_4vmwm44vmwm44vmw.jpg-oPqoGWXSYG1PFFwJNCVu5pnKHgGqc5.jpeg"
                     alt="Healthcare consultation - man using smartphone for telemedicine"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 relative z-10">
-              <button className="bg-white text-[#c49b61] px-8 py-4 rounded-xl font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 relative z-10">
+              <button className="bg-white text-[#c49b61] px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base hover:transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
                 Book consultation
               </button>
-              <button className="bg-transparent text-white px-8 py-4 border-2 border-white/30 rounded-xl font-semibold hover:bg-white/10 hover:border-white/50 transition-all duration-300">
+              <button className="bg-transparent text-white px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300">
                 Learn about services
               </button>
             </div>
           </div>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4 sm:gap-5">
             {/* Fitness Card */}
-            <div className="bg-white p-12 rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1 min-h-[500px]">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Stay active with expert guidance</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+            <div className="bg-white p-6 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1 min-h-[400px] sm:min-h-[500px]">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
+                Stay active with expert guidance
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
                 Get personalized fitness recommendations from certified health professionals to support your wellness
                 journey safely.
               </p>
-              <div className="flex justify-center my-6">
-                <div className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-lg animate-pulse">
+              <div className="flex justify-center my-4 sm:my-6">
+                <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg animate-pulse">
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_rh1aryrh1aryrh1a.jpg-V3T5z6yPo8581GoH03mvisbtqZjP9j.jpeg"
                     alt="Woman jogging outdoors in pink athletic wear"
-                    className="w-full h-full object-contain rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100"
+                    className="w-full h-full object-contain rounded-xl sm:rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100"
                   />
-                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-[#8b6914] rounded-full animate-bounce flex items-center justify-center text-sm">
+                  <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-[#8b6914] rounded-full animate-bounce flex items-center justify-center text-xs sm:text-sm">
                     ⭐
                   </div>
                 </div>
               </div>
-              <div className="mt-8 flex justify-center">
-                <button className="bg-[#c49b61] text-white px-10 py-5 rounded-lg font-semibold text-lg hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <div className="mt-6 sm:mt-8 flex justify-center">
+                <button className="bg-[#c49b61] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg font-semibold text-sm sm:text-base lg:text-lg hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
                   Explore wellness
                 </button>
               </div>
             </div>
 
             {/* Nutrition Card */}
-            <div className="bg-white p-10 rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Nutrition guidance for better health</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
+                Nutrition guidance for better health
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
                 Receive science-based dietary advice from qualified nutritionists to complement your healthcare routine.
               </p>
-              <div className="grid grid-cols-4 gap-2 my-5">
+              <div className="grid grid-cols-4 gap-1 sm:gap-2 my-4 sm:my-5">
                 {[
                   { emoji: "🥗", alt: "Salad" },
                   { emoji: "🍎", alt: "Apple" },
@@ -150,27 +154,31 @@ export default function BenefitsPage() {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8b6914] to-[#6b4e03] flex items-center justify-center shadow-lg animate-foodFloat text-2xl"
+                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#8b6914] to-[#6b4e03] flex items-center justify-center shadow-lg animate-foodFloat text-lg sm:text-xl lg:text-2xl"
                     style={{ animationDelay: `${index * 0.5}s` }}
                   >
                     {item.emoji}
                   </div>
                 ))}
               </div>
-              <button className="bg-[#c49b61] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300">
+              <button className="bg-[#c49b61] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300">
                 Get nutrition tips
               </button>
             </div>
 
             {/* Dynamic Card */}
-            <div className="bg-white p-10 rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1">
+            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1">
               <div
                 className={`transition-all duration-800 ${isTransitioning ? "opacity-0 transform translate-y-5" : "opacity-100 transform translate-y-0"}`}
               >
-                <h3 className="text-3xl font-bold text-gray-800 mb-4">{currentContent.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{currentContent.description}</p>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
+                  {currentContent.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
+                  {currentContent.description}
+                </p>
                 {currentContent.visual}
-                <button className="bg-[#c49b61] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300">
+                <button className="bg-[#c49b61] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300">
                   {currentContent.buttonText}
                 </button>
               </div>
