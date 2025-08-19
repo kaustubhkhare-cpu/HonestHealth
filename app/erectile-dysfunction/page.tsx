@@ -24,11 +24,11 @@ export default function ErectileDysfunctionPage() {
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_q1jntoq1jntoq1jn.jpg-e59me4bS79nBdqIxAxZXPqUnKxpxmX.jpeg"
             alt="Satisfied customer - happy man in casual attire"
-            className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 object-cover rounded-lg"
+            className="w-full h-full object-cover rounded-lg"
           />
         ),
-        title: "Satisfied Customer",
-        text: '"Discreet and professional service"',
+        title: "",
+        text: "",
         type: "testimonial",
       },
       {
@@ -36,11 +36,11 @@ export default function ErectileDysfunctionPage() {
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_me9x5eme9x5eme9x.jpg-TRlmGE4NwxdKqYP3uqbyADP0rJzv5B.jpeg"
             alt="Dr. Morepen - man with HONEST HEALTH badge"
-            className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 object-cover rounded-lg"
+            className="w-full h-full object-cover rounded-lg"
           />
         ),
-        title: "Dr. Morepen",
-        text: "Trusted healthcare brand",
+        title: "",
+        text: "",
         type: "branding",
       },
       { icon: "🚚", title: "Fast Delivery", text: "Discreet packaging guaranteed", type: "product" },
@@ -138,10 +138,16 @@ export default function ErectileDysfunctionPage() {
                             {typeof card.icon === "string" ? card.icon : card.icon}
                           </div>
                         )}
-                        <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 leading-tight">{card.title}</div>
-                        <div className="text-xs opacity-80 leading-snug max-w-[100px] sm:max-w-[120px] lg:max-w-[140px]">
-                          {card.text}
-                        </div>
+                        {card.title && (
+                          <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 leading-tight">
+                            {card.title}
+                          </div>
+                        )}
+                        {card.text && (
+                          <div className="text-xs opacity-80 leading-snug max-w-[100px] sm:max-w-[120px] lg:max-w-[140px]">
+                            {card.text}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
