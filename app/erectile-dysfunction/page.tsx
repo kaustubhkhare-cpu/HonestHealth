@@ -30,6 +30,7 @@ export default function ErectileDysfunctionPage() {
         title: "",
         text: "",
         type: "testimonial",
+        isImageOnly: true,
       },
       {
         icon: (
@@ -42,6 +43,7 @@ export default function ErectileDysfunctionPage() {
         title: "",
         text: "",
         type: "branding",
+        isImageOnly: true,
       },
       { icon: "🚚", title: "Fast Delivery", text: "Discreet packaging guaranteed", type: "product" },
       { icon: "⭐", title: "5-Star Rating", text: '"Quick and effective treatment"', type: "testimonial" },
@@ -133,20 +135,26 @@ export default function ErectileDysfunctionPage() {
                         key={cardIndex}
                         className={`${getCardStyle(card.type)} rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 shadow-lg backdrop-blur-sm border border-white/20 min-h-[120px] sm:min-h-[140px] lg:min-h-[160px] flex flex-col justify-center items-center text-center`}
                       >
-                        {card.icon && (
-                          <div className="text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-3">
-                            {typeof card.icon === "string" ? card.icon : card.icon}
-                          </div>
-                        )}
-                        {card.title && (
-                          <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 leading-tight">
-                            {card.title}
-                          </div>
-                        )}
-                        {card.text && (
-                          <div className="text-xs opacity-80 leading-snug max-w-[100px] sm:max-w-[120px] lg:max-w-[140px]">
-                            {card.text}
-                          </div>
+                        {card.isImageOnly ? (
+                          <div className="w-full h-full flex items-center justify-center">{card.icon}</div>
+                        ) : (
+                          <>
+                            {card.icon && (
+                              <div className="text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-3">
+                                {typeof card.icon === "string" ? card.icon : card.icon}
+                              </div>
+                            )}
+                            {card.title && (
+                              <div className="text-xs sm:text-sm font-semibold mb-1 sm:mb-2 leading-tight">
+                                {card.title}
+                              </div>
+                            )}
+                            {card.text && (
+                              <div className="text-xs opacity-80 leading-snug max-w-[100px] sm:max-w-[120px] lg:max-w-[140px]">
+                                {card.text}
+                              </div>
+                            )}
+                          </>
                         )}
                       </div>
                     ))}
