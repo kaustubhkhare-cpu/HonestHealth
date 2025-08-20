@@ -6,8 +6,11 @@ export default function GlobalHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMenu = () => {
+    console.log("[v0] Menu toggle clicked, current state:", isMobileMenuOpen)
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
+
+  console.log("[v0] GlobalHeader rendering, menu open:", isMobileMenuOpen)
 
   return (
     <>
@@ -28,7 +31,10 @@ export default function GlobalHeader() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
-            <button className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+            <button
+              className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center bg-red-100 border-2 border-red-500"
+              onClick={() => console.log("[v0] User button clicked")}
+            >
               <svg
                 width="24"
                 height="24"
@@ -42,7 +48,10 @@ export default function GlobalHeader() {
                 <circle cx="12" cy="7" r="4" />
               </svg>
             </button>
-            <button className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+            <button
+              className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center bg-blue-100 border-2 border-blue-500"
+              onClick={() => console.log("[v0] Cart button clicked")}
+            >
               <svg
                 width="24"
                 height="24"
@@ -59,7 +68,7 @@ export default function GlobalHeader() {
             </button>
             <button
               onClick={toggleMenu}
-              className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center bg-green-100 border-2 border-green-500"
             >
               <svg
                 width="24"
