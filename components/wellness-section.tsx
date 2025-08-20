@@ -405,7 +405,7 @@ export default function WellnessSection() {
                 }}
               >
                 <div
-                  className="w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-2xl overflow-hidden mx-auto mb-6 lg:mb-8"
+                  className="w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-2xl overflow-hidden mx-auto mb-6 lg:mb-8 bg-white/10"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.2)",
                     boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
@@ -414,7 +414,7 @@ export default function WellnessSection() {
                   <img
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2020%2C%202025%2C%2010_53_51%20AM-JGlCSHu8CmnfrD7KOUdUPYFykV9Ns1.png"
                     alt="Woman in athletic wear tying her running shoes, preparing for fitness activity"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
 
