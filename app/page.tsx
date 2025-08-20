@@ -63,6 +63,9 @@ export default function HomePage() {
     if (category === "ed") {
       router.push("/erectile-dysfunction")
     }
+    if (category === "weight") {
+      router.push("/weight-management")
+    }
   }
 
   const currentContent = contentSets[currentIndex]
