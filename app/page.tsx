@@ -24,16 +24,6 @@ const contentSets = [
   },
 ]
 
-const features = [
-  { icon: "🏥", text: "Licensed healthcare providers" },
-  { icon: "📱", text: "100% online consultations" },
-  { icon: "💬", text: "Unlimited doctor messaging" },
-  { icon: "🇮🇳", text: "Made in India quality" },
-  { icon: "⭐", text: "Trusted by 50K+ patients" },
-  { icon: "🚚", text: "Free home delivery" },
-  { icon: "🔒", text: "100% confidential" },
-]
-
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -73,34 +63,6 @@ export default function HomePage() {
           🏥 Licensed Medical Professionals • 📞 Free Consultation • 🔒 100% Confidential
         </span>
       </div>
-
-      {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50" style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
-        <div className="max-w-6xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-          <div className="text-xl sm:text-2xl lg:text-3xl font-bold" style={{ color: "#2c5aa0" }}>
-            HonestHealth
-          </div>
-
-          {/* Features Slider */}
-          <div className="hidden lg:flex items-center overflow-hidden whitespace-nowrap w-96 xl:w-[600px] relative">
-            <div className="flex gap-15 animate-[slideFeatures_25s_infinite_linear]">
-              {[...features, ...features].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm text-gray-600 flex-shrink-0">
-                  <span>{feature.icon}</span>
-                  <span>{feature.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button
-            className="text-white px-3 sm:px-4 lg:px-5 py-2 sm:py-2.5 rounded-md font-medium hover:opacity-90 transition-all text-sm sm:text-base"
-            style={{ background: "#2c5aa0" }}
-          >
-            Log in
-          </button>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
@@ -230,13 +192,6 @@ export default function HomePage() {
         {/* FAQ Section */}
         <FAQSection />
       </div>
-
-      <style jsx>{`
-        @keyframes slideFeatures {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
-        }
-      `}</style>
     </div>
   )
 }
