@@ -251,21 +251,11 @@ export default function ErectileDysfunctionPage() {
                   Prescription Required
                 </div>
                 <div className="flex justify-center mb-4 sm:mb-6">
-                  <svg
-                    width="48"
-                    height="48"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="sm:w-[60px] sm:h-[60px]"
-                  >
-                    <rect x="35" y="25" width="20" height="50" fill="#2d2d2d" rx="3" />
-                    <rect x="37" y="20" width="16" height="8" fill="#2d2d2d" rx="2" />
-                    <line x1="55" y1="22" x2="75" y2="18" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
-                    <line x1="55" y1="25" x2="78" y2="23" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
-                    <line x1="55" y1="28" x2="75" y2="28" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
-                    <line x1="55" y1="31" x2="72" y2="33" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
-                    <line x1="55" y1="34" x2="70" y2="38" stroke="#666" strokeWidth="1.5" strokeDasharray="3,2" />
-                  </svg>
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2019%2C%202025%2C%2003_25_34%20PM-TVWvfqk1T6UqgD0KmtABB0aYQqJoWF.png"
+                    alt="Dr. Morepen EXYGRA Delay Spray - Black spray bottle with pink branding"
+                    className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain rounded-lg"
+                  />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a1a] mb-3 sm:mb-4">Exygra Spray</h3>
                 <p className="text-[#666] mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
