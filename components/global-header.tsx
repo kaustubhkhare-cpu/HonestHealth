@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { User, ShoppingCart, X, ChevronRight } from "lucide-react"
 
 export default function GlobalHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -30,10 +29,33 @@ export default function GlobalHeader() {
 
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
             <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <User size={20} className="text-gray-700" />
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-gray-700"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
             </button>
             <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-              <ShoppingCart size={20} className="text-gray-700" />
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-gray-700"
+              >
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+              </svg>
             </button>
             <button onClick={toggleMenu} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -65,7 +87,18 @@ export default function GlobalHeader() {
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-lg font-semibold text-gray-800">Menu</h2>
           <button onClick={toggleMenu} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-            <X size={20} className="text-gray-700" />
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="text-gray-700"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
         </div>
 
@@ -82,7 +115,17 @@ export default function GlobalHeader() {
                 onClick={toggleMenu}
               >
                 <span className="text-gray-800 font-medium">Weight Loss</span>
-                <ChevronRight size={16} className="text-gray-400 group-hover:text-gray-600" />
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="text-gray-400 group-hover:text-gray-600"
+                >
+                  <polyline points="9,18 15,12 9,6" />
+                </svg>
               </a>
 
               <a
@@ -91,7 +134,17 @@ export default function GlobalHeader() {
                 onClick={toggleMenu}
               >
                 <span className="text-gray-800 font-medium">Erectile Dysfunction</span>
-                <ChevronRight size={16} className="text-gray-400 group-hover:text-gray-600" />
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="text-gray-400 group-hover:text-gray-600"
+                >
+                  <polyline points="9,18 15,12 9,6" />
+                </svg>
               </a>
             </div>
           </div>
