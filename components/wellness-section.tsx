@@ -123,6 +123,7 @@ export default function WellnessSection() {
                   color: "#A67C52",
                   boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                 }}
+                onClick={() => window.open("https://wa.me/1234567890", "_blank")}
               >
                 Book consultation
               </button>
@@ -136,7 +137,7 @@ export default function WellnessSection() {
                     backgroundColor: "rgba(255, 255, 255, 0.1)",
                   },
                 }}
-                onClick={() => router.push("/erectile-dysfunction")}
+                onClick={() => router.push("/weight-management")}
               >
                 Explore wellness programs
               </button>
@@ -217,18 +218,9 @@ export default function WellnessSection() {
                       color: "#A67C52",
                       boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
                     }}
+                    onClick={() => window.open("https://wa.me/1234567890", "_blank")}
                   >
                     Start Your Assessment
-                  </button>
-                  <button
-                    className="px-6 lg:px-8 py-3 lg:py-4 rounded-full text-sm lg:text-base font-bold transition-all duration-300"
-                    style={{
-                      backgroundColor: "transparent",
-                      color: "white",
-                      border: "2px solid white",
-                    }}
-                  >
-                    How It Works
                   </button>
                 </div>
               </div>
@@ -468,16 +460,6 @@ export default function WellnessSection() {
                     </li>
                   </ul>
                 </div>
-                <button
-                  className="px-6 lg:px-8 py-3 lg:py-4 rounded-full text-sm lg:text-base font-bold hover:transform hover:-translate-y-1 transition-all duration-300"
-                  style={{
-                    backgroundColor: "white",
-                    color: "#A67C52",
-                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
-                  }}
-                >
-                  Start Moving
-                </button>
               </div>
 
               {/* Nutrition Card */}
@@ -552,16 +534,6 @@ export default function WellnessSection() {
                     </li>
                   </ul>
                 </div>
-                <button
-                  className="px-6 lg:px-8 py-3 lg:py-4 rounded-full text-sm lg:text-base font-bold hover:transform hover:-translate-y-1 transition-all duration-300"
-                  style={{
-                    backgroundColor: "white",
-                    color: "#A67C52",
-                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
-                  }}
-                >
-                  View Meal Plans
-                </button>
               </div>
             </div>
 
@@ -622,6 +594,7 @@ export default function WellnessSection() {
                   color: "#A67C52",
                   boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
                 }}
+                onClick={() => window.open("https://wa.me/1234567890", "_blank")}
               >
                 Book Free Consultation
               </button>

@@ -46,24 +46,6 @@ export default function GlobalHeader() {
               </svg>
             </button>
             <button
-              className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center border border-gray-300"
-              onClick={() => console.log("Cart button clicked")}
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="text-gray-800"
-              >
-                <circle cx="9" cy="21" r="1" />
-                <circle cx="20" cy="21" r="1" />
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-              </svg>
-            </button>
-            <button
               onClick={toggleMenu}
               className="p-3 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center border border-blue-300"
             >
