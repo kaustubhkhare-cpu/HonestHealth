@@ -1,220 +1,144 @@
 "use client"
 
-import { useState, useEffect } from "react"
-
-const dynamicContents = [
-  {
-    title: "Healthcare consultation made simple",
-    description:
-      "Connect with qualified doctors through secure video consultations for professional medical advice and health assessments.",
-    visual: (
-      <div className="flex items-center justify-center my-4 sm:my-5">
-        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#c49b61] to-[#a67c52] rounded-full flex items-center justify-center text-2xl sm:text-4xl text-white shadow-lg animate-ping">
-          👨‍⚕️
-        </div>
-      </div>
-    ),
-    buttonText: "Book consultation",
-  },
-  {
-    title: "Your health data stays secure",
-    description:
-      "We follow strict data protection protocols to ensure your medical information remains confidential and protected.",
-    visual: (
-      <div className="flex items-center justify-center my-4 sm:my-5">
-        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#d4a574] to-[#b8956a] rounded-xl sm:rounded-2xl flex items-center justify-center text-2xl sm:text-4xl text-white shadow-lg animate-secure">
-          🔒
-        </div>
-      </div>
-    ),
-    buttonText: "Privacy policy",
-  },
-  {
-    title: "Expert support when you need it",
-    description:
-      "Access qualified healthcare professionals for medical guidance and follow-up consultations at your convenience.",
-    visual: (
-      <div className="flex items-center justify-center my-4 sm:my-5">
-        <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8b6914] to-[#6b4e03] rounded-full flex items-center justify-center text-2xl sm:text-4xl text-white shadow-lg animate-ping">
-          💬
-        </div>
-      </div>
-    ),
-    buttonText: "Contact us",
-  },
-]
+import { useRouter } from "next/navigation"
 
 export default function BenefitsPage() {
-  const [currentContentIndex, setCurrentContentIndex] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const router = useRouter()
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsTransitioning(true)
-      setTimeout(() => {
-        setCurrentContentIndex((prev) => (prev + 1) % dynamicContents.length)
-        setIsTransitioning(false)
-      }, 400)
-    }, 4000)
+  const handleEdTreatmentClick = () => {
+    router.push("/erectile-dysfunction")
+  }
 
-    return () => clearInterval(interval)
-  }, [])
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/1234567890?text=I'd like to consult about ED treatment", "_blank")
+  }
 
-  const currentContent = dynamicContents[currentContentIndex]
+  const handlePrivateConsultationClick = () => {
+    window.open("https://wa.me/1234567890?text=I'd like a private consultation about ED treatment", "_blank")
+  }
 
   return (
-    <div className="bg-[#f8f9ff] px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-          <div
-            className="p-6 sm:p-8 lg:p-12 xl:p-15 relative overflow-hidden text-white flex flex-col justify-between min-h-[500px] sm:min-h-[600px]"
-            style={{ background: "linear-gradient(135deg, #c49b61 0%, #a67c52 100%)" }}
-          >
-            {/* Background decorative elements */}
-            <div className="absolute -top-1/2 -right-1/5 w-48 h-48 sm:w-64 sm:h-64 lg:w-75 lg:h-75 bg-white/10 rounded-full"></div>
-            <div className="absolute -bottom-1/3 -left-1/10 w-32 h-32 sm:w-40 sm:h-40 lg:w-50 lg:h-50 bg-white/8 rounded-full"></div>
+    <div className="bg-[#87CEEB] min-h-screen px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+          {/* Hero Section */}
+          <div className="bg-gradient-to-br from-[#87CEEB] to-[#4682B4] px-6 sm:px-12 lg:px-16 py-12 sm:py-16 lg:py-20 text-center text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
+              Regain Your Confidence in the Bedroom
+            </h1>
+            <p className="text-lg sm:text-xl lg:text-2xl opacity-90 mb-8 sm:mb-10 lg:mb-12 leading-relaxed max-w-4xl mx-auto">
+              Discreet, effective ED treatment from licensed doctors. Get personalized solutions delivered to your door
+              with complete privacy and professional care.
+            </p>
 
-            <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-3 sm:mb-4 lg:mb-5">
-                Consult qualified doctors for personalized healthcare solutions
-              </h2>
-              <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-6 sm:mb-8 lg:mb-10 leading-relaxed">
-                Connect with licensed medical professionals for evidence-based treatment recommendations and health
-                guidance
-              </p>
+            {/* Hero Image Placeholder */}
+            <div className="w-72 sm:w-80 lg:w-96 h-80 sm:h-96 lg:h-[450px] mx-auto my-8 sm:my-10 lg:my-12 rounded-2xl shadow-2xl flex items-center justify-center bg-white/20 border-4 border-dashed border-white/50 text-white font-bold text-lg sm:text-xl">
+              HERO IMAGE
+              <br />
+              (Website ED banner.png)
+            </div>
 
-              <div className="flex justify-center my-6 sm:my-8 lg:my-10">
-                <div className="relative w-48 h-36 sm:w-56 sm:h-42 lg:w-64 lg:h-48 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/15 to-white/5 border-2 sm:border-3 border-white/20 flex items-center justify-center animate-doctorFloat overflow-hidden">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_4vmwm44vmwm44vmw.jpg-oPqoGWXSYG1PFFwJNCVu5pnKHgGqc5.jpeg"
-                    alt="Healthcare consultation - man using smartphone for telemedicine"
-                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
-                  />
-                </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-10 opacity-90">
+              <div className="flex items-center justify-center gap-2 text-sm sm:text-base">
+                <span>✓ Licensed Doctors</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-sm sm:text-base">
+                <span>✓ 100% Discreet</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-sm sm:text-base">
+                <span>✓ FDA Approved</span>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 relative z-10">
-              <button className="bg-white text-[#c49b61] px-6 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base hover:transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-                Book consultation
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center pb-8 sm:pb-10">
+              <button
+                onClick={handleEdTreatmentClick}
+                className="bg-white text-[#4682B4] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
+              >
+                Explore ED Treatments
               </button>
-              <button className="bg-transparent text-white px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300">
-                Learn about services
+              <button
+                onClick={handleWhatsAppClick}
+                className="bg-transparent text-white px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 rounded-xl font-semibold text-base sm:text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+              >
+                WhatsApp Consultation
               </button>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:gap-5">
-            {/* Fitness Card */}
-            <div className="bg-white p-6 sm:p-8 lg:p-12 rounded-xl sm:rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1 min-h-[400px] sm:min-h-[500px]">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
-                Stay active with expert guidance
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 min-h-[600px]">
+            {/* Card 1: Large - Restore Intimacy */}
+            <div className="lg:col-span-2 lg:row-span-2 bg-[#f8f9fa] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center text-gray-800 min-h-[600px]">
+              <div className="w-56 sm:w-64 lg:w-72 h-64 sm:h-72 lg:h-80 rounded-2xl shadow-2xl flex items-center justify-center bg-[#e9ecef] border-4 border-dashed border-[#87CEEB] text-[#4682B4] font-bold text-base sm:text-lg mb-6 sm:mb-8">
+                COUPLE IMAGE
+                <br />
+                (Website ED banner 2.png)
+              </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
+                Restore Intimacy & Connection
               </h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                Get personalized fitness recommendations from certified health professionals to support your wellness
-                journey safely.
+              <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 lg:mb-10 opacity-80 max-w-md lg:max-w-lg">
+                Strengthen your relationship with effective ED treatment. Regain confidence and improve your intimate
+                moments together. Experience the difference that professional medical care can make in your
+                relationship.
               </p>
-              <div className="flex justify-center my-4 sm:my-6">
-                <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg animate-pulse">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_rh1aryrh1aryrh1a.jpg-V3T5z6yPo8581GoH03mvisbtqZjP9j.jpeg"
-                    alt="Woman jogging outdoors in pink athletic wear"
-                    className="w-full h-full object-contain rounded-xl sm:rounded-2xl bg-gradient-to-br from-pink-100 to-purple-100"
-                  />
-                  <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-[#8b6914] rounded-full animate-bounce flex items-center justify-center text-xs sm:text-sm">
-                    ⭐
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6 sm:mt-8 flex justify-center">
-                <button className="bg-[#c49b61] text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-lg font-semibold text-sm sm:text-base lg:text-lg hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300 shadow-lg">
-                  Explore wellness
-                </button>
-              </div>
-            </div>
-
-            {/* Nutrition Card */}
-            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1">
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
-                Nutrition guidance for better health
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                Receive science-based dietary advice from qualified nutritionists to complement your healthcare routine.
-              </p>
-              <div className="grid grid-cols-4 gap-1 sm:gap-2 my-4 sm:my-5">
-                {[
-                  { emoji: "🥗", alt: "Salad" },
-                  { emoji: "🍎", alt: "Apple" },
-                  { emoji: "🥕", alt: "Carrot" },
-                  { emoji: "🥑", alt: "Avocado" },
-                  { emoji: "🫐", alt: "Blueberries" },
-                  { emoji: "🥦", alt: "Broccoli" },
-                  { emoji: "🍊", alt: "Orange" },
-                  { emoji: "🥒", alt: "Cucumber" },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#8b6914] to-[#6b4e03] flex items-center justify-center shadow-lg animate-foodFloat text-lg sm:text-xl lg:text-2xl"
-                    style={{ animationDelay: `${index * 0.5}s` }}
-                  >
-                    {item.emoji}
-                  </div>
-                ))}
-              </div>
-              <button className="bg-[#c49b61] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300">
-                Get nutrition tips
+              <button
+                onClick={handleEdTreatmentClick}
+                className="bg-[#4682B4] text-white px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#4682B4] rounded-xl font-semibold text-base sm:text-lg hover:bg-[#5a72c4] hover:border-[#5a72c4] hover:transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Start Your Journey
               </button>
             </div>
 
-            {/* Dynamic Card */}
-            <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg hover:transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden flex-1">
-              <div
-                className={`transition-all duration-800 ${isTransitioning ? "opacity-0 transform translate-y-5" : "opacity-100 transform translate-y-0"}`}
-              >
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
-                  {currentContent.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                  {currentContent.description}
-                </p>
-                {currentContent.visual}
-                <button className="bg-[#c49b61] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-[#a67c52] hover:transform hover:-translate-y-1 transition-all duration-300">
-                  {currentContent.buttonText}
-                </button>
+            {/* Card 2: Treatment Options */}
+            <div className="bg-[#f8f9fa] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center text-gray-800 min-h-[350px]">
+              <div className="w-48 sm:w-52 lg:w-56 h-52 sm:h-56 lg:h-60 rounded-2xl shadow-2xl flex items-center justify-center bg-[#e9ecef] border-4 border-dashed border-[#87CEEB] text-[#4682B4] font-bold text-base sm:text-lg mb-6 sm:mb-8">
+                TREATMENT
+                <br />
+                OPTIONS
+                <br />
+                (Website ED banner 4.png)
               </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5 leading-tight">
+                Proven Treatment Options
+              </h3>
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 opacity-80 max-w-xs">
+                Access FDA-approved medications like Sildenafil and Tadalafil. Safe, effective solutions prescribed by
+                licensed healthcare professionals.
+              </p>
+              <button
+                onClick={handleEdTreatmentClick}
+                className="bg-[#4682B4] text-white px-5 sm:px-6 py-2 sm:py-3 border-2 border-[#4682B4] rounded-xl font-semibold text-sm sm:text-base hover:bg-[#5a72c4] hover:border-[#5a72c4] hover:transform hover:-translate-y-1 transition-all duration-300"
+              >
+                View Treatments
+              </button>
+            </div>
+
+            {/* Card 3: Discreet Care */}
+            <div className="bg-[#f8f9fa] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center text-gray-800 min-h-[350px]">
+              <div className="w-48 sm:w-52 lg:w-56 h-52 sm:h-56 lg:h-60 rounded-2xl shadow-2xl flex items-center justify-center bg-[#e9ecef] border-4 border-dashed border-[#87CEEB] text-[#4682B4] font-bold text-base sm:text-lg mb-6 sm:mb-8">
+                DISCREET CARE
+                <br />
+                (Website ED banner 5.png)
+              </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5 leading-tight">
+                Discreet & Professional Care
+              </h3>
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 opacity-80 max-w-xs">
+                Get expert medical consultation from the comfort of your home. Private consultations with qualified
+                doctors who understand your needs.
+              </p>
+              <button
+                onClick={handlePrivateConsultationClick}
+                className="bg-[#4682B4] text-white px-5 sm:px-6 py-2 sm:py-3 border-2 border-[#4682B4] rounded-xl font-semibold text-sm sm:text-base hover:bg-[#5a72c4] hover:border-[#5a72c4] hover:transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Book Consultation
+              </button>
             </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes doctorFloat {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-        @keyframes bounce {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.2); }
-        }
-        @keyframes foodFloat {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-        }
-        @keyframes secure {
-          0%, 100% { transform: rotate(0deg); }
-          25% { transform: rotate(-3deg); }
-          75% { transform: rotate(3deg); }
-        }
-        .animate-doctorFloat {
-          animation: doctorFloat 3s ease-in-out infinite;
-        }
-        .animate-foodFloat {
-          animation: foodFloat 4s ease-in-out infinite;
-        }
-        .animate-secure {
-          animation: secure 3s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   )
 }
