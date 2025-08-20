@@ -592,18 +592,17 @@ export default function WellnessSection() {
               </h3>
 
               <div
-                className="w-64 h-48 sm:w-80 sm:h-56 lg:w-96 lg:h-64 rounded-2xl flex items-center justify-center text-sm text-center leading-relaxed mx-auto mb-6 lg:mb-8"
+                className="w-64 h-48 sm:w-80 sm:h-56 lg:w-96 lg:h-64 rounded-2xl overflow-hidden flex items-center justify-center mx-auto mb-6 lg:mb-8"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.2)",
-                  border: "2px dashed rgba(255, 255, 255, 0.5)",
-                  color: "rgba(255, 255, 255, 0.7)",
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
                 }}
               >
-                [Doctor Consultation Image]
-                <br />
-                Virtual consultation
-                <br />
-                with specialist
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2020%2C%202025%2C%2012_16_44%20PM-80oMcZ5IvTOu7QFZDQlUeDktsKPAKg.png"
+                  alt="Patient having telemedicine consultation with Dr. Nitin about medication safety"
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               <p
