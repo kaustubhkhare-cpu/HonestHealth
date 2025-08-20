@@ -211,8 +211,76 @@ export default function WeightManagementPage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Process Section */}
       <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-[#A67C52] text-white px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider mb-4">
+              How It Works
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-800">Simple, Professional, Effective</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our streamlined medical approach ensures you get the right treatment plan tailored to your specific health
+              needs and goals.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                number: "1",
+                title: "Medical Consultation",
+                description:
+                  "Schedule a comprehensive consultation with our licensed medical professionals. Discuss your health history, goals, and current medications for a complete assessment.",
+              },
+              {
+                number: "2",
+                title: "Personalized Assessment",
+                description:
+                  "Our doctors evaluate your medical profile, BMI, health conditions, and lifestyle to determine the most suitable treatment approach for your specific needs.",
+              },
+              {
+                number: "3",
+                title: "Treatment Prescription",
+                description:
+                  "If medically appropriate, receive a personalized prescription for FDA-approved treatments. All medications are prescribed only after thorough medical evaluation.",
+              },
+              {
+                number: "4",
+                title: "Medication Delivery",
+                description:
+                  "Your prescribed medications are delivered directly to your doorstep with complete privacy and discretion. All packages are securely sealed and tracked.",
+              },
+              {
+                number: "5",
+                title: "Ongoing Support",
+                description:
+                  "Regular check-ins with your medical team to monitor progress, adjust treatment if needed, and provide additional support services like nutrition counseling when required.",
+              },
+              {
+                number: "6",
+                title: "Health Monitoring",
+                description:
+                  "Continuous monitoring of your health metrics and treatment response. Access to nutritionists and lifestyle coaches when prescribed as part of your treatment plan.",
+              },
+            ].map((step, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-[#A67C52] to-[#8B7657] rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">
+                  {step.number}
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-800">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block bg-[#A67C52] text-white px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider mb-4">
@@ -279,7 +347,7 @@ export default function WeightManagementPage() {
       </section>
 
       {/* Success Stories Section */}
-      <section className="py-16 sm:py-20 bg-gray-50">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block bg-[#A67C52] text-white px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider mb-4">
@@ -335,6 +403,73 @@ export default function WeightManagementPage() {
         </div>
       </section>
 
+      {/* Medical Standards Section */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-[#A67C52] text-white px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider mb-4">
+              Medical Standards
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-800">Trusted Healthcare Excellence</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our commitment to the highest standards of medical care and patient safety.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {[
+              {
+                icon: "🏥",
+                title: "Licensed Medical Practice",
+                description:
+                  "All our medical professionals are licensed and registered with the Medical Council of India. Full compliance with healthcare regulations and standards.",
+              },
+              {
+                icon: "🔬",
+                title: "Evidence-Based Medicine",
+                description:
+                  "All treatment protocols are based on peer-reviewed research and established medical guidelines for safe and effective weight management.",
+              },
+              {
+                icon: "🛡️",
+                title: "Patient Safety First",
+                description:
+                  "Comprehensive screening for contraindications, drug interactions, and medical conditions. Safety monitoring throughout treatment.",
+              },
+              {
+                icon: "📋",
+                title: "Complete Medical Records",
+                description:
+                  "Detailed documentation of all consultations, prescriptions, and treatment progress. Secure, encrypted medical record management.",
+              },
+            ].map((standard, index) => (
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-16 h-16 bg-[#A67C52] rounded-2xl flex items-center justify-center text-2xl text-white">
+                    {standard.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800">{standard.title}</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed">{standard.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center bg-white p-8 rounded-2xl shadow-lg">
+            <h3 className="text-2xl font-bold mb-6 text-gray-800">Our Medical Certifications</h3>
+            <div className="flex flex-wrap justify-center gap-6">
+              {["Medical Council of India", "ISO 27001 Certified", "HIPAA Compliant", "FDA Guidelines"].map(
+                (cert, index) => (
+                  <div key={index} className="bg-gray-50 px-6 py-3 rounded-lg font-semibold text-gray-700">
+                    {cert}
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section
         id="consultation"
@@ -378,6 +513,203 @@ export default function WeightManagementPage() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+            {/* Brand Section */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="text-2xl font-bold bg-gradient-to-r from-[#A67C52] to-[#8B7657] bg-clip-text text-transparent">
+                  HonestHealth
+                </div>
+              </div>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Transforming lives through honest, transparent, and medically-supervised weight management solutions.
+                Your health journey deserves nothing less than complete honesty and professional care.
+              </p>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 bg-[#A67C52] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#8B7657] transition-colors">
+                  📧
+                </div>
+                <div className="w-10 h-10 bg-[#A67C52] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#8B7657] transition-colors">
+                  📱
+                </div>
+                <div className="w-10 h-10 bg-[#A67C52] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#8B7657] transition-colors">
+                  💬
+                </div>
+              </div>
+            </div>
+
+            {/* Medical Services */}
+            <div>
+              <h3 className="text-lg font-bold mb-4">Medical Services</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Doctor Consultation
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Health Assessment
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Prescription Management
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Medical Monitoring
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Nutritionist Support
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Patient Care */}
+            <div>
+              <h3 className="text-lg font-bold mb-4">Patient Care</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    24/7 Medical Support
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Patient Portal Access
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Secure Medication Delivery
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Progress Tracking
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Emergency Assistance
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Health Resources */}
+            <div>
+              <h3 className="text-lg font-bold mb-4">Health Resources</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    BMI Calculator
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Goal Setting Tools
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Health Education
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Success Stories
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Medical Research
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Trust & Safety */}
+            <div>
+              <h3 className="text-lg font-bold mb-4">Trust & Safety</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Medical Disclaimer
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Patient Rights
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Regulatory Compliance
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="border-t border-gray-800 pt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-8">
+              <div className="text-sm text-gray-400">
+                <div>🏥 Licensed Medical Practice</div>
+                <div>📋 Medical Council of India Registered</div>
+              </div>
+
+              <div className="text-center">
+                <div className="text-[#A67C52] font-bold text-lg mb-2">HonestHealth Promise</div>
+                <div className="text-gray-400 text-sm">Transparent • Ethical • Results-Driven</div>
+              </div>
+
+              <div className="text-sm text-gray-400 lg:text-right">
+                <div>🔒 HIPAA Compliant</div>
+                <div>✅ ISO 27001 Certified</div>
+              </div>
+            </div>
+
+            <div className="text-center text-gray-400">
+              <p>&copy; 2025 HonestHealth India Pvt. Ltd. All rights reserved.</p>
+              <p className="mt-4 text-xs max-w-4xl mx-auto leading-relaxed">
+                <strong>Medical Disclaimer:</strong> HonestHealth provides general medical information and professional
+                medical consultation services. This website is not a substitute for professional medical advice,
+                diagnosis, or treatment. Always seek the advice of qualified healthcare providers regarding medical
+                conditions. Individual treatment results may vary. Medications are prescribed only after proper medical
+                evaluation and when clinically appropriate. We are committed to honest, transparent healthcare that puts
+                your wellbeing first.
+              </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-6 text-xs">
+                <span>🏥 Licensed Healthcare Provider</span>
+                <span>📞 24/7 Medical Support</span>
+                <span>🛡️ Patient Privacy Protected</span>
+                <span>⭐ 4.9/5 Patient Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
