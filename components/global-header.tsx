@@ -29,34 +29,34 @@ export default function GlobalHeader() {
 
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
             <button
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
+              className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center border border-gray-300"
               onClick={() => console.log("User button clicked")}
             >
               <svg
-                width="20"
-                height="20"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-700"
+                className="text-gray-800"
               >
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
               </svg>
             </button>
             <button
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
+              className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center border border-gray-300"
               onClick={() => console.log("Cart button clicked")}
             >
               <svg
-                width="20"
-                height="20"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-700"
+                className="text-gray-800"
               >
                 <circle cx="9" cy="21" r="1" />
                 <circle cx="20" cy="21" r="1" />
@@ -65,16 +65,16 @@ export default function GlobalHeader() {
             </button>
             <button
               onClick={toggleMenu}
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
+              className="p-3 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center border border-blue-300"
             >
               <svg
-                width="20"
-                height="20"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-700"
+                className="text-blue-800"
               >
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
