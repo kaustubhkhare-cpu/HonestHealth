@@ -6,11 +6,8 @@ export default function GlobalHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    console.log("[v0] Menu toggle clicked, current state:", isMobileMenuOpen)
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
-
-  console.log("[v0] GlobalHeader rendering, menu open:", isMobileMenuOpen)
 
   return (
     <>
@@ -32,34 +29,34 @@ export default function GlobalHeader() {
 
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
             <button
-              className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center bg-red-100 border-2 border-red-500"
-              onClick={() => console.log("[v0] User button clicked")}
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
+              onClick={() => console.log("User button clicked")}
             >
               <svg
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-800"
+                className="text-gray-700"
               >
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
               </svg>
             </button>
             <button
-              className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center bg-blue-100 border-2 border-blue-500"
-              onClick={() => console.log("[v0] Cart button clicked")}
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
+              onClick={() => console.log("Cart button clicked")}
             >
               <svg
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-800"
+                className="text-gray-700"
               >
                 <circle cx="9" cy="21" r="1" />
                 <circle cx="20" cy="21" r="1" />
@@ -68,16 +65,16 @@ export default function GlobalHeader() {
             </button>
             <button
               onClick={toggleMenu}
-              className="p-3 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center bg-green-100 border-2 border-green-500"
+              className="p-2 hover:bg-gray-100 rounded-lg transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
             >
               <svg
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-800"
+                className="text-gray-700"
               >
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
