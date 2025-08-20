@@ -76,6 +76,14 @@ export default function ErectileDysfunctionPage() {
 
   return (
     <div className="min-h-screen overflow-hidden">
+      {/* Premium Header */}
+      <div className="bg-gradient-to-r from-[#A67C52] to-[#8B7657] text-white text-center py-3 text-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+        <span className="relative z-10">
+          🏥 Licensed Medical Professionals • 📞 Free Consultation • 🔒 100% Confidential
+        </span>
+      </div>
+
       <div className="pt-16 sm:pt-20 bg-gradient-to-br from-[#f8f6f3] to-[#f1ede6]">
         <section className="min-h-screen flex items-center py-12 sm:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">

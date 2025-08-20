@@ -66,6 +66,14 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%)" }}>
+      {/* Premium Header */}
+      <div className="bg-gradient-to-r from-[#A67C52] to-[#8B7657] text-white text-center py-3 text-sm relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+        <span className="relative z-10">
+          🏥 Licensed Medical Professionals • 📞 Free Consultation • 🔒 100% Confidential
+        </span>
+      </div>
+
       {/* Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50" style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
         <div className="max-w-6xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
