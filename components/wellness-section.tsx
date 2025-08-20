@@ -405,19 +405,19 @@ export default function WellnessSection() {
                 }}
               >
                 <div
-                  className="w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-2xl flex items-center justify-center text-sm text-center leading-relaxed mx-auto mb-6 lg:mb-8"
+                  className="w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-2xl overflow-hidden mx-auto mb-6 lg:mb-8"
                   style={{
                     backgroundColor: "rgba(255, 255, 255, 0.2)",
-                    border: "2px dashed rgba(255, 255, 255, 0.5)",
-                    color: "rgba(255, 255, 255, 0.7)",
+                    boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
                   }}
                 >
-                  [Fitness Tracking App Image]
-                  <br />
-                  Mobile interface showing
-                  <br />
-                  workout progress
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Aug%2020%2C%202025%2C%2010_53_51%20AM-JGlCSHu8CmnfrD7KOUdUPYFykV9Ns1.png"
+                    alt="Woman in athletic wear tying her running shoes, preparing for fitness activity"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
+
                 <h2 className="text-xl sm:text-2xl lg:text-3xl mb-3 lg:mb-4 font-bold" style={{ color: "white" }}>
                   Move Smart
                 </h2>
