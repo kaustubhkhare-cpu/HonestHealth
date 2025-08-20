@@ -121,9 +121,12 @@ export default function BenefitsPage() {
 
             {/* Card 3: Discreet Care */}
             <div className="bg-[#f8f9fa] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center text-gray-800 min-h-[350px]">
-              <div className="w-48 sm:w-52 lg:w-56 h-52 sm:h-56 lg:h-60 rounded-2xl shadow-2xl flex items-center justify-center bg-[#e9ecef] border-4 border-dashed border-[#87CEEB] text-[#4682B4] font-bold text-base sm:text-lg mb-6 sm:mb-8">
-                {/* DISCREET CARE */}
-                {/* (Website ED banner 5.png) */}
+              <div className="w-48 sm:w-52 lg:w-56 h-52 sm:h-56 lg:h-60 rounded-2xl shadow-2xl overflow-hidden mb-6 sm:mb-8">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Website-ED-banner-5.png-rO5a6M321MhB4LkKc1l6wwpX4Fcn1v.png"
+                  alt="Brown envelope representing discreet packaging and confidential delivery"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
               </div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5 leading-tight">
                 Discreet & Professional Care
