@@ -234,17 +234,17 @@ export default function WellnessSection() {
               </div>
 
               <div
-                className="w-full h-64 sm:h-80 lg:h-96 rounded-2xl flex items-center justify-center text-sm sm:text-base text-center leading-relaxed"
+                className="w-full h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden flex items-center justify-center"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.2)",
-                  border: "2px dashed rgba(255, 255, 255, 0.5)",
-                  color: "rgba(255, 255, 255, 0.7)",
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.15)",
                 }}
               >
-                [Success Story Image]
-                <br />
-                Before/After Transformation
-                <br />+ Patient Testimonial
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Weight%20loss%20image%20banner%201-LSg8HMiUfOBiQxSJYFTZJEbhGFDWnl.png"
+                  alt="HonestHealth medical products - white branded box and blue medical pen device"
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
 
