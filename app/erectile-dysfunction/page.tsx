@@ -136,9 +136,7 @@ export default function ErectileDysfunctionPage() {
                         className={`${getCardStyle(card.type)} rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 shadow-lg backdrop-blur-sm border border-white/20 min-h-[120px] sm:min-h-[140px] lg:min-h-[160px] flex flex-col justify-center items-center text-center`}
                       >
                         {card.isImageOnly ? (
-                          <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-lg">
-                            <div className="w-full h-full">{card.icon}</div>
-                          </div>
+                          <div className="w-full h-full overflow-hidden rounded-lg">{card.icon}</div>
                         ) : (
                           <>
                             {card.icon && (
