@@ -12,17 +12,17 @@ export default function GlobalHeader() {
           <div className="flex items-center gap-3 sm:gap-4">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="flex flex-col justify-center items-center w-6 h-6 sm:w-7 sm:h-7 cursor-pointer"
+              className="flex flex-col justify-center items-center w-10 h-10 sm:w-12 sm:h-12 cursor-pointer hover:bg-gray-100 rounded-lg transition-colors p-2"
               aria-label="Toggle menu"
             >
               <span
-                className={`block w-5 h-0.5 bg-[#2d2d2d] transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-1" : ""}`}
+                className={`block w-6 h-1 bg-[#2d2d2d] transition-all duration-300 rounded-full ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
               ></span>
               <span
-                className={`block w-5 h-0.5 bg-[#2d2d2d] my-1 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : ""}`}
+                className={`block w-6 h-1 bg-[#2d2d2d] my-1 transition-all duration-300 rounded-full ${isMobileMenuOpen ? "opacity-0" : ""}`}
               ></span>
               <span
-                className={`block w-5 h-0.5 bg-[#2d2d2d] transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-1" : ""}`}
+                className={`block w-6 h-1 bg-[#2d2d2d] transition-all duration-300 rounded-full ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
               ></span>
             </button>
 
