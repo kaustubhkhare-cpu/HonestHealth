@@ -10,11 +10,18 @@ export default function BenefitsPage() {
   }
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/1234567890?text=I'd like to consult about ED treatment", "_blank")
+    // TODO: Replace with actual WhatsApp link when provided
+    window.open("https://wa.me/PHONE_NUMBER?text=I'd like to consult about ED treatment", "_blank")
   }
 
   const handlePrivateConsultationClick = () => {
-    window.open("https://wa.me/1234567890?text=I'd like a private consultation about ED treatment", "_blank")
+    // TODO: Replace with actual WhatsApp link when provided
+    window.open("https://wa.me/PHONE_NUMBER?text=I'd like a private consultation about ED treatment", "_blank")
+  }
+
+  const handleStartJourneyClick = () => {
+    // TODO: Replace with actual WhatsApp link when provided
+    window.open("https://wa.me/PHONE_NUMBER?text=I'd like to start my ED treatment journey", "_blank")
   }
 
   return (
@@ -88,7 +95,7 @@ export default function BenefitsPage() {
                 relationship.
               </p>
               <button
-                onClick={handleEdTreatmentClick}
+                onClick={handleStartJourneyClick}
                 className="bg-[#4682B4] text-white px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#4682B4] rounded-xl font-semibold text-base sm:text-lg hover:bg-[#5a72c4] hover:border-[#5a72c4] hover:transform hover:-translate-y-1 transition-all duration-300"
               >
                 Start Your Journey
