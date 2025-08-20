@@ -192,18 +192,34 @@ export default function GlobalHeader() {
             <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">COMPANY</h3>
 
             <div className="space-y-1">
-              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+              <a
+                href="/about"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
                 About Us
-              </button>
-              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+              </a>
+              <a
+                href="/how-it-works"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
                 How It Works
-              </button>
-              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+              </a>
+              <a
+                href="/medical-experts"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
                 Medical Experts
-              </button>
-              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+              </a>
+              <a
+                href="/contact"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
                 Contact Us
-              </button>
+              </a>
             </div>
           </div>
 
@@ -218,12 +234,20 @@ export default function GlobalHeader() {
               <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                 Help Center
               </button>
-              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                Track Order
-              </button>
-              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                Live Chat
-              </button>
+              <a
+                href="/shipping-policy"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
+                Shipping Policy
+              </a>
+              <a
+                href="/refund-policy"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
+                Refund Policy
+              </a>
             </div>
           </div>
 
@@ -241,9 +265,20 @@ export default function GlobalHeader() {
               <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
                 Order History
               </button>
-              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+              <a
+                href="/privacy"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
                 Privacy Policy
-              </button>
+              </a>
+              <a
+                href="/terms"
+                className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors block"
+                onClick={toggleMenu}
+              >
+                Terms & Conditions
+              </a>
             </div>
           </div>
         </div>
