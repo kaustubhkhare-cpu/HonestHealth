@@ -1,31 +1,20 @@
 "use client"
 
 import { useState } from "react"
+import { User, ShoppingCart, X, ChevronRight } from "lucide-react"
 
 export default function GlobalHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-black/10 z-50 px-4 sm:px-6 lg:px-8 safe-area-inset-top">
         <div className="max-w-7xl mx-auto flex items-center justify-between h-16 sm:h-18 lg:h-20">
           <div className="flex items-center gap-3 sm:gap-4">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="flex flex-col justify-center items-center w-10 h-10 sm:w-12 sm:h-12 cursor-pointer hover:bg-gray-100 rounded-lg transition-colors p-2"
-              aria-label="Toggle menu"
-            >
-              <span
-                className={`block w-6 h-1 bg-[#2d2d2d] transition-all duration-300 rounded-full ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-              ></span>
-              <span
-                className={`block w-6 h-1 bg-[#2d2d2d] my-1 transition-all duration-300 rounded-full ${isMobileMenuOpen ? "opacity-0" : ""}`}
-              ></span>
-              <span
-                className={`block w-6 h-1 bg-[#2d2d2d] transition-all duration-300 rounded-full ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-              ></span>
-            </button>
-
             <a
               href="/"
               className="flex items-center text-[#2d2d2d] no-underline font-bold text-lg sm:text-xl lg:text-2xl"
@@ -40,6 +29,19 @@ export default function GlobalHeader() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
+            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <User size={20} className="text-gray-700" />
+            </button>
+            <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <ShoppingCart size={20} className="text-gray-700" />
+            </button>
+            <button onClick={toggleMenu} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
             <a
               href="#"
               className="bg-[#2c5aa0] text-white px-3 sm:px-4 lg:px-5 py-2 sm:py-2.5 rounded-full font-semibold cursor-pointer transition-all duration-300 text-xs sm:text-sm hover:bg-[#1e3a8a] hover:-translate-y-0.5 min-h-[44px] flex items-center"
@@ -50,99 +52,150 @@ export default function GlobalHeader() {
         </div>
       </header>
 
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black/50 z-40" onClick={() => setIsMobileMenuOpen(false)}>
-          <div
-            className="fixed top-0 left-0 w-80 h-full bg-white shadow-2xl z-50 transform transition-transform duration-300"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Menu Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-[#2d2d2d]">Menu</h2>
-              <div className="flex items-center gap-3">
-                <button className="w-8 h-8 flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </button>
-                <button className="w-8 h-8 flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <path d="M16 10a4 4 0 0 1-8 0" />
-                  </svg>
-                </button>
-                <button onClick={() => setIsMobileMenuOpen(false)} className="w-8 h-8 flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
-              </div>
+      {/* Overlay */}
+      {isMobileMenuOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={toggleMenu} />}
+
+      {/* Side Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-50 ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Menu Header */}
+        <div className="flex items-center justify-between p-4 border-b">
+          <h2 className="text-lg font-semibold text-gray-800">Menu</h2>
+          <button onClick={toggleMenu} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <X size={20} className="text-gray-700" />
+          </button>
+        </div>
+
+        {/* Menu Content */}
+        <div className="overflow-y-auto h-full pb-20">
+          {/* Explore Section */}
+          <div className="p-4">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">EXPLORE</h3>
+
+            <div className="space-y-1">
+              <a
+                href="/weight-management"
+                className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-50 rounded-lg transition-colors group"
+                onClick={toggleMenu}
+              >
+                <span className="text-gray-800 font-medium">Weight Loss</span>
+                <ChevronRight size={16} className="text-gray-400 group-hover:text-gray-600" />
+              </a>
+
+              <a
+                href="/erectile-dysfunction"
+                className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-50 rounded-lg transition-colors group"
+                onClick={toggleMenu}
+              >
+                <span className="text-gray-800 font-medium">Erectile Dysfunction</span>
+                <ChevronRight size={16} className="text-gray-400 group-hover:text-gray-600" />
+              </a>
             </div>
+          </div>
 
-            {/* Menu Content */}
-            <div className="p-4">
-              <div className="mb-6">
-                <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">EXPLORE</h3>
-                <nav className="space-y-1">
-                  <a
-                    href="/erectile-dysfunction"
-                    className="flex items-center justify-between py-3 px-2 text-[#2d2d2d] hover:bg-gray-50 rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <span className="font-medium">Sexual Health</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <polyline points="9,18 15,12 9,6" />
-                    </svg>
-                  </a>
-                  <a
-                    href="/weight-management"
-                    className="flex items-center justify-between py-3 px-2 text-[#2d2d2d] hover:bg-gray-50 rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <span className="font-medium">Weight Loss</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <polyline points="9,18 15,12 9,6" />
-                    </svg>
-                  </a>
-                </nav>
-              </div>
+          {/* Top Treatments Section */}
+          <div className="p-4 border-t">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">TOP TREATMENTS</h3>
 
-              <div className="mb-6">
-                <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">MEET HONESTHEALTH</h3>
-                <nav className="space-y-1">
-                  <a
-                    href="#"
-                    className="block py-3 px-2 text-[#2d2d2d] hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                  >
-                    About Us
-                  </a>
-                  <a
-                    href="#"
-                    className="block py-3 px-2 text-[#2d2d2d] hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                  >
-                    How It Works
-                  </a>
-                  <a
-                    href="#"
-                    className="block py-3 px-2 text-[#2d2d2d] hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                  >
-                    Medical Experts
-                  </a>
-                  <a
-                    href="#"
-                    className="block py-3 px-2 text-[#2d2d2d] hover:bg-gray-50 rounded-lg transition-colors font-medium"
-                  >
-                    FAQ
-                  </a>
-                </nav>
-              </div>
+            <div className="grid grid-cols-2 gap-3">
+              {/* Weight Loss Treatment */}
+              <a
+                href="/weight-management"
+                className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors cursor-pointer"
+                onClick={toggleMenu}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs bg-teal-100 text-teal-700 px-2 py-1 rounded font-medium">Rx</span>
+                  <span className="text-xs bg-teal-500 text-white px-2 py-1 rounded font-medium">Popular</span>
+                </div>
+                <div className="w-12 h-12 bg-orange-200 rounded-full mb-3 flex items-center justify-center">
+                  <div className="w-8 h-6 bg-orange-400 rounded-full"></div>
+                </div>
+                <h4 className="text-sm font-medium text-gray-800">Weight Loss Kits</h4>
+              </a>
+
+              {/* ED Treatment */}
+              <a
+                href="/erectile-dysfunction"
+                className="bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors cursor-pointer"
+                onClick={toggleMenu}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs bg-teal-100 text-teal-700 px-2 py-1 rounded font-medium">Rx</span>
+                  <span className="text-xs bg-teal-500 text-white px-2 py-1 rounded font-medium">Popular</span>
+                </div>
+                <div className="w-12 h-12 bg-teal-200 rounded-full mb-3 flex items-center justify-center">
+                  <div className="w-6 h-6 bg-teal-400 rounded"></div>
+                </div>
+                <h4 className="text-sm font-medium text-gray-800">ED Treatments</h4>
+              </a>
+            </div>
+          </div>
+
+          {/* Company Section */}
+          <div className="p-4 border-t">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">COMPANY</h3>
+
+            <div className="space-y-1">
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                About Us
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                How It Works
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Medical Experts
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Contact Us
+              </button>
+            </div>
+          </div>
+
+          {/* Support Section */}
+          <div className="p-4 border-t">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">SUPPORT</h3>
+
+            <div className="space-y-1">
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                FAQ
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Help Center
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Track Order
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Live Chat
+              </button>
+            </div>
+          </div>
+
+          {/* Account Section */}
+          <div className="p-4 border-t">
+            <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">ACCOUNT</h3>
+
+            <div className="space-y-1">
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Sign In
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                My Profile
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Order History
+              </button>
+              <button className="w-full text-left p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                Privacy Policy
+              </button>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </>
   )
 }
