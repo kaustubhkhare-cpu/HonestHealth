@@ -207,11 +207,6 @@ const HonestHealthWebsite = () => {
                 </button>
               </li>
               <li>
-                <button onClick={() => navigateTo("diabetes-category")} className="hover:text-white transition-colors">
-                  Diabetes Support
-                </button>
-              </li>
-              <li>
                 <button onClick={() => navigateTo("consultation")} className="hover:text-white transition-colors">
                   Online Consultation
                 </button>
@@ -314,8 +309,6 @@ const HonestHealthWebsite = () => {
         return <EDCategoryPage />
       case "weight-category":
         return <WeightCategoryPage />
-      case "diabetes-category":
-        return <DiabetesCategoryPage />
       default:
         return <HomePage navigateTo={navigateTo} TrustBadges={TrustBadges} />
     }
@@ -327,7 +320,6 @@ const HonestHealthWebsite = () => {
   const AboutPage = () => <div>AboutPage Component - Will be defined in Part 6</div>
   const EDCategoryPage = () => <div>EDCategoryPage Component - Will be defined in Part 10</div>
   const WeightCategoryPage = () => <div>WeightCategoryPage Component - Will be defined in Part 11</div>
-  const DiabetesCategoryPage = () => <div>DiabetesCategoryPage Component - Will be defined in Part 12</div>
 
   return (
     <div className="min-h-screen bg-white">

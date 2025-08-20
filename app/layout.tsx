@@ -21,7 +21,7 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: "Honest Health - Confidential Healthcare Solutions",
   description:
-    "Science-backed health solutions with doctor-guided care and complete discretion. Private consultations for ED, weight management, and diabetes support.",
+    "Science-backed health solutions with doctor-guided care and complete discretion. Private consultations for ED and weight management.",
   generator: "v0.app",
 }
 

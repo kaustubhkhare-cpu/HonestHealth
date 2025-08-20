@@ -17,12 +17,6 @@ const contentSets = [
     color: "#ff6b6b",
   },
   {
-    headline: "Diabetes care",
-    mainTitle: "expertly managed",
-    subtitle: "Comprehensive diabetes management",
-    color: "#4ecdc4",
-  },
-  {
     headline: "ED treatment",
     mainTitle: "discreetly delivered",
     subtitle: "Effective & confidential solutions",
