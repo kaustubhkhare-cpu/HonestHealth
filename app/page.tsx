@@ -130,7 +130,7 @@ export default function HomePage() {
         </p>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-6 sm:mt-8 lg:mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-6 sm:mt-8 lg:mt-10">
           {/* Weight Management Card */}
           <div
             className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 text-center cursor-pointer group relative overflow-hidden transition-all duration-300 hover:-translate-y-2"
@@ -192,44 +192,6 @@ export default function HomePage() {
             </div>
             <div className="mb-4 sm:mb-5 text-sm sm:text-base" style={{ color: "#666" }}>
               Discreet & proven treatments
-            </div>
-            <div
-              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white mx-auto transition-all duration-300 group-hover:scale-110 text-sm sm:text-base"
-              style={{ background: "#333" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#2c5aa0"
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#333"
-              }}
-            >
-              →
-            </div>
-          </div>
-
-          {/* Diabetes Care Card */}
-          <div
-            className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 text-center cursor-pointer group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 sm:col-span-2 lg:col-span-1"
-            style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
-            onClick={() => handleCategoryClick("diabetes")}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.15)"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)"
-            }}
-          >
-            <div
-              className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 mx-auto mb-4 sm:mb-6 rounded-xl sm:rounded-2xl flex items-center justify-center text-3xl sm:text-4xl transition-all duration-500 group-hover:scale-110"
-              style={{ background: "linear-gradient(135deg, #4ecdc4, #44a08d)" }}
-            >
-              ⚕️
-            </div>
-            <div className="text-lg sm:text-xl font-semibold mb-2" style={{ color: "#333" }}>
-              Diabetes <span style={{ color: "#4ecdc4" }}>care</span>
-            </div>
-            <div className="mb-4 sm:mb-5 text-sm sm:text-base" style={{ color: "#666" }}>
-              Complete diabetes management
             </div>
             <div
               className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-white mx-auto transition-all duration-300 group-hover:scale-110 text-sm sm:text-base"
