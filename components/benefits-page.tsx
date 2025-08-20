@@ -32,10 +32,12 @@ export default function BenefitsPage() {
             </p>
 
             {/* Hero Image Placeholder */}
-            <div className="w-72 sm:w-80 lg:w-96 h-80 sm:h-96 lg:h-[450px] mx-auto my-8 sm:my-10 lg:my-12 rounded-2xl shadow-2xl flex items-center justify-center bg-white/20 border-4 border-dashed border-white/50 text-white font-bold text-lg sm:text-xl">
-              HERO IMAGE
-              <br />
-              (Website ED banner.png)
+            <div className="w-72 sm:w-80 lg:w-96 h-80 sm:h-96 lg:h-[450px] mx-auto my-8 sm:my-10 lg:my-12 rounded-2xl shadow-2xl overflow-hidden">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Website-ED-banner.png-DpkQMkitBJfjCSoB5HP5IadDceklA8.png"
+                alt="Happy couple representing restored intimacy and connection"
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </div>
 
             <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-10 opacity-90">
@@ -71,9 +73,8 @@ export default function BenefitsPage() {
             {/* Card 1: Large - Restore Intimacy */}
             <div className="lg:col-span-2 lg:row-span-2 bg-[#f8f9fa] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center text-gray-800 min-h-[600px]">
               <div className="w-56 sm:w-64 lg:w-72 h-64 sm:h-72 lg:h-80 rounded-2xl shadow-2xl flex items-center justify-center bg-[#e9ecef] border-4 border-dashed border-[#87CEEB] text-[#4682B4] font-bold text-base sm:text-lg mb-6 sm:mb-8">
-                COUPLE IMAGE
-                <br />
-                (Website ED banner 2.png)
+                {/* COUPLE IMAGE */}
+                {/* (Website ED banner 2.png) */}
               </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
                 Restore Intimacy & Connection
@@ -94,11 +95,9 @@ export default function BenefitsPage() {
             {/* Card 2: Treatment Options */}
             <div className="bg-[#f8f9fa] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center text-gray-800 min-h-[350px]">
               <div className="w-48 sm:w-52 lg:w-56 h-52 sm:h-56 lg:h-60 rounded-2xl shadow-2xl flex items-center justify-center bg-[#e9ecef] border-4 border-dashed border-[#87CEEB] text-[#4682B4] font-bold text-base sm:text-lg mb-6 sm:mb-8">
-                TREATMENT
-                <br />
-                OPTIONS
-                <br />
-                (Website ED banner 4.png)
+                {/* TREATMENT */}
+                {/* OPTIONS */}
+                {/* (Website ED banner 4.png) */}
               </div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5 leading-tight">
                 Proven Treatment Options
@@ -118,9 +117,8 @@ export default function BenefitsPage() {
             {/* Card 3: Discreet Care */}
             <div className="bg-[#f8f9fa] p-8 sm:p-12 lg:p-16 flex flex-col justify-center items-center text-center text-gray-800 min-h-[350px]">
               <div className="w-48 sm:w-52 lg:w-56 h-52 sm:h-56 lg:h-60 rounded-2xl shadow-2xl flex items-center justify-center bg-[#e9ecef] border-4 border-dashed border-[#87CEEB] text-[#4682B4] font-bold text-base sm:text-lg mb-6 sm:mb-8">
-                DISCREET CARE
-                <br />
-                (Website ED banner 5.png)
+                {/* DISCREET CARE */}
+                {/* (Website ED banner 5.png) */}
               </div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5 leading-tight">
                 Discreet & Professional Care
