@@ -32,7 +32,11 @@ const HonestHealthWebsite = () => {
           {/* Logo */}
           <div className="flex-shrink-0 cursor-pointer" onClick={() => navigateTo("home")}>
             <div className="flex items-center">
-              <img src="/images/honest-health-logo.png" alt="Honest Health" className="h-16 w-auto" />
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honest%20Health%20Logo%20v1%20%28transparent%20bg%29-9zIvRD0EuakFnEAMmsVdKynHPApwL2.png"
+                alt="Honest Health"
+                className="h-16 w-auto"
+              />
             </div>
           </div>
 
@@ -170,9 +174,9 @@ const HonestHealthWebsite = () => {
           <div className="md:col-span-1">
             <div className="flex items-center mb-6">
               <img
-                src="/images/honest-health-logo.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honest%20Health%20Logo%20v1%20%28transparent%20bg%29-9zIvRD0EuakFnEAMmsVdKynHPApwL2.png"
                 alt="Honest Health"
-                className="h-10 w-auto filter brightness-0 invert"
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">

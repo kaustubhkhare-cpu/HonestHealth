@@ -7,7 +7,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10 pb-8 sm:pb-12 border-b border-slate-600">
           <div className="sm:col-span-2 lg:col-span-2 max-w-sm">
             <a href="/" className="text-xl sm:text-2xl font-bold text-blue-500 no-underline mb-4 sm:mb-5 block">
-              HonestHealth
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honest%20Health%20Logo%20v1%20%28transparent%20bg%29-9zIvRD0EuakFnEAMmsVdKynHPApwL2.png"
+                alt="HonestHealth"
+                className="h-8 sm:h-10 w-auto"
+              />
             </a>
             <p className="text-slate-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
               Providing safe, effective, and discreet online healthcare solutions. Licensed physicians delivering

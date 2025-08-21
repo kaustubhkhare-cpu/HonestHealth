@@ -18,12 +18,11 @@ export default function GlobalHeader() {
               href="/"
               className="flex items-center text-[#2d2d2d] no-underline font-bold text-lg sm:text-xl lg:text-2xl"
             >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 bg-conic-gradient from-[#ff6b35] via-[#ff8c42] to-[#ff6b35] rounded-full mr-2 sm:mr-3 relative flex items-center justify-center">
-                <div className="absolute w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-white rounded-full"></div>
-                <div className="absolute w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 bg-gradient-to-br from-[#ff6b35] to-[#ff8c42] rounded-full z-10"></div>
-              </div>
-              <span className="text-[#2c5aa0] hidden sm:inline">HonestHealth</span>
-              <span className="text-[#2c5aa0] sm:hidden">HonestHealth</span>
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honest%20Health%20Logo%20v1%20%28transparent%20bg%29-9zIvRD0EuakFnEAMmsVdKynHPApwL2.png"
+                alt="HonestHealth"
+                className="h-8 sm:h-10 lg:h-12 w-auto"
+              />
             </a>
           </div>
 
@@ -58,9 +57,9 @@ export default function GlobalHeader() {
                 strokeWidth="2"
                 className="text-blue-800"
               >
-                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="6" x2="21" y2="18" />
                 <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="18" x2="21" y2="6" />
               </svg>
             </button>
             <a
