@@ -12,7 +12,7 @@ export default function GlobalHeader() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-black/10 z-50 px-4 sm:px-6 lg:px-8 safe-area-inset-top">
-        <div className="max-w-7xl mx-auto flex items-center justify-between h-16 sm:h-18 lg:h-20">
+        <div className="max-w-7xl mx-auto flex items-center justify-between h-20 sm:h-22 lg:h-24">
           <div className="flex items-center gap-3 sm:gap-4">
             <a
               href="/"
@@ -21,7 +21,7 @@ export default function GlobalHeader() {
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honest%20Health%20Logo%20v1%20%28transparent%20bg%29-9zIvRD0EuakFnEAMmsVdKynHPApwL2.png"
                 alt="HonestHealth"
-                className="h-8 sm:h-10 lg:h-12 w-auto"
+                className="h-12 sm:h-16 lg:h-20 w-auto"
               />
             </a>
           </div>
@@ -57,9 +57,9 @@ export default function GlobalHeader() {
                 strokeWidth="2"
                 className="text-blue-800"
               >
-                <line x1="3" y1="6" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             </button>
             <a
