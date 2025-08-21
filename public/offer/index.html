@@ -17,7 +17,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
+            color: #333;
+            background: #F8FCFD;
             overflow-x: hidden;
         }
 
@@ -29,14 +30,14 @@
 
         /* Header */
         header {
-            background: rgba(26, 32, 46, 0.98);
+            background: rgba(248, 252, 253, 0.95);
             backdrop-filter: blur(15px);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 30px rgba(87, 178, 177, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -47,49 +48,90 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 2rem;
             font-weight: bold;
-            color: #e74c3c;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: #57B2B1;
+            text-shadow: 0 2px 4px rgba(87, 178, 177, 0.2);
+            position: relative;
+            display: none;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #FED500;
+            border-radius: 2px;
+        }
+
+        /* Show text logo if image fails to load */
+        .logo img:not([src]), .logo img[src=""] {
+            display: none;
+        }
+
+        .logo img:not([src]) + .logo-text, .logo img[src=""] + .logo-text {
+            display: block;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #ecf0f1;
-            font-weight: 500;
+            color: #57B2B1;
+            font-weight: 600;
             transition: all 0.3s;
             position: relative;
+            padding: 8px 16px;
+            border-radius: 25px;
         }
 
         .nav-links a:hover {
-            color: #e74c3c;
+            background: #57B2B1;
+            color: white;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(87, 178, 177, 0.3);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #e74c3c;
-            transition: width 0.3s;
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #57B2B1;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a202e 0%, #2d3748 50%, #1a202e 100%);
+            background: linear-gradient(135deg, #F8FCFD 0%, #E8F6F6 100%);
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
@@ -102,11 +144,44 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23e74c3c;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23e74c3c;stop-opacity:0"/></radialGradient></defs><circle cx="20" cy="20" r="10" fill="url(%23g)"/><circle cx="80" cy="40" r="15" fill="url(%23g)"/><circle cx="40" cy="80" r="12" fill="url(%23g)"/></svg>');
-            animation: float 20s ease-in-out infinite;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(87, 178, 177, 0.05));
+            z-index: 1;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(87, 178, 177, 0.1), rgba(254, 213, 0, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-elements::before {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-elements::after {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            right: 15%;
+            animation-delay: 3s;
         }
 
         .hero-content {
@@ -118,59 +193,68 @@
             z-index: 2;
         }
 
-        .hero-text {
-            color: #ecf0f1;
-        }
-
-        .hero h1 {
+        .hero-text h1 {
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            background: linear-gradient(45deg, #ecf0f1, #e74c3c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s ease-in-out infinite alternate;
+            color: #2c3e50;
+            line-height: 1.2;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero-text h1 .highlight {
+            color: #57B2B1;
+            position: relative;
+        }
+
+        .hero-text h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #FED500;
+            border-radius: 2px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.8;
+            color: #666;
+            line-height: 1.7;
         }
 
         .hero-image {
             position: relative;
             height: 500px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 25px;
             overflow: hidden;
-            border: 3px solid #e74c3c;
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
         }
 
         .hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 17px;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
             color: white;
-            padding: 18px 45px;
+            padding: 18px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 8px 25px rgba(87, 178, 177, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -182,8 +266,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(254, 213, 0, 0.3), transparent);
+            transition: left 0.6s;
         }
 
         .cta-button:hover::before {
@@ -191,31 +275,64 @@
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.4);
+            background: linear-gradient(135deg, #4A9E9D, #57B2B1);
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .hero-feature::before {
+            content: '✓';
+            color: #FED500;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
         /* Dynamic Stats Section */
         .stats-section {
-            background: #ecf0f1;
+            background: white;
             padding: 80px 0;
             position: relative;
         }
 
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, #F8FCFD, white);
+        }
+
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
 
         .stat-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            border-left: 5px solid #e74c3c;
+            box-shadow: 0 10px 30px rgba(87, 178, 177, 0.1);
+            transition: all 0.4s;
+            border: 2px solid transparent;
             position: relative;
             overflow: hidden;
         }
@@ -225,63 +342,80 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(231, 76, 60, 0.05));
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-
-        .stat-card:hover::before {
-            transform: translateX(0);
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #57B2B1, #FED500);
         }
 
         .stat-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 50px rgba(87, 178, 177, 0.2);
+            border-color: #57B2B1;
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: bold;
-            color: #e74c3c;
+            color: #57B2B1;
             margin-bottom: 0.5rem;
-            counter-increment: none;
+            display: block;
         }
 
         .stat-label {
-            color: #2c3e50;
+            color: #666;
             font-weight: 600;
             font-size: 1.1rem;
         }
 
-        /* Trust Section with Images */
+        /* Trust Section */
         .trust-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 100%);
             padding: 100px 0;
             color: white;
+            position: relative;
+        }
+
+        .trust-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(254,213,0,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(254,213,0,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(254,213,0,0.1)"/></svg>');
         }
 
         .trust-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
+            position: relative;
+            z-index: 2;
         }
 
         .trust-header h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            color: #ecf0f1;
+            font-weight: 700;
+        }
+
+        .trust-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .trust-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .trust-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2.5rem 1.5rem;
             border-radius: 20px;
             text-align: center;
             backdrop-filter: blur(10px);
@@ -298,104 +432,125 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(231, 76, 60, 0.1), transparent);
-            animation: rotate 4s linear infinite;
+            background: conic-gradient(from 0deg, transparent, rgba(254, 213, 0, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        .trust-item-content {
-            position: relative;
-            z-index: 2;
+        .trust-item:hover::before {
+            opacity: 1;
         }
 
         .trust-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(231, 76, 60, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.25);
         }
 
         .trust-image {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
         }
 
         .trust-image img {
-            width: 100%;
-            height: 100%;
+            width: 60px;
+            height: 60px;
             object-fit: cover;
+            border-radius: 50%;
         }
 
         .trust-item h3 {
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 2;
         }
 
-        /* How It Works with Images */
+        .trust-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* How It Works */
         .how-it-works {
-            background: #ecf0f1;
+            background: #F8FCFD;
             padding: 100px 0;
+            position: relative;
         }
 
         .how-it-works h2 {
             text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
+            font-size: 3rem;
+            margin-bottom: 3rem;
             color: #2c3e50;
+            font-weight: 700;
         }
 
-        .steps-container {
+        .how-it-works h2 .highlight {
+            color: #57B2B1;
             position: relative;
+        }
+
+        .how-it-works h2 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #FED500;
+            border-radius: 2px;
         }
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            max-width: 800px;
-            margin: 0 auto;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(90deg, #57B2B1, #FED500, #57B2B1);
+            z-index: 1;
         }
 
         .step {
             background: white;
-            padding: 2.5rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.1);
             transition: all 0.4s;
             position: relative;
-            border-top: 5px solid #e74c3c;
+            z-index: 2;
+            border: 2px solid transparent;
         }
 
         .step:hover {
             transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-        }
-
-        .step-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 15px;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
-
-        .step-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
+            border-color: #57B2B1;
         }
 
         .step-number {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
             color: white;
             width: 60px;
             height: 60px;
@@ -405,51 +560,98 @@
             justify-content: center;
             font-weight: bold;
             font-size: 1.5rem;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(87, 178, 177, 0.3);
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
             position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 50%;
+            border: 2px solid #FED500;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .step:hover .step-number::after {
+            opacity: 1;
+        }
+
+        .step-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(87, 178, 177, 0.15);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .step h3 {
             color: #2c3e50;
             margin-bottom: 1rem;
             font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .step p {
-            color: #7f8c8d;
+            color: #666;
             line-height: 1.6;
         }
 
         /* Benefits Section */
         .benefits {
-            background: linear-gradient(135deg, #1a202e 0%, #2d3748 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             padding: 100px 0;
             color: white;
+            position: relative;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,0 100,0 80,100 0,100" fill="rgba(87,178,177,0.05)"/></svg>');
         }
 
         .benefits h2 {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 4rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .benefit-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
+            padding: 2.5rem 1.5rem;
             border-radius: 20px;
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -461,7 +663,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(231, 76, 60, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(87, 178, 177, 0.1), transparent);
             transform: translateX(-100%) rotate(45deg);
             transition: transform 0.8s;
         }
@@ -472,48 +674,61 @@
 
         .benefit-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(231, 76, 60, 0.2);
+            box-shadow: 0 25px 50px rgba(87, 178, 177, 0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .benefit-image {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 15px;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
-            overflow: hidden;
+            background: rgba(87, 178, 177, 0.2);
+            position: relative;
+            z-index: 2;
         }
 
         .benefit-image img {
-            width: 100%;
-            height: 100%;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
+            border-radius: 8px;
         }
 
         .benefit-card h3 {
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Testimonials Section */
+        .benefit-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Testimonials */
         .testimonials {
-            background: #ecf0f1;
+            background: #F8FCFD;
             padding: 100px 0;
         }
 
         .testimonials h2 {
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 4rem;
             color: #2c3e50;
+            font-weight: 700;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
@@ -521,25 +736,24 @@
             background: white;
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.1);
             transition: all 0.3s;
             position: relative;
+            border-top: 4px solid #57B2B1;
         }
 
         .testimonial-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
         }
 
         .testimonial-image {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
+            border: 3px solid #FED500;
         }
 
         .testimonial-image img {
@@ -551,13 +765,14 @@
         .testimonial-text {
             font-style: italic;
             margin-bottom: 1rem;
-            color: #2c3e50;
-            line-height: 1.6;
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.1rem;
         }
 
         .testimonial-author {
             font-weight: bold;
-            color: #e74c3c;
+            color: #57B2B1;
         }
 
         /* FAQ */
@@ -570,34 +785,41 @@
             text-align: center;
             color: #2c3e50;
             margin-bottom: 4rem;
-            font-size: 2.8rem;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: 1.5rem;
-            border: 2px solid #ecf0f1;
+            margin-bottom: 1rem;
+            border: 2px solid #F8FCFD;
             border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s;
         }
 
         .faq-item:hover {
-            border-color: #e74c3c;
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.1);
+            border-color: #57B2B1;
+            box-shadow: 0 5px 20px rgba(87, 178, 177, 0.1);
         }
 
         .faq-question {
-            background: #ecf0f1;
+            background: #F8FCFD;
             padding: 1.5rem 2rem;
             cursor: pointer;
             font-weight: 600;
             color: #2c3e50;
             transition: all 0.3s;
             position: relative;
+            font-size: 1.1rem;
         }
 
         .faq-question:hover {
-            background: #e74c3c;
+            background: #57B2B1;
             color: white;
         }
 
@@ -607,6 +829,11 @@
             right: 2rem;
             font-size: 1.5rem;
             transition: transform 0.3s;
+            color: #57B2B1;
+        }
+
+        .faq-question:hover::after {
+            color: white;
         }
 
         .faq-question.active::after {
@@ -614,15 +841,23 @@
         }
 
         .faq-answer {
-            padding: 1.5rem 2rem;
+            padding: 0 2rem;
             background: white;
-            display: none;
-            animation: slideDown 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem 2rem;
+            max-height: 200px;
+            opacity: 1;
         }
 
         /* Final CTA */
         .final-cta {
-            background: linear-gradient(135deg, #2c3e50 0%, #1a202e 100%);
+            background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 100%);
             padding: 100px 0;
             text-align: center;
             color: white;
@@ -637,7 +872,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="%23e74c3c" opacity="0.3"/><circle cx="75" cy="25" r="1.5" fill="%23e74c3c" opacity="0.2"/><circle cx="50" cy="75" r="1" fill="%23e74c3c" opacity="0.4"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(254,213,0,0.2)"/><circle cx="90" cy="20" r="1.5" fill="rgba(254,213,0,0.2)"/><circle cx="20" cy="90" r="1" fill="rgba(254,213,0,0.2)"/><circle cx="80" cy="80" r="1.2" fill="rgba(254,213,0,0.2)"/></svg>');
             animation: float 15s ease-in-out infinite;
         }
 
@@ -649,6 +884,7 @@
         .final-cta h2 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         .final-cta p {
@@ -660,24 +896,37 @@
             margin-right: auto;
         }
 
+        .final-cta .cta-button {
+            background: white;
+            color: #57B2B1;
+            font-size: 1.2rem;
+            padding: 20px 50px;
+        }
+
+        .final-cta .cta-button:hover {
+            background: #FED500;
+            color: #2c3e50;
+        }
+
         /* Footer */
         footer {
-            background: #1a202e;
-            color: #ecf0f1;
+            background: #2c3e50;
+            color: white;
             padding: 60px 0 30px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 3rem;
             margin-bottom: 3rem;
         }
 
         .footer-section h3 {
             margin-bottom: 1.5rem;
-            color: #e74c3c;
+            color: #57B2B1;
             font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .footer-section a {
@@ -689,7 +938,7 @@
         }
 
         .footer-section a:hover {
-            color: #e74c3c;
+            color: #FED500;
             transform: translateX(5px);
         }
 
@@ -700,46 +949,32 @@
             color: #bdc3c7;
         }
 
+        /* Security Badge */
+        .security-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(87, 178, 177, 0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            border: 2px solid #FED500;
+        }
+
         /* Animations */
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
 
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px rgba(231, 76, 60, 0.5); }
-            100% { text-shadow: 0 0 20px rgba(231, 76, 60, 0.8), 0 0 30px rgba(231, 76, 60, 0.6); }
-        }
-
         @keyframes rotate {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes countUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Security Badge */
-        .security-badge {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, #27ae60, #2ecc71);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
-            z-index: 1000;
-            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
@@ -748,39 +983,154 @@
             100% { transform: scale(1); }
         }
 
-        /* Responsive */
-        @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .trust-grid,
+            .steps-grid,
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
-            
-            .hero h1 {
-                font-size: 2.5rem;
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .nav-links {
+
+            .steps-grid::before {
                 display: none;
-            }
-            
-            .hero {
-                padding: 100px 0 60px;
-            }
-
-            .benefits-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .steps-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
             }
         }
 
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(87, 178, 177, 0.2);
+                border-radius: 0 0 15px 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                height: 300px;
+                transform: none;
+            }
+
+            .trust-grid,
+            .steps-grid,
+            .benefits-grid,
+            .testimonials-grid,
             .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-features {
+                justify-content: center;
+            }
+
+            .trust-header h2,
+            .how-it-works h2,
+            .benefits h2,
+            .testimonials h2,
+            .faq h2,
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+                min-height: auto;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .security-badge {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading animation for stats */
+        .stat-number {
+            opacity: 0;
+            animation: countUp 2s ease forwards;
+        }
+
+        @keyframes countUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px) scale(0.8); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
             }
         }
     </style>
@@ -789,7 +1139,10 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">HonestHealth</div>
+            <div class="logo">
+                <img src="images/logo.png" alt="HonestHealth Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-text">HonestHealth</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#how-it-works">Process</a></li>
@@ -797,18 +1150,29 @@
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="floating-elements"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Confidential Men's Health Consultations</h1>
+                    <h1>Confidential <span class="highlight">Men's Health</span> Consultations</h1>
                     <p>Get professional medical consultation from licensed physicians in complete privacy. Genuine treatments and health solutions delivered discreetly across India.</p>
                     <a href="https://wa.me/919876543210?text=Hi,%20I%20want%20to%20start%20a%20confidential%20health%20consultation" class="cta-button">Start Confidential Consultation</a>
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">✓ 100% Private ✓ Licensed Doctors ✓ Discreet Delivery ✓ Money Back Guarantee</p>
+                    <div class="hero-features">
+                        <div class="hero-feature">100% Private</div>
+                        <div class="hero-feature">Licensed Doctors</div>
+                        <div class="hero-feature">Discreet Delivery</div>
+                        <div class="hero-feature">Money Back Guarantee</div>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="images/hero-man-phone.jpg" alt="Happy Man Using Phone for Health Consultation">
@@ -821,19 +1185,19 @@
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card animate-on-scroll">
                     <div class="stat-number" data-count="5000">0</div>
                     <div class="stat-label">Satisfied Customers</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card animate-on-scroll">
                     <div class="stat-number" data-count="95">0</div>
                     <div class="stat-label">% Success Rate</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card animate-on-scroll">
                     <div class="stat-number" data-count="48">0</div>
                     <div class="stat-label">Hour Response Time</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card animate-on-scroll">
                     <div class="stat-number" data-count="15">0</div>
                     <div class="stat-label">Licensed Doctors</div>
                 </div>
@@ -846,44 +1210,36 @@
         <div class="container">
             <div class="trust-header">
                 <h2>Why 5,000+ Men Trust Us</h2>
-                <p>Professional healthcare with complete discretion</p>
+                <p>Professional healthcare with complete discretion and genuine care</p>
             </div>
             <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-item-content">
-                        <div class="trust-image">
-                            <img src="images/doctor-icon.jpg" alt="Licensed Indian Physicians">
-                        </div>
-                        <h3>Licensed Indian Physicians</h3>
-                        <p>Consultations with qualified doctors registered with Medical Council of India</p>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-image">
+                        <img src="images/doctor-icon.jpg" alt="Licensed Indian Physicians">
                     </div>
+                    <h3>Licensed Indian Physicians</h3>
+                    <p>Consultations with qualified doctors registered with Medical Council of India</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-item-content">
-                        <div class="trust-image">
-                            <img src="images/privacy-lock.jpg" alt="100% Confidential">
-                        </div>
-                        <h3>100% Confidential</h3>
-                        <p>Your privacy is protected with military-grade encryption and discreet packaging</p>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-image">
+                        <img src="images/privacy-lock.jpg" alt="100% Confidential">
                     </div>
+                    <h3>100% Confidential</h3>
+                    <p>Your privacy is protected with military-grade encryption and discreet packaging</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-item-content">
-                        <div class="trust-image">
-                            <img src="images/health-products.jpg" alt="Genuine Health Products">
-                        </div>
-                        <h3>Genuine Health Products</h3>
-                        <p>Only authentic health products and wellness solutions from licensed sources across India</p>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-image">
+                        <img src="images/health-products.jpg" alt="Genuine Health Products">
                     </div>
+                    <h3>Genuine Health Products</h3>
+                    <p>Only authentic health products and wellness solutions from licensed sources across India</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-item-content">
-                        <div class="trust-image">
-                            <img src="images/delivery-truck.jpg" alt="Quick Delivery">
-                        </div>
-                        <h3>Quick Delivery</h3>
-                        <p>Discreet delivery within 24-48 hours across major Indian cities</p>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-image">
+                        <img src="images/delivery-truck.jpg" alt="Quick Delivery">
                     </div>
+                    <h3>Quick Delivery</h3>
+                    <p>Discreet delivery within 24-48 hours across major Indian cities</p>
                 </div>
             </div>
         </div>
@@ -892,41 +1248,39 @@
     <!-- How It Works -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <h2>Simple 4-Step Process</h2>
-            <div class="steps-container">
-                <div class="steps-grid">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-image">
-                            <img src="images/health-assessment.jpg" alt="Health Assessment Form">
-                        </div>
-                        <h3>Complete Health Assessment</h3>
-                        <p>Fill out a confidential medical questionnaire designed by Indian healthcare experts</p>
+            <h2>Simple <span class="highlight">4-Step</span> Process</h2>
+            <div class="steps-grid">
+                <div class="step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-image">
+                        <img src="images/health-assessment.jpg" alt="Health Assessment Form">
                     </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-image">
-                            <img src="images/video-consultation.jpg" alt="Doctor Consultation">
-                        </div>
-                        <h3>Doctor Consultation</h3>
-                        <p>Speak with a licensed physician via secure video call in Hindi or English</p>
+                    <h3>Complete Health Assessment</h3>
+                    <p>Fill out a confidential medical questionnaire designed by Indian healthcare experts</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <div class="step-image">
+                        <img src="images/video-consultation.jpg" alt="Doctor Consultation">
                     </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-image">
-                            <img src="images/health-plan.jpg" alt="Personalized Health Plan">
-                        </div>
-                        <h3>Personalized Health Plan</h3>
-                        <p>Receive a customized health plan with treatment options and wellness recommendations</p>
+                    <h3>Doctor Consultation</h3>
+                    <p>Speak with a licensed physician via secure video call in Hindi or English</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <div class="step-image">
+                        <img src="images/health-plan.jpg" alt="Personalized Health Plan">
                     </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-image">
-                            <img src="images/delivery-box.jpg" alt="Discreet Delivery">
-                        </div>
-                        <h3>Discreet Delivery</h3>
-                        <p>Get your health solutions delivered confidentially with ongoing medical support</p>
+                    <h3>Personalized Health Plan</h3>
+                    <p>Receive a customized health plan with treatment options and wellness recommendations</p>
+                </div>
+                <div class="step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <div class="step-image">
+                        <img src="images/delivery-box.jpg" alt="Discreet Delivery">
                     </div>
+                    <h3>Discreet Delivery</h3>
+                    <p>Get your health solutions delivered confidentially with ongoing medical support</p>
                 </div>
             </div>
         </div>
@@ -937,28 +1291,28 @@
         <div class="container">
             <h2>Why Choose Our Service?</h2>
             <div class="benefits-grid">
-                <div class="benefit-card">
+                <div class="benefit-card animate-on-scroll">
                     <div class="benefit-image">
                         <img src="images/privacy-lock.jpg" alt="Save Time & Embarrassment">
                     </div>
                     <h3>Save Time & Embarrassment</h3>
                     <p>No waiting rooms or awkward pharmacy visits. Get medical care from home with complete privacy.</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card animate-on-scroll">
                     <div class="benefit-image">
                         <img src="images/privacy-lock.jpg" alt="Complete Privacy">
                     </div>
                     <h3>Complete Privacy</h3>
                     <p>End-to-end encryption ensures your health information stays confidential. No data sharing.</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card animate-on-scroll">
                     <div class="benefit-image">
                         <img src="images/health-products.jpg" alt="Affordable & Transparent">
                     </div>
                     <h3>Affordable & Transparent</h3>
                     <p>Clear pricing with no hidden fees. Much cheaper than clinic visits with better convenience.</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card animate-on-scroll">
                     <div class="benefit-image">
                         <img src="images/doctor-icon.jpg" alt="Ongoing Medical Support">
                     </div>
@@ -974,7 +1328,7 @@
         <div class="container">
             <h2>What Our Customers Say</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-image">
                         <img src="images/hero-man-phone.jpg" alt="Customer Review">
                     </div>
@@ -983,7 +1337,7 @@
                     </div>
                     <div class="testimonial-author">- Rajesh K., Mumbai</div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-image">
                         <img src="images/hero-man-phone.jpg" alt="Customer Review">
                     </div>
@@ -992,7 +1346,7 @@
                     </div>
                     <div class="testimonial-author">- Amit S., Delhi</div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-image">
                         <img src="images/hero-man-phone.jpg" alt="Customer Review">
                     </div>
@@ -1009,29 +1363,31 @@
     <section class="faq" id="faq">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <div class="faq-question">Are your doctors really qualified and licensed in India?</div>
-                <div class="faq-answer">Yes, all our physicians are registered with the Medical Council of India and have valid licenses to practice. You can verify their credentials during consultation.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How do you ensure my privacy and confidentiality?</div>
-                <div class="faq-answer">We use bank-level encryption for all data. Medicines are delivered in plain packaging with no medical terms. Your information is never shared with anyone.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What if the health plan doesn't work for me?</div>
-                <div class="faq-answer">We offer free follow-up consultations to adjust your health plan. If you're not satisfied within 30 days, we provide a full refund.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How quickly will I receive my health products?</div>
-                <div class="faq-answer">Most orders are shipped within 24 hours and delivered within 1-3 days across major Indian cities. Express delivery available.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What payment methods do you accept?</div>
-                <div class="faq-answer">We accept all major credit cards, debit cards, UPI, net banking, and digital wallets for your convenience.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Can I consult in regional languages?</div>
-                <div class="faq-answer">Yes, our doctors can consult in Hindi, English, and several regional languages including Tamil, Telugu, and Bengali.</div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Are your doctors really qualified and licensed in India?</div>
+                    <div class="faq-answer">Yes, all our physicians are registered with the Medical Council of India and have valid licenses to practice. You can verify their credentials during consultation.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do you ensure my privacy and confidentiality?</div>
+                    <div class="faq-answer">We use bank-level encryption for all data. Medicines are delivered in plain packaging with no medical terms. Your information is never shared with anyone.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if the health plan doesn't work for me?</div>
+                    <div class="faq-answer">We offer free follow-up consultations to adjust your health plan. If you're not satisfied within 30 days, we provide a full refund.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How quickly will I receive my health products?</div>
+                    <div class="faq-answer">Most orders are shipped within 24 hours and delivered within 1-3 days across major Indian cities. Express delivery available.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <div class="faq-answer">We accept all major credit cards, debit cards, UPI, net banking, and digital wallets for your convenience.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I consult in regional languages?</div>
+                    <div class="faq-answer">Yes, our doctors can consult in Hindi, English, and several regional languages including Tamil, Telugu, and Bengali.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1097,6 +1453,15 @@
     </div>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+
         // Counter Animation for Stats
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
@@ -1108,6 +1473,7 @@
                         const target = parseInt(counter.getAttribute('data-count'));
                         let current = 0;
                         const increment = target / 100;
+                        
                         const timer = setInterval(() => {
                             current += increment;
                             if (current >= target) {
@@ -1115,29 +1481,49 @@
                                 clearInterval(timer);
                             }
                             counter.textContent = Math.floor(current).toLocaleString();
-                        }, 20);
+                        }, 30);
+                        
                         observer.unobserve(counter);
                     }
                 });
-            });
+            }, { threshold: 0.7 });
 
             counters.forEach(counter => observer.observe(counter));
         }
 
-        // FAQ Toggle with Animation
+        // Scroll Animation
+        function initScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach(el => observer.observe(el));
+        }
+
+        // FAQ Toggle with smooth animation
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                const isOpen = answer.style.display === 'block';
+                const isActive = question.classList.contains('active');
                 
-                // Close all answers and remove active class
-                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                // Close all FAQ items
                 document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
                 
-                // Open clicked answer if it wasn't already open
-                if (!isOpen) {
-                    answer.style.display = 'block';
+                // Open clicked item if it wasn't active
+                if (!isActive) {
                     question.classList.add('active');
+                    answer.classList.add('active');
                 }
             });
         });
@@ -1152,104 +1538,93 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
                 }
             });
         });
 
         // Header scroll effect
+        let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 32, 46, 0.98)';
-                header.style.boxShadow = '0 8px 40px rgba(0,0,0,0.3)';
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(248, 252, 253, 0.98)';
+                header.style.boxShadow = '0 8px 40px rgba(87, 178, 177, 0.2)';
             } else {
-                header.style.background = 'rgba(26, 32, 46, 0.98)';
-                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.2)';
+                header.style.background = 'rgba(248, 252, 253, 0.95)';
+                header.style.boxShadow = '0 4px 30px rgba(87, 178, 177, 0.15)';
             }
+            
+            // Hide/show header on scroll
+            if (currentScroll > lastScroll && currentScroll > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
         });
 
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            const speed = scrolled * 0.5;
-            if (parallax) {
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
-        });
-
-        // Initialize animations
+        // Initialize all animations when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             animateCounters();
+            initScrollAnimations();
             
-            // Add entrance animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'countUp 0.8s ease forwards';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            // Observe elements for animation
-            document.querySelectorAll('.trust-item, .step, .benefit-card, .testimonial-card').forEach(el => {
-                observer.observe(el);
-            });
+            // Add loading animation delay for better UX
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
         });
 
-        // CTA Button Click Tracking (for analytics)
+        // CTA Button Click Tracking
         document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('click', function(e) {
-                // Add your analytics tracking here
-                console.log('CTA clicked:', this.textContent);
+                // Add analytics tracking here
+                console.log('CTA clicked:', this.textContent.trim());
                 
-                // You can add Google Analytics or Facebook Pixel tracking here
+                // Optional: Add conversion tracking
                 // gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Start Consultation' });
             });
         });
 
-        // Mobile menu toggle (if needed)
-        const createMobileMenu = () => {
-            if (window.innerWidth <= 768) {
-                const nav = document.querySelector('.nav-links');
-                const logo = document.querySelector('.logo');
-                
-                if (!document.querySelector('.mobile-menu-toggle')) {
-                    const menuToggle = document.createElement('div');
-                    menuToggle.className = 'mobile-menu-toggle';
-                    menuToggle.innerHTML = '☰';
-                    menuToggle.style.cssText = `
-                        display: block;
-                        color: #ecf0f1;
-                        font-size: 1.5rem;
-                        cursor: pointer;
-                        padding: 10px;
-                    `;
-                    
-                    menuToggle.addEventListener('click', () => {
-                        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-                        nav.style.flexDirection = 'column';
-                        nav.style.position = 'absolute';
-                        nav.style.top = '100%';
-                        nav.style.left = '0';
-                        nav.style.right = '0';
-                        nav.style.background = 'rgba(26, 32, 46, 0.98)';
-                        nav.style.padding = '1rem';
-                    });
-                    
-                    logo.parentNode.appendChild(menuToggle);
-                }
-            }
-        };
+        // Performance optimization - Lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
 
-        window.addEventListener('resize', createMobileMenu);
-        createMobileMenu();
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('.hero-image');
+            const floatingElements = document.querySelector('.floating-elements');
+            
+            if (heroImage && scrolled < window.innerHeight) {
+                heroImage.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${scrolled * 0.3}px)`;
+            }
+            
+            if (floatingElements && scrolled < window.innerHeight) {
+                floatingElements.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
     </script>
 </body>
 </html>
