@@ -144,7 +144,6 @@
         .hero-image {
             position: relative;
             height: 500px;
-            background: linear-gradient(45deg, #34495e, #2c3e50);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -154,12 +153,11 @@
             border: 3px solid #e74c3c;
         }
 
-        .hero-image::before {
-            content: '📱 Doctor Consultation Image';
-            color: #ecf0f1;
-            font-size: 1.2rem;
-            text-align: center;
-            opacity: 0.7;
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 17px;
         }
 
         .cta-button {
@@ -317,30 +315,19 @@
         .trust-image {
             width: 120px;
             height: 120px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
             border-radius: 50%;
             margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: white;
-            text-align: center;
             box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
-            position: relative;
             overflow: hidden;
         }
 
-        .trust-image::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
+        .trust-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .trust-item h3 {
@@ -367,8 +354,10 @@
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .step {
@@ -390,30 +379,19 @@
         .step-image {
             width: 150px;
             height: 150px;
-            background: linear-gradient(45deg, #34495e, #2c3e50);
             border-radius: 15px;
             margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
-            text-align: center;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            position: relative;
             overflow: hidden;
         }
 
-        .step-image::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80px;
-            height: 80px;
-            background: rgba(231, 76, 60, 0.2);
-            border-radius: 10px;
-            transform: translate(-50%, -50%);
+        .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .step-number {
@@ -500,30 +478,19 @@
         .benefit-image {
             width: 100px;
             height: 100px;
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
             border-radius: 15px;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            text-align: center;
             box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
-            position: relative;
             overflow: hidden;
         }
 
-        .benefit-image::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            transform: translate(-50%, -50%);
+        .benefit-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .benefit-card h3 {
@@ -567,29 +534,18 @@
         .testimonial-image {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #34495e, #2c3e50);
             border-radius: 50%;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 2rem;
-            text-align: center;
-            position: relative;
             overflow: hidden;
         }
 
-        .testimonial-image::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 40px;
-            height: 40px;
-            background: rgba(231, 76, 60, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .testimonial-text {
@@ -815,15 +771,16 @@
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
         }
 
         @media (max-width: 768px) {
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .steps-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -848,13 +805,13 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Confidential Men's Health Solutions</h1>
-                    <p>Get professional medical consultation from licensed physicians in complete privacy. Genuine treatments delivered discreetly across India. Take control of your confidence today.</p>
-                    <a href="#consultation" class="cta-button">Start Confidential Consultation</a>
+                    <h1>Confidential Men's Health Consultations</h1>
+                    <p>Get professional medical consultation from licensed physicians in complete privacy. Genuine treatments and health solutions delivered discreetly across India.</p>
+                    <a href="https://wa.me/919876543210?text=Hi,%20I%20want%20to%20start%20a%20confidential%20health%20consultation" class="cta-button">Start Confidential Consultation</a>
                     <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">✓ 100% Private ✓ Licensed Doctors ✓ Discreet Delivery ✓ Money Back Guarantee</p>
                 </div>
                 <div class="hero-image">
-                    <!-- Hero consultation image placeholder -->
+                    <img src="images/hero-man-phone.jpg" alt="Happy Man Using Phone for Health Consultation">
                 </div>
             </div>
         </div>
@@ -895,7 +852,7 @@
                 <div class="trust-item">
                     <div class="trust-item-content">
                         <div class="trust-image">
-                            👨‍⚕️
+                            <img src="images/doctor-icon.jpg" alt="Licensed Indian Physicians">
                         </div>
                         <h3>Licensed Indian Physicians</h3>
                         <p>Consultations with qualified doctors registered with Medical Council of India</p>
@@ -904,7 +861,7 @@
                 <div class="trust-item">
                     <div class="trust-item-content">
                         <div class="trust-image">
-                            🛡️
+                            <img src="images/privacy-lock.jpg" alt="100% Confidential">
                         </div>
                         <h3>100% Confidential</h3>
                         <p>Your privacy is protected with military-grade encryption and discreet packaging</p>
@@ -913,7 +870,7 @@
                 <div class="trust-item">
                     <div class="trust-item-content">
                         <div class="trust-image">
-                            💊
+                            <img src="images/health-products.jpg" alt="Genuine Health Products">
                         </div>
                         <h3>Genuine Health Products</h3>
                         <p>Only authentic health products and wellness solutions from licensed sources across India</p>
@@ -922,7 +879,7 @@
                 <div class="trust-item">
                     <div class="trust-item-content">
                         <div class="trust-image">
-                            🚚
+                            <img src="images/delivery-truck.jpg" alt="Quick Delivery">
                         </div>
                         <h3>Quick Delivery</h3>
                         <p>Discreet delivery within 24-48 hours across major Indian cities</p>
@@ -941,7 +898,7 @@
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-image">
-                            📋
+                            <img src="images/health-assessment.jpg" alt="Health Assessment Form">
                         </div>
                         <h3>Complete Health Assessment</h3>
                         <p>Fill out a confidential medical questionnaire designed by Indian healthcare experts</p>
@@ -949,7 +906,7 @@
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-image">
-                            💻
+                            <img src="images/video-consultation.jpg" alt="Doctor Consultation">
                         </div>
                         <h3>Doctor Consultation</h3>
                         <p>Speak with a licensed physician via secure video call in Hindi or English</p>
@@ -957,7 +914,7 @@
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-image">
-                            📝
+                            <img src="images/health-plan.jpg" alt="Personalized Health Plan">
                         </div>
                         <h3>Personalized Health Plan</h3>
                         <p>Receive a customized health plan with treatment options and wellness recommendations</p>
@@ -965,7 +922,7 @@
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-image">
-                            📦
+                            <img src="images/delivery-box.jpg" alt="Discreet Delivery">
                         </div>
                         <h3>Discreet Delivery</h3>
                         <p>Get your health solutions delivered confidentially with ongoing medical support</p>
@@ -982,28 +939,28 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-image">
-                        ⏰
+                        <img src="images/privacy-lock.jpg" alt="Save Time & Embarrassment">
                     </div>
                     <h3>Save Time & Embarrassment</h3>
                     <p>No waiting rooms or awkward pharmacy visits. Get medical care from home with complete privacy.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-image">
-                        🔒
+                        <img src="images/privacy-lock.jpg" alt="Complete Privacy">
                     </div>
                     <h3>Complete Privacy</h3>
                     <p>End-to-end encryption ensures your health information stays confidential. No data sharing.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-image">
-                        💰
+                        <img src="images/health-products.jpg" alt="Affordable & Transparent">
                     </div>
                     <h3>Affordable & Transparent</h3>
                     <p>Clear pricing with no hidden fees. Much cheaper than clinic visits with better convenience.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-image">
-                        🏥
+                        <img src="images/doctor-icon.jpg" alt="Ongoing Medical Support">
                     </div>
                     <h3>Ongoing Medical Support</h3>
                     <p>24/7 support from your dedicated medical team. Follow-up consultations included.</p>
@@ -1019,7 +976,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-image">
-                        👤
+                        <img src="images/hero-man-phone.jpg" alt="Customer Review">
                     </div>
                     <div class="testimonial-text">
                         "Finally found a solution that works. The doctor was professional and understanding. Delivery was super discreet. Highly recommend!"
@@ -1028,7 +985,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-image">
-                        👤
+                        <img src="images/hero-man-phone.jpg" alt="Customer Review">
                     </div>
                     <div class="testimonial-text">
                         "I was skeptical at first, but the consultation was thorough and the treatment really works. No more embarrassing pharmacy visits."
@@ -1037,7 +994,7 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-image">
-                        👤
+                        <img src="images/hero-man-phone.jpg" alt="Customer Review">
                     </div>
                     <div class="testimonial-text">
                         "Great service! Doctor spoke in Hindi which made me comfortable. Medicine arrived next day in plain packaging. Very satisfied."
@@ -1085,7 +1042,7 @@
             <div class="final-cta-content">
                 <h2>Take Control of Your Confidence Today</h2>
                 <p>Join thousands of satisfied customers who regained their confidence through our confidential medical consultations and health solutions.</p>
-                <a href="#" class="cta-button">Start Your Confidential Consultation</a>
+                <a href="https://wa.me/919876543210?text=Hi,%20I%20want%20to%20start%20a%20confidential%20health%20consultation" class="cta-button">Start Your Confidential Consultation</a>
                 <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">✓ No commitment required ✓ Doctor consultation within 48 hours ✓ 100% money-back guarantee</p>
             </div>
         </div>
@@ -1098,9 +1055,9 @@
                 <div class="footer-section">
                     <h3>Our Services</h3>
                     <a href="#">Medical Consultations</a>
-                    <a href="#">Prescription Treatments</a>
+                    <a href="#">Health Solutions</a>
+                    <a href="#">Ongoing Care</a>
                     <a href="#">Health Monitoring</a>
-                    <a href="#">Follow-up Care</a>
                     <a href="#">Emergency Support</a>
                 </div>
                 <div class="footer-section">
