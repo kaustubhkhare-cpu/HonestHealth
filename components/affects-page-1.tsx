@@ -2,7 +2,7 @@
 
 import type React from "react"
 import type { JSX } from "react"
-import { Heart, CheckCircle, Activity, Brain } from "lucide-react"
+import { Heart, CheckCircle, Activity } from "lucide-react"
 
 interface AffectsPageProps {
   navigateTo: (page: string) => void
@@ -20,7 +20,7 @@ export const AffectsPage: React.FC<AffectsPageProps> = ({ navigateTo, TrustBadge
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-8 mb-16">
+      <div className="grid lg:grid-cols-2 gap-8 mb-16">
         {/* Men's Sexual Health */}
         <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
           <div className="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6">
@@ -105,50 +105,6 @@ export const AffectsPage: React.FC<AffectsPageProps> = ({ navigateTo, TrustBadge
               className="w-full border border-green-600 text-green-600 hover:bg-green-50 py-3 rounded-lg font-semibold transition-colors"
             >
               View Program Details
-            </button>
-          </div>
-        </div>
-
-        {/* Diabetes Support */}
-        <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-          <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-            <Brain className="w-8 h-8 text-blue-600" />
-          </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Diabetes Support</h2>
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            Complete diabetes care with regular monitoring, medication management, lifestyle guidance, and specialist
-            consultations. Take control of your diabetes with expert medical support.
-          </p>
-          <div className="space-y-3 mb-8">
-            <div className="flex items-center text-sm text-gray-600">
-              <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-              Diabetologist consultations
-            </div>
-            <div className="flex items-center text-sm text-gray-600">
-              <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-              Regular HbA1c monitoring
-            </div>
-            <div className="flex items-center text-sm text-gray-600">
-              <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-              Medication auto-delivery
-            </div>
-            <div className="flex items-center text-sm text-gray-600">
-              <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-              Lifestyle coaching included
-            </div>
-          </div>
-          <div className="space-y-3">
-            <button
-              onClick={() => navigateTo("diabetes-category")}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors"
-            >
-              Book Consultation
-            </button>
-            <button
-              onClick={() => navigateTo("pricing")}
-              className="w-full border border-blue-600 text-blue-600 hover:bg-blue-50 py-3 rounded-lg font-semibold transition-colors"
-            >
-              View Care Plans
             </button>
           </div>
         </div>
