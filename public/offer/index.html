@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Men's Health Solutions Online | Discreet Treatment Delivery India | HonestHealth</title>
     <meta name="description" content="Get confidential men's health treatments delivered discreetly across India. Licensed doctors, genuine medicines, complete privacy. Order online today.">
-    <meta name="keywords" content="men's health treatment, online doctor consultation India, discreet medicine delivery, men's wellness, health solutions India, confidential treatment">
-    <meta name="author" content="HonestHealth">
-    <meta property="og:title" content="Discreet Men's Health Solutions | HonestHealth India">
-    <meta property="og:description" content="Confidential online consultations with licensed doctors. Genuine treatments delivered discreetly across India. Start today.">
-    <meta property="og:type" content="website">
-    src="https://via.placeholder.com/180x50/57B2B1/FFFFFF?text=HonestHealth"
+    <link rel="icon" type="image/x-icon" href="logo.png">
     
     <style>
         * {
@@ -43,7 +38,6 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 30px rgba(87, 178, 177, 0.15);
-            transition: all 0.3s ease;
         }
 
         nav {
@@ -105,7 +99,6 @@
             color: #57B2B1;
             font-weight: 600;
             transition: all 0.3s;
-            position: relative;
             padding: 8px 16px;
             border-radius: 25px;
         }
@@ -117,23 +110,6 @@
             box-shadow: 0 5px 15px rgba(87, 178, 177, 0.3);
         }
 
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #57B2B1;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #F8FCFD 0%, #E8F6F6 100%);
@@ -143,50 +119,6 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(87, 178, 177, 0.05));
-            z-index: 1;
-        }
-
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .floating-elements::before,
-        .floating-elements::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(45deg, rgba(87, 178, 177, 0.1), rgba(254, 213, 0, 0.1));
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-elements::before {
-            width: 150px;
-            height: 150px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-elements::after {
-            width: 100px;
-            height: 100px;
-            bottom: 20%;
-            right: 15%;
-            animation-delay: 3s;
         }
 
         .hero-content {
@@ -249,6 +181,29 @@
             object-fit: cover;
         }
 
+        .hero-visual-fallback {
+            position: relative;
+            height: 500px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .hero-visual-fallback::before {
+            content: '📱💊';
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #57B2B1, #4A9E9D);
@@ -264,25 +219,9 @@
             overflow: hidden;
         }
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(254, 213, 0, 0.3), transparent);
-            transition: left 0.6s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(87, 178, 177, 0.4);
-            background: linear-gradient(135deg, #4A9E9D, #57B2B1);
         }
 
         .hero-features {
@@ -307,21 +246,10 @@
             font-size: 1.1rem;
         }
 
-        /* Dynamic Stats Section */
+        /* Stats Section */
         .stats-section {
             background: white;
             padding: 80px 0;
-            position: relative;
-        }
-
-        .stats-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-            background: linear-gradient(to bottom, #F8FCFD, white);
         }
 
         .stats-grid {
@@ -337,25 +265,12 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(87, 178, 177, 0.1);
             transition: all 0.4s;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #57B2B1, #FED500);
+            border-top: 4px solid #57B2B1;
         }
 
         .stat-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 50px rgba(87, 178, 177, 0.2);
-            border-color: #57B2B1;
         }
 
         .stat-number {
@@ -377,24 +292,11 @@
             background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 100%);
             padding: 100px 0;
             color: white;
-            position: relative;
-        }
-
-        .trust-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(254,213,0,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(254,213,0,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(254,213,0,0.1)"/></svg>');
         }
 
         .trust-header {
             text-align: center;
             margin-bottom: 5rem;
-            position: relative;
-            z-index: 2;
         }
 
         .trust-header h2 {
@@ -414,8 +316,6 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            position: relative;
-            z-index: 2;
         }
 
         .trust-item {
@@ -426,25 +326,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .trust-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(254, 213, 0, 0.1), transparent);
-            animation: rotate 8s linear infinite;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .trust-item:hover::before {
-            opacity: 1;
         }
 
         .trust-item:hover {
@@ -463,7 +344,7 @@
             justify-content: center;
             background: rgba(255, 255, 255, 0.2);
             position: relative;
-            z-index: 2;
+            overflow: hidden;
         }
 
         .trust-image img {
@@ -473,25 +354,25 @@
             border-radius: 50%;
         }
 
+        .trust-icon-fallback {
+            font-size: 2rem;
+            display: none;
+        }
+
         .trust-item h3 {
             margin-bottom: 1rem;
             font-size: 1.3rem;
-            position: relative;
-            z-index: 2;
         }
 
         .trust-item p {
             opacity: 0.9;
             line-height: 1.6;
-            position: relative;
-            z-index: 2;
         }
 
         /* How It Works */
         .how-it-works {
             background: #F8FCFD;
             padding: 100px 0;
-            position: relative;
         }
 
         .how-it-works h2 {
@@ -525,17 +406,6 @@
             position: relative;
         }
 
-        .steps-grid::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 12.5%;
-            right: 12.5%;
-            height: 2px;
-            background: linear-gradient(90deg, #57B2B1, #FED500, #57B2B1);
-            z-index: 1;
-        }
-
         .step {
             background: white;
             padding: 2.5rem 1.5rem;
@@ -543,15 +413,11 @@
             text-align: center;
             box-shadow: 0 15px 40px rgba(87, 178, 177, 0.1);
             transition: all 0.4s;
-            position: relative;
-            z-index: 2;
-            border: 2px solid transparent;
         }
 
         .step:hover {
             transform: translateY(-15px);
             box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
-            border-color: #57B2B1;
         }
 
         .step-number {
@@ -567,24 +433,6 @@
             font-size: 1.5rem;
             margin: 0 auto 1.5rem;
             box-shadow: 0 8px 20px rgba(87, 178, 177, 0.3);
-            position: relative;
-        }
-
-        .step-number::after {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            border-radius: 50%;
-            border: 2px solid #FED500;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .step:hover .step-number::after {
-            opacity: 1;
         }
 
         .step-image {
@@ -594,12 +442,26 @@
             margin: 0 auto 1.5rem;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(87, 178, 177, 0.15);
+            position: relative;
         }
 
         .step-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .step-icon-fallback {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #F8FCFD, #E8F6F6);
+            font-size: 2.5rem;
+            box-shadow: 0 10px 25px rgba(87, 178, 177, 0.15);
         }
 
         .step h3 {
@@ -619,17 +481,6 @@
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             padding: 100px 0;
             color: white;
-            position: relative;
-        }
-
-        .benefits::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,0 100,0 80,100 0,100" fill="rgba(87,178,177,0.05)"/></svg>');
         }
 
         .benefits h2 {
@@ -637,16 +488,12 @@
             font-size: 3rem;
             margin-bottom: 4rem;
             font-weight: 700;
-            position: relative;
-            z-index: 2;
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            position: relative;
-            z-index: 2;
         }
 
         .benefit-card {
@@ -657,24 +504,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.4s;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(87, 178, 177, 0.1), transparent);
-            transform: translateX(-100%) rotate(45deg);
-            transition: transform 0.8s;
-        }
-
-        .benefit-card:hover::before {
-            transform: translateX(100%) rotate(45deg);
         }
 
         .benefit-card:hover {
@@ -693,7 +522,7 @@
             justify-content: center;
             background: rgba(87, 178, 177, 0.2);
             position: relative;
-            z-index: 2;
+            overflow: hidden;
         }
 
         .benefit-image img {
@@ -703,18 +532,19 @@
             border-radius: 8px;
         }
 
+        .benefit-icon-fallback {
+            font-size: 2rem;
+            display: none;
+        }
+
         .benefit-card h3 {
             margin-bottom: 1rem;
             font-size: 1.3rem;
-            position: relative;
-            z-index: 2;
         }
 
         .benefit-card p {
             opacity: 0.9;
             line-height: 1.6;
-            position: relative;
-            z-index: 2;
         }
 
         /* Testimonials */
@@ -743,7 +573,6 @@
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(87, 178, 177, 0.1);
             transition: all 0.3s;
-            position: relative;
             border-top: 4px solid #57B2B1;
         }
 
@@ -752,19 +581,19 @@
             box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
         }
 
-        .testimonial-image {
+        .testimonial-avatar {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             margin-bottom: 1.5rem;
-            overflow: hidden;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
             border: 3px solid #FED500;
-        }
-
-        .testimonial-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .testimonial-text {
@@ -866,24 +695,6 @@
             padding: 100px 0;
             text-align: center;
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(254,213,0,0.2)"/><circle cx="90" cy="20" r="1.5" fill="rgba(254,213,0,0.2)"/><circle cx="20" cy="90" r="1" fill="rgba(254,213,0,0.2)"/><circle cx="80" cy="80" r="1.2" fill="rgba(254,213,0,0.2)"/></svg>');
-            animation: float 15s ease-in-out infinite;
-        }
-
-        .final-cta-content {
-            position: relative;
-            z-index: 2;
         }
 
         .final-cta h2 {
@@ -954,43 +765,21 @@
             color: #bdc3c7;
         }
 
-        /* Security Badge */
-        .security-badge {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 8px 25px rgba(87, 178, 177, 0.3);
-            z-index: 1000;
-            animation: pulse 2s infinite;
-            border: 2px solid #FED500;
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
         }
 
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #57B2B1;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
         }
 
         /* Responsive Design */
@@ -1004,10 +793,6 @@
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .steps-grid::before {
-                display: none;
             }
         }
 
@@ -1043,9 +828,8 @@
                 font-size: 2.5rem;
             }
 
-            .hero-image {
+            .hero-image, .hero-visual-fallback {
                 height: 300px;
-                transform: none;
             }
 
             .trust-grid,
@@ -1089,13 +873,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .security-badge {
-                bottom: 10px;
-                right: 10px;
-                padding: 8px 15px;
-                font-size: 0.8rem;
-            }
-
             .stat-number {
                 font-size: 2.5rem;
             }
@@ -1109,35 +886,6 @@
                 font-size: 1rem;
             }
         }
-
-        /* Scroll animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Loading animation for stats */
-        .stat-number {
-            opacity: 0;
-            animation: countUp 2s ease forwards;
-        }
-
-        @keyframes countUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(20px) scale(0.8); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0) scale(1); 
-            }
-        }
     </style>
 </head>
 <body>
@@ -1145,7 +893,7 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <img src="https://via.placeholder.com/180x50/57B2B1/FFFFFF?text=HonestHealth" alt="HonestHealth Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="logo.png" alt="HonestHealth Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <div class="logo-text">HonestHealth</div>
             </div>
             <ul class="nav-links">
@@ -1165,7 +913,6 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="floating-elements"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -1180,7 +927,13 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&h=500&fit=crop&crop=center&auto=format" alt="Happy confident man using phone for online health consultation">
+                    <img src="hero-man-phone.png" alt="Happy confident man using phone for online health consultation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hero-visual-fallback">
+                        <div>
+                            Online Health<br>Consultation<br>
+                            <small style="font-size: 1rem; opacity: 0.8;">Professional • Private • Convenient</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1190,20 +943,20 @@
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card animate-on-scroll">
-                    <div class="stat-number" data-count="8500">0</div>
+                <div class="stat-card">
+                    <div class="stat-number">8,500+</div>
                     <div class="stat-label">Happy Customers</div>
                 </div>
-                <div class="stat-card animate-on-scroll">
-                    <div class="stat-number" data-count="96">0</div>
-                    <div class="stat-label">% Success Rate</div>
+                <div class="stat-card">
+                    <div class="stat-number">96%</div>
+                    <div class="stat-label">Success Rate</div>
                 </div>
-                <div class="stat-card animate-on-scroll">
-                    <div class="stat-number" data-count="24">0</div>
-                    <div class="stat-label">Hour Delivery</div>
+                <div class="stat-card">
+                    <div class="stat-number">24hr</div>
+                    <div class="stat-label">Fast Delivery</div>
                 </div>
-                <div class="stat-card animate-on-scroll">
-                    <div class="stat-number" data-count="12">0</div>
+                <div class="stat-card">
+                    <div class="stat-number">12+</div>
                     <div class="stat-label">Expert Doctors</div>
                 </div>
             </div>
@@ -1218,30 +971,34 @@
                 <p>Complete treatment solutions with absolute privacy and convenience</p>
             </div>
             <div class="trust-grid">
-                <div class="trust-item animate-on-scroll">
+                <div class="trust-item">
                     <div class="trust-image">
-                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=60&h=60&fit=crop&crop=center&auto=format" alt="Licensed Indian Doctors">
+                        <img src="doctor-consultation.png" alt="Licensed Indian Doctors" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">👨‍⚕️</div>
                     </div>
                     <h3>Licensed Indian Doctors</h3>
                     <p>Qualified medical doctors registered with Medical Council of India. Get expert advice in Hindi, English, or your preferred language.</p>
                 </div>
-                <div class="trust-item animate-on-scroll">
+                <div class="trust-item">
                     <div class="trust-image">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=60&h=60&fit=crop&crop=center&auto=format" alt="Complete Privacy Protection">
+                        <img src="privacy-lock.png" alt="Complete Privacy Protection" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">🔒</div>
                     </div>
                     <h3>100% Private & Secure</h3>
                     <p>Your personal information stays completely confidential. No data sharing, no records kept. Plain packaging with zero medical labels.</p>
                 </div>
-                <div class="trust-item animate-on-scroll">
+                <div class="trust-item">
                     <div class="trust-image">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=60&h=60&fit=crop&crop=center&auto=format" alt="Science-backed treatments India">
+                        <img src="science-treatments.png" alt="Science-backed treatments India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">⚕️</div>
                     </div>
                     <h3>Science-Backed Treatments</h3>
                     <p>Clinically proven treatments recommended by medical experts. Evidence-based solutions that actually work, sourced from trusted manufacturers.</p>
                 </div>
-                <div class="trust-item animate-on-scroll">
+                <div class="trust-item">
                     <div class="trust-image">
-                        <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=60&h=60&fit=crop&crop=center&auto=format" alt="Free fast shipping India">
+                        <img src="delivery-box.png" alt="Free fast shipping India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">📦</div>
                     </div>
                     <h3>Free & Fast Shipping</h3>
                     <p>Order today, ships today. Discreet delivery to 500+ Indian cities within 24-48 hours. No shipping charges, completely free delivery.</p>
@@ -1255,34 +1012,38 @@
         <div class="container">
             <h2>Get Your <span class="highlight">Treatment</span> in 4 Simple Steps</h2>
             <div class="steps-grid">
-                <div class="step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=120&h=120&fit=crop&crop=center&auto=format" alt="Online health questionnaire India">
+                        <img src="health-assessment.png" alt="Online health questionnaire India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">📋</div>
                     </div>
                     <h3>Quick Health Assessment</h3>
                     <p>Complete a simple 3-minute confidential questionnaire about your health. All information stays completely private.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=120&h=120&fit=crop&crop=center&auto=format" alt="Online doctor consultation India">
+                        <img src="video-consultation.png" alt="Online doctor consultation India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">📞</div>
                     </div>
                     <h3>Talk to Licensed Doctor</h3>
                     <p>Get expert medical advice via phone or video call. Our doctors speak Hindi, English, and regional languages.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=120&h=120&fit=crop&crop=center&auto=format"alt="Personalized treatment plan India">
+                        <img src="health-plan.png" alt="Personalized treatment plan India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">💊</div>
                     </div>
                     <h3>Get Your Treatment Plan</h3>
                     <p>Receive a customized treatment solution based on your specific needs. Choose what works best for your lifestyle.</p>
                 </div>
-                <div class="step animate-on-scroll">
+                <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-image">
-                        <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=60&h=60&fit=crop&crop=center&auto=format" alt="Discreet medicine delivery India">
+                        <img src="delivery-box.png" alt="Discreet medicine delivery India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">🚚</div>
                     </div>
                     <h3>Discreet Home Delivery</h3>
                     <p>Your treatment arrives in plain packaging within 24-48 hours. No one will know what's inside. Complete privacy guaranteed.</p>
@@ -1296,30 +1057,34 @@
         <div class="container">
             <h2>Why Indian Men Love HonestHealth</h2>
             <div class="benefits-grid">
-                <div class="benefit-card animate-on-scroll">
+                <div class="benefit-card">
                     <div class="benefit-image">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=60&h=60&fit=crop&crop=center&auto=format" alt="No embarrassment treatment India">
+                        <img src="privacy-lock.png" alt="No embarrassment treatment India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">😌</div>
                     </div>
                     <h3>No More Embarrassment</h3>
                     <p>Skip awkward pharmacy visits and judgmental looks. Get treatment from the comfort of your home with complete dignity.</p>
                 </div>
-                <div class="benefit-card animate-on-scroll">
+                <div class="benefit-card">
                     <div class="benefit-image">
-                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=60&h=60&fit=crop&crop=center&auto=format" alt="Complete privacy protection India">
+                        <img src="privacy-lock.png" alt="Complete privacy protection India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">🔐</div>
                     </div>
                     <h3>Absolute Privacy</h3>
                     <p>Your personal details stay 100% confidential. No medical history stored. No one will ever know about your treatment.</p>
                 </div>
-                <div class="benefit-card animate-on-scroll">
+                <div class="benefit-card">
                     <div class="benefit-image">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=60&h=60&fit=crop&crop=center&auto=format" alt="Affordable treatment India">
+                        <img src="science-treatments.png" alt="Affordable treatment India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">💰</div>
                     </div>
                     <h3>Affordable & Transparent</h3>
                     <p>Clear upfront pricing with no hidden costs. Pay only for what you need. Much cheaper than expensive clinic visits.</p>
                 </div>
-                <div class="benefit-card animate-on-scroll">
+                <div class="benefit-card">
                     <div class="benefit-image">
-                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=60&h=60&fit=crop&crop=center&auto=format" alt="Expert medical support India">
+                        <img src="doctor-consultation.png" alt="Expert medical support India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">💬</div>
                     </div>
                     <h3>Expert Support Always</h3>
                     <p>Get unlimited follow-up consultations with your doctor. WhatsApp support available 24/7 for any questions or concerns.</p>
@@ -1333,19 +1098,22 @@
         <div class="container">
             <h2>Real Reviews from Real Customers</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">R</div>
                     <div class="testimonial-text">
                         "Finally got the help I needed without any embarrassment. Doctor was very understanding and treatment actually works. Delivery was super discreet - nobody knew what it was."
                     </div>
                     <div class="testimonial-author">- Rajesh K.</div>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">A</div>
                     <div class="testimonial-text">
                         "I was hesitant at first but the doctor explained everything clearly in Hindi. Treatment came in plain box within 2 days. My confidence is back!"
                     </div>
                     <div class="testimonial-author">- Amit S.</div>
                 </div>
-                <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">S</div>
                     <div class="testimonial-text">
                         "Best decision I made this year. No more awkward pharmacy visits. Treatment works great and follow-up support is excellent. Highly recommend!"
                     </div>
@@ -1443,67 +1211,16 @@
         </div>
     </footer>
 
-    <!-- Security Badge -->
-    <div class="security-badge">
-        🔒 Secure & Encrypted
-    </div>
-
     <script>
         // Mobile Menu Toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuToggle.classList.toggle('active');
-        });
-
-        // Counter Animation for Stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = parseInt(counter.getAttribute('data-count'));
-                        let current = 0;
-                        const increment = target / 100;
-                        
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            counter.textContent = Math.floor(current).toLocaleString();
-                        }, 30);
-                        
-                        observer.unobserve(counter);
-                    }
-                });
-            }, { threshold: 0.7 });
-
-            counters.forEach(counter => observer.observe(counter));
-        }
-
-        // Scroll Animation
-        function initScrollAnimations() {
-            const animatedElements = document.querySelectorAll('.animate-on-scroll');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { 
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
             });
-
-            animatedElements.forEach(el => observer.observe(el));
         }
 
         // FAQ Toggle with smooth animation
@@ -1536,7 +1253,9 @@
                     });
                     
                     // Close mobile menu if open
-                    navLinks.classList.remove('active');
+                    if (navLinks) {
+                        navLinks.classList.remove('active');
+                    }
                 }
             });
         });
@@ -1565,61 +1284,43 @@
             lastScroll = currentScroll;
         });
 
-        // Initialize all animations when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            animateCounters();
-            initScrollAnimations();
-            
-            // Add loading animation delay for better UX
-            setTimeout(() => {
-                document.body.classList.add('loaded');
-            }, 100);
-        });
-
         // CTA Button Click Tracking
         document.querySelectorAll('.cta-button').forEach(button => {
             button.addEventListener('click', function(e) {
                 // Add analytics tracking here
                 console.log('CTA clicked:', this.textContent.trim());
-                
-                // Optional: Add conversion tracking
-                // gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Start Consultation' });
             });
         });
 
-        // Performance optimization - Lazy load images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            img.src = img.dataset.src;
-                            img.removeAttribute('data-src');
-                            imageObserver.unobserve(img);
-                        }
-                    }
-                });
-            });
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-        }
+        }, observerOptions);
 
-        // Add subtle parallax effect to hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroImage = document.querySelector('.hero-image');
-            const floatingElements = document.querySelector('.floating-elements');
-            
-            if (heroImage && scrolled < window.innerHeight) {
-                heroImage.style.transform = `perspective(1000px) rotateY(-5deg) translateY(${scrolled * 0.3}px)`;
-            }
-            
-            if (floatingElements && scrolled < window.innerHeight) {
-                floatingElements.style.transform = `translateY(${scrolled * 0.2}px)`;
-            }
+        // Apply animation to cards and sections
+        document.querySelectorAll('.stat-card, .trust-item, .step, .benefit-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Image loading error handling
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.log('Image failed to load:', this.src);
+                // The onerror handlers in HTML will handle the fallbacks
+            });
         });
     </script>
 </body>
