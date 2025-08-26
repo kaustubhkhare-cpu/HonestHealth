@@ -33,6 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable} antialiased`}>
       <head>
+        {/* Facebook Domain Verification */}
+        <meta name="facebook-domain-verification" content="gt6aureg961lxvv5s4pkoeygxnyp9v" />
+        
         {/* Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
