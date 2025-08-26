@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Health Solutions Online | Discreet Treatment Delivery India | HonestHealth</title>
+    <meta name="description" content="Get confidential men's health treatments delivered discreetly across India. Licensed doctors, genuine medicines, complete privacy. Order online today.">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #F8FCFD;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(248, 252, 253, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(87, 178, 177, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #57B2B1;
+            text-shadow: 0 2px 4px rgba(87, 178, 177, 0.2);
+            position: relative;
+            display: none;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #FED500;
+            border-radius: 2px;
+        }
+
+        /* Show text logo if image fails to load */
+        .logo img:not([src]), .logo img[src=""] {
+            display: none;
+        }
+
+        .logo img:not([src]) + .logo-text, .logo img[src=""] + .logo-text {
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #57B2B1;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: #57B2B1;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(87, 178, 177, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #F8FCFD 0%, #E8F6F6 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 .highlight {
+            color: #57B2B1;
+            position: relative;
+        }
+
+        .hero-text h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #FED500;
+            border-radius: 2px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-visual-fallback {
+            position: relative;
+            height: 500px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .hero-visual-fallback::before {
+            content: '📱💊';
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s;
+            box-shadow: 0 8px 25px rgba(87, 178, 177, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.4);
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .hero-feature::before {
+            content: '✓';
+            color: #FED500;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(87, 178, 177, 0.1);
+            transition: all 0.4s;
+            border-top: 4px solid #57B2B1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(87, 178, 177, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #57B2B1;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 100%);
+            padding: 100px 0;
+            color: white;
+        }
+
+        .trust-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .trust-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .trust-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .trust-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .trust-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-image img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .trust-icon-fallback {
+            font-size: 2rem;
+            display: none;
+        }
+
+        .trust-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .trust-item p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: #F8FCFD;
+            padding: 100px 0;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .how-it-works h2 .highlight {
+            color: #57B2B1;
+            position: relative;
+        }
+
+        .how-it-works h2 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #FED500;
+            border-radius: 2px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .step {
+            background: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.1);
+            transition: all 0.4s;
+        }
+
+        .step:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(87, 178, 177, 0.3);
+        }
+
+        .step-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(87, 178, 177, 0.15);
+            position: relative;
+        }
+
+        .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .step-icon-fallback {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #F8FCFD, #E8F6F6);
+            font-size: 2.5rem;
+            box-shadow: 0 10px 25px rgba(87, 178, 177, 0.15);
+        }
+
+        .step h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 100px 0;
+            color: white;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            font-weight: 700;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s;
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px rgba(87, 178, 177, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .benefit-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(87, 178, 177, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-image img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .benefit-icon-fallback {
+            font-size: 2rem;
+            display: none;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #F8FCFD;
+            padding: 100px 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.1);
+            transition: all 0.3s;
+            border-top: 4px solid #57B2B1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 3px solid #FED500;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #57B2B1;
+        }
+
+        /* FAQ */
+        .faq {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 4rem;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 2px solid #F8FCFD;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: #57B2B1;
+            box-shadow: 0 5px 20px rgba(87, 178, 177, 0.1);
+        }
+
+        .faq-question {
+            background: #F8FCFD;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: #2c3e50;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            background: #57B2B1;
+            color: white;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 2rem;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            color: #57B2B1;
+        }
+
+        .faq-question:hover::after {
+            color: white;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem 2rem;
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .cta-button {
+            background: white;
+            color: #57B2B1;
+            font-size: 1.2rem;
+            padding: 20px 50px;
+        }
+
+        .final-cta .cta-button:hover {
+            background: #FED500;
+            color: #2c3e50;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: #57B2B1;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #FED500;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 2rem;
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #57B2B1;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .trust-grid,
+            .steps-grid,
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 20px rgba(87, 178, 177, 0.2);
+                border-radius: 0 0 15px 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image, .hero-visual-fallback {
+                height: 300px;
+            }
+
+            .trust-grid,
+            .steps-grid,
+            .benefits-grid,
+            .testimonials-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-features {
+                justify-content: center;
+            }
+
+            .trust-header h2,
+            .how-it-works h2,
+            .benefits h2,
+            .testimonials h2,
+            .faq h2,
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+                min-height: auto;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+               <img src="https://www.gethonesthealth.in/offer/logo.png" alt="HonestHealth Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                
+                <div class="logo-text">HonestHealth</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Discreet <span class="highlight">Men's Health</span> Solutions</h1>
+                    <p>Skip the embarrassing clinic visits. Get genuine treatments from licensed doctors delivered privately to your door across India. Thousands of men trust us for complete confidentiality.</p>
+                    <a href="https://wa.me/919876543210?text=Hi,%20I%20want%20to%20start%20my%20confidential%20treatment%20consultation" class="cta-button">Get Your Treatment Now</a>
+                    <div class="hero-features">
+                        <div class="hero-feature">100% Confidential</div>
+                        <div class="hero-feature">Licensed Doctors</div>
+                        <div class="hero-feature">Free & Fast Shipping</div>
+                        <div class="hero-feature">30-Day Guarantee</div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    https://www.gethonesthealth.in/offer/hero-man-phone.png
+                    
+                    <div class="hero-visual-fallback">
+                        <div>
+                            Online Health<br>Consultation<br>
+                            <small style="font-size: 1rem; opacity: 0.8;">Professional • Private • Convenient</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">8,500+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">96%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24hr</div>
+                    <div class="stat-label">Fast Delivery</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Expert Doctors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-header">
+                <h2>Why 8,500+ Indian Men Choose Us</h2>
+                <p>Complete treatment solutions with absolute privacy and convenience</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-image">
+                        <img src="doctor-consultation.png" alt="Licensed Indian Doctors" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">👨‍⚕️</div>
+                    </div>
+                    <h3>Licensed Indian Doctors</h3>
+                    <p>Qualified medical doctors registered with Medical Council of India. Get expert advice in Hindi, English, or your preferred language.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-image">
+                        <img src="privacy-lock.png" alt="Complete Privacy Protection" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">🔒</div>
+                    </div>
+                    <h3>100% Private & Secure</h3>
+                    <p>Your personal information stays completely confidential. No data sharing, no records kept. Plain packaging with zero medical labels.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-image">
+                        <img src="science-treatments.png" alt="Science-backed treatments India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">⚕️</div>
+                    </div>
+                    <h3>Science-Backed Treatments</h3>
+                    <p>Clinically proven treatments recommended by medical experts. Evidence-based solutions that actually work, sourced from trusted manufacturers.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-image">
+                        <img src="delivery-box.png" alt="Free fast shipping India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="trust-icon-fallback">📦</div>
+                    </div>
+                    <h3>Free & Fast Shipping</h3>
+                    <p>Order today, ships today. Discreet delivery to 500+ Indian cities within 24-48 hours. No shipping charges, completely free delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>Get Your <span class="highlight">Treatment</span> in 4 Simple Steps</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-image">
+                        <img src="health-assessment.png" alt="Online health questionnaire India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">📋</div>
+                    </div>
+                    <h3>Quick Health Assessment</h3>
+                    <p>Complete a simple 3-minute confidential questionnaire about your health. All information stays completely private.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-image">
+                        <img src="video-consultation.png" alt="Online doctor consultation India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">📞</div>
+                    </div>
+                    <h3>Talk to Licensed Doctor</h3>
+                    <p>Get expert medical advice via phone or video call. Our doctors speak Hindi, English, and regional languages.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-image">
+                        <img src="health-plan.png" alt="Personalized treatment plan India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">💊</div>
+                    </div>
+                    <h3>Get Your Treatment Plan</h3>
+                    <p>Receive a customized treatment solution based on your specific needs. Choose what works best for your lifestyle.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-image">
+                        <img src="delivery-box.png" alt="Discreet medicine delivery India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="step-icon-fallback">🚚</div>
+                    </div>
+                    <h3>Discreet Home Delivery</h3>
+                    <p>Your treatment arrives in plain packaging within 24-48 hours. No one will know what's inside. Complete privacy guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2>Why Indian Men Love HonestHealth</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-image">
+                        <img src="privacy-lock.png" alt="No embarrassment treatment India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">😌</div>
+                    </div>
+                    <h3>No More Embarrassment</h3>
+                    <p>Skip awkward pharmacy visits and judgmental looks. Get treatment from the comfort of your home with complete dignity.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-image">
+                        <img src="privacy-lock.png" alt="Complete privacy protection India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">🔐</div>
+                    </div>
+                    <h3>Absolute Privacy</h3>
+                    <p>Your personal details stay 100% confidential. No medical history stored. No one will ever know about your treatment.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-image">
+                        <img src="science-treatments.png" alt="Affordable treatment India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">💰</div>
+                    </div>
+                    <h3>Affordable & Transparent</h3>
+                    <p>Clear upfront pricing with no hidden costs. Pay only for what you need. Much cheaper than expensive clinic visits.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-image">
+                        <img src="doctor-consultation.png" alt="Expert medical support India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="benefit-icon-fallback">💬</div>
+                    </div>
+                    <h3>Expert Support Always</h3>
+                    <p>Get unlimited follow-up consultations with your doctor. WhatsApp support available 24/7 for any questions or concerns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Real Reviews from Real Customers</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">R</div>
+                    <div class="testimonial-text">
+                        "Finally got the help I needed without any embarrassment. Doctor was very understanding and treatment actually works. Delivery was super discreet - nobody knew what it was."
+                    </div>
+                    <div class="testimonial-author">- Rajesh K.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">A</div>
+                    <div class="testimonial-text">
+                        "I was hesitant at first but the doctor explained everything clearly in Hindi. Treatment came in plain box within 2 days. My confidence is back!"
+                    </div>
+                    <div class="testimonial-author">- Amit S.</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">S</div>
+                    <div class="testimonial-text">
+                        "Best decision I made this year. No more awkward pharmacy visits. Treatment works great and follow-up support is excellent. Highly recommend!"
+                    </div>
+                    <div class="testimonial-author">- Suresh M.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Common Questions Answered</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Are your doctors really qualified and licensed in India?</div>
+                    <div class="faq-answer">Yes, all our doctors are registered with the Medical Council of India and have valid licenses. You can verify their credentials during consultation. They have years of experience treating men's health issues.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do you guarantee my privacy and confidentiality?</div>
+                    <div class="faq-answer">Your information is 100% confidential. We use secure encryption for all communications. Medicines arrive in plain packaging with no medical labels. We never store or share your personal details.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What if the treatment doesn't work for me?</div>
+                    <div class="faq-answer">We offer unlimited follow-up consultations to adjust your treatment. If you're not completely satisfied within 30 days, we provide a full money-back guarantee.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How quickly will I receive my treatment?</div>
+                    <div class="faq-answer">Most orders ship within 24 hours and arrive within 1-3 days across India. We cover 500+ cities including Mumbai, Delhi, Bangalore, Pune, Chennai, Hyderabad, and more.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <div class="faq-answer">We accept all major payment methods including UPI, credit cards, debit cards, net banking, and digital wallets like Paytm, PhonePe, and GPay for your convenience.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I consult in my local language?</div>
+                    <div class="faq-answer">Absolutely! Our doctors can consult in Hindi, English, Tamil, Telugu, Bengali, Marathi, and other regional languages. You'll feel comfortable discussing your concerns in your preferred language.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="consultation">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Get Your Treatment Today - Results Guaranteed</h2>
+                <p>Join 8,500+ satisfied customers who got their confidence back. Start your completely confidential treatment journey now. Free shipping across India.</p>
+                <a href="https://wa.me/919876543210?text=Hi,%20I%20want%20to%20start%20my%20confidential%20treatment%20consultation" class="cta-button">Order Your Treatment Now</a>
+                <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">✓ Doctor consultation within 2 hours ✓ Free shipping ✓ 30-day money-back guarantee ✓ 100% confidential</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Our Treatments</h3>
+                    <a href="#">Online Doctor Consultations</a>
+                    <a href="#">Men's Health Solutions</a>
+                    <a href="#">Discreet Home Delivery</a>
+                    <a href="#">Follow-up Support</a>
+                    <a href="#">Treatment Monitoring</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Doctors</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press & Media</a>
+                    <a href="#">Investor Relations</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Live Chat</a>
+                    <a href="#">WhatsApp Support</a>
+                    <a href="#">Track Your Order</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal & Compliance</h3>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Medical Disclaimer</a>
+                    <a href="#">Refund Policy</a>
+                    <a href="#">Licensing Info</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HonestHealth. All rights reserved. Licensed to operate across India. This website provides information about treatment options and does not replace professional medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+        }
+
+        // FAQ Toggle with smooth animation
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(248, 252, 253, 0.98)';
+                header.style.boxShadow = '0 8px 40px rgba(87, 178, 177, 0.2)';
+            } else {
+                header.style.background = 'rgba(248, 252, 253, 0.95)';
+                header.style.boxShadow = '0 4px 30px rgba(87, 178, 177, 0.15)';
+            }
+            
+            // Hide/show header on scroll
+            if (currentScroll > lastScroll && currentScroll > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // CTA Button Click Tracking
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Add analytics tracking here
+                console.log('CTA clicked:', this.textContent.trim());
+            });
+        });
+
+        // Add entrance animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards and sections
+        document.querySelectorAll('.stat-card, .trust-item, .step, .benefit-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Image loading error handling
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                console.log('Image failed to load:', this.src);
+                // The onerror handlers in HTML will handle the fallbacks
+            });
+        });
+    </script>
+</body>
+</html>
