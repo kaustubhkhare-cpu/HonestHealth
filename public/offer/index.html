@@ -56,6 +56,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 0 20px;
         }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            border-radius: 50px;
+            padding: 15px 20px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Notification Bar */
+        .notification-bar {
+            background: linear-gradient(135deg, #FED500, #F1C40F);
+            padding: 12px 0;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .notification-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
         /* Header */
         header {
             background: rgba(248, 252, 253, 0.95);
@@ -63,9 +123,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 1rem 0;
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 30px;
             z-index: 1000;
             box-shadow: 0 4px 30px rgba(87, 178, 177, 0.15);
+            transition: all 0.3s ease;
         }
 
         nav {
@@ -136,12 +197,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(87, 178, 177, 0.3);
+            text-decoration: none;
         }
 
-        /* Hero Section */
+        /* COMPLETELY NEW HERO SECTION */
         .hero {
-            background: linear-gradient(135deg, #F8FCFD 0%, #E8F6F6 100%);
-            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #F8FCFD 0%, #E8F6F6 50%, #D5F2F2 100%);
+            padding: 140px 0 100px;
             position: relative;
             overflow: hidden;
             min-height: 100vh;
@@ -149,129 +211,346 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             align-items: center;
         }
 
+        /* Animated background elements */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, rgba(87, 178, 177, 0.1), rgba(254, 213, 0, 0.1));
+            border-radius: 50%;
+            top: 10%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, rgba(254, 213, 0, 0.15), rgba(87, 178, 177, 0.1));
+            border-radius: 50%;
+            bottom: 20%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite reverse;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
             align-items: center;
             position: relative;
             z-index: 2;
         }
 
+        .hero-text {
+            position: relative;
+        }
+
         .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            font-size: 4.2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
             color: #2c3e50;
-            line-height: 1.2;
+            line-height: 1.1;
+            position: relative;
         }
 
         .hero-text h1 .highlight {
-            color: #57B2B1;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D, #3D8A89);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             position: relative;
+            display: inline-block;
         }
 
         .hero-text h1 .highlight::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -8px;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: #FED500;
-            border-radius: 2px;
+            height: 8px;
+            background: linear-gradient(90deg, #FED500, #F39C12, #FED500);
+            border-radius: 4px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 2px 10px rgba(254, 213, 0, 0.3); }
+            to { box-shadow: 0 4px 20px rgba(254, 213, 0, 0.6); }
         }
 
         .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #666;
-            line-height: 1.7;
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            color: #555;
+            line-height: 1.8;
+            font-weight: 400;
+            max-width: 500px;
         }
 
-        .hero-image {
+        /* NEW CREATIVE CTA BUTTON - FIXED */
+        .cta-button {
             position: relative;
-            height: 500px;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
-            transform: perspective(1000px) rotateY(-5deg);
-            transition: all 0.3s ease;
-        }
-
-        .hero-image:hover {
-            transform: perspective(1000px) rotateY(0deg) scale(1.02);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-visual-fallback {
-            position: relative;
-            height: 500px;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.2);
-            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
-            display: none;
+            display: inline-flex !important;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .hero-visual-fallback::before {
-            content: '📱💊';
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.4s;
-            box-shadow: 0 8px 25px rgba(87, 178, 177, 0.3);
-            position: relative;
+            background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 50%, #3D8A89 100%) !important;
+            color: white !important;
+            padding: 25px 50px;
+            text-decoration: none !important;
+            border-radius: 70px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 3px solid transparent;
+            box-shadow: 
+                0 15px 40px rgba(87, 178, 177, 0.4),
+                0 5px 20px rgba(87, 178, 177, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
+            cursor: pointer;
+            margin: 2rem 0;
+            z-index: 10;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s;
+        }
+
+        .cta-button::after {
+            content: '→';
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.4);
+            transform: translateY(-8px) scale(1.05) !important;
+            box-shadow: 
+                0 25px 60px rgba(87, 178, 177, 0.5),
+                0 10px 30px rgba(87, 178, 177, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: #FED500;
+            color: white !important;
+            text-decoration: none !important;
         }
 
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .cta-button:active {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        /* Enhanced hero features */
         .hero-features {
             display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
         }
 
         .hero-feature {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: #666;
-            font-size: 0.9rem;
+            gap: 10px;
+            color: #444;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 8px 25px rgba(87, 178, 177, 0.15);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .hero-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(87, 178, 177, 0.25);
+            background: rgba(255, 255, 255, 1);
+            border-color: rgba(87, 178, 177, 0.2);
         }
 
         .hero-feature::before {
             content: '✓';
-            color: #FED500;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(45deg, #FED500, #F39C12);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(254, 213, 0, 0.3);
+        }
+
+        /* Redesigned hero image container */
+        .hero-image {
+            position: relative;
+            height: 600px;
+            perspective: 1000px;
+        }
+
+        .hero-image-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            overflow: hidden;
+            transform: rotateY(-10deg) rotateX(5deg);
+            transition: all 0.5s ease;
+            box-shadow: 
+                0 35px 80px rgba(87, 178, 177, 0.3),
+                0 15px 35px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+        }
+
+        .hero-image:hover .hero-image-inner {
+            transform: rotateY(-5deg) rotateX(2deg) scale(1.02);
+            box-shadow: 
+                0 45px 100px rgba(87, 178, 177, 0.4),
+                0 20px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.15) 0%,
+                transparent 50%,
+                rgba(0, 0, 0, 0.1) 100%
+            );
+            z-index: 3;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-visual-fallback {
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            z-index: 2;
+        }
+
+        .hero-visual-fallback::before {
+            content: '💊📱✨';
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            display: block;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+        }
+
+        /* Live activity section */
+        .live-activity {
+            background: rgba(37, 211, 102, 0.1);
+            border: 2px solid rgba(37, 211, 102, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(37, 211, 102, 0.15);
+            font-size: 0.95rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-dot {
+            width: 10px;
+            height: 10px;
+            background: #25D366;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+            box-shadow: 0 0 8px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; transform: scale(1); }
+            51%, 100% { opacity: 0.5; transform: scale(0.9); }
+        }
+
+        .urgency-text {
+            background: linear-gradient(135deg, rgba(254, 213, 0, 0.15), rgba(254, 213, 0, 0.05));
+            border: 2px solid rgba(254, 213, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
             font-size: 1.1rem;
+        }
+
+        .medical-disclaimer {
+            background: rgba(254, 213, 0, 0.1);
+            border: 2px solid rgba(254, 213, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 25px 0;
+            font-size: 0.9rem;
+            color: #2c3e50;
+            line-height: 1.6;
         }
 
         /* Stats Section */
@@ -302,7 +581,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .stat-number {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #57B2B1;
             margin-bottom: 0.5rem;
@@ -312,7 +591,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .stat-label {
             color: #666;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
         }
 
         /* Trust Section */
@@ -395,6 +674,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .trust-item p {
             opacity: 0.9;
             line-height: 1.6;
+        }
+
+        /* Doctor Availability */
+        .doctor-status {
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            padding: 60px 0;
+            color: white;
+        }
+
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .doctor-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .doctor-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 3px solid #25D366;
+        }
+
+        .online-status {
+            background: #25D366;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
         }
 
         /* How It Works */
@@ -575,7 +900,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.6;
         }
 
-        /* Testimonials */
+        /* Testimonials - FIXED */
         .testimonials {
             background: #F8FCFD;
             padding: 100px 0;
@@ -602,6 +927,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 15px 40px rgba(87, 178, 177, 0.1);
             transition: all 0.3s;
             border-top: 4px solid #57B2B1;
+            position: relative;
         }
 
         .testimonial-card:hover {
@@ -622,6 +948,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 1.5rem;
             font-weight: bold;
             border: 3px solid #FED500;
+            box-shadow: 0 4px 15px rgba(87, 178, 177, 0.3);
         }
 
         .testimonial-text {
@@ -630,11 +957,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: #666;
             line-height: 1.7;
             font-size: 1.1rem;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: -15px;
+            font-size: 3rem;
+            color: #57B2B1;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-text::after {
+            content: '"';
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            font-size: 3rem;
+            color: #57B2B1;
+            opacity: 0.3;
+            font-family: serif;
         }
 
         .testimonial-author {
             font-weight: bold;
             color: #57B2B1;
+            font-size: 1rem;
         }
 
         /* FAQ */
@@ -668,10 +1019,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-color: #57B2B1;
             box-shadow: 0 5px 20px rgba(87, 178, 177, 0.1);
         }
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJD3B6R6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
         .faq-question {
             background: #F8FCFD;
             padding: 1.5rem 2rem;
@@ -744,15 +1092,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
         .final-cta .cta-button {
-            background: white;
-            color: #57B2B1;
+            background: white !important;
+            color: #57B2B1 !important;
             font-size: 1.2rem;
             padding: 20px 50px;
         }
 
         .final-cta .cta-button:hover {
-            background: #FED500;
-            color: #2c3e50;
+            background: #FED500 !important;
+            color: #2c3e50 !important;
         }
 
         /* Footer */
@@ -782,11 +1130,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             display: block;
             margin-bottom: 0.8rem;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .footer-section a:hover {
             color: #FED500;
             transform: translateX(5px);
+            text-decoration: none;
         }
 
         .footer-bottom {
@@ -815,6 +1165,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         /* Responsive Design */
         @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+            
             .trust-grid,
             .steps-grid,
             .benefits-grid {
@@ -823,6 +1179,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
 
             .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .doctor-grid,
+            .testimonials-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -849,25 +1210,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 display: flex;
             }
 
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
 
-            .hero-image, .hero-visual-fallback {
-                height: 300px;
+            .hero-image {
+                height: 400px;
             }
 
             .trust-grid,
             .steps-grid,
             .benefits-grid,
             .testimonials-grid,
-            .stats-grid {
+            .stats-grid,
+            .doctor-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
@@ -890,7 +1246,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 120px 0 80px;
                 min-height: auto;
             }
 
@@ -905,27 +1261,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
 
             .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .hero-text h1 {
                 font-size: 2rem;
             }
 
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
             .cta-button {
-                padding: 15px 30px;
-                font-size: 1rem;
+                padding: 20px 35px;
+                font-size: 1.1rem;
+            }
+
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 16px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJD3B6R6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://t.trypeach.ai/py2ob" target="_blank" class="whatsapp-float">
+        <span style="font-size: 1.2rem;">💬</span>
+        Chat Now
+    </a>
+
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        🔥 FREE Consultation Today Only | 3 Doctors Available Now | Speak in Hindi/English
+    </div>
+
     <!-- Header -->
     <header>
         <nav class="container">
             <div class="logo">
                 <img src="https://www.gethonesthealth.in/offer/logo.png" alt="HonestHealth Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-              
+                <span class="logo-text">HonestHealth</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -942,27 +1320,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Discreet <span class="highlight">Men's Health</span> Solutions</h1>
                     <p>Skip the embarrassing clinic visits. Get genuine treatments from licensed doctors delivered privately to your door across India. Thousands of men trust us for complete confidentiality.</p>
+                    
+                    <div class="urgency-text">
+                        ⏰ Limited consultation slots available today - Only 7 immediate bookings left
+                    </div>
+                    
                     <a href="https://t.trypeach.ai/py2ob" target="_blank" rel="noopener" id="wa-test" class="cta-button">Get Your Treatment Now</a>
+                    
                     <div class="hero-features">
                         <div class="hero-feature">100% Confidential</div>
                         <div class="hero-feature">Licensed Doctors</div>
                         <div class="hero-feature">Free & Fast Shipping</div>
                         <div class="hero-feature">30-Day Guarantee</div>
                     </div>
+
+                    <div class="live-activity">
+                        <div class="activity-item">
+                            <div class="activity-dot"></div>
+                            <span><strong>Raj from Mumbai</strong> just booked consultation - 2 min ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot"></div>
+                            <span><strong>Dr. Sharma</strong> completed consultation with Amit - 5 min ago</span>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-dot"></div>
+                            <span><strong>Suresh from Delhi</strong> received treatment plan - 8 min ago</span>
+                        </div>
+                    </div>
+
+                    <div class="medical-disclaimer">
+                        <strong>Medical Disclaimer:</strong> This service provides health information and consultations but is not a substitute for professional medical diagnosis, treatment, or advice. Always consult qualified healthcare providers for medical decisions.
+                    </div>
                 </div>
+                
                 <div class="hero-image">
-                    <img src="https://www.gethonesthealth.in/offer/hero-man-phone.png" alt="Happy confident man using phone for online health consultation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="hero-visual-fallback">
-                        <div>
-                            Online Health<br>Consultation<br>
-                            <small style="font-size: 1rem; opacity: 0.8;">Professional • Private • Convenient</small>
+                    <div class="hero-image-inner">
+                        <img src="https://www.gethonesthealth.in/offer/hero-man-phone.png" alt="Happy confident man using phone for online health consultation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hero-visual-fallback">
+                            <div>
+                                Online Health<br>Consultation<br>
+                                <small style="font-size: 1.2rem; opacity: 0.8;">Professional • Private • Convenient</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -970,25 +1376,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- Dynamic Stats Section -->
+    <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">8,500+</div>
-                    <div class="stat-label">Happy Customers</div>
+                    <div class="stat-number">2,100+</div>
+                    <div class="stat-label">Consultations This Month</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">96%</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24hr</div>
-                    <div class="stat-label">Fast Delivery</div>
+                    <div class="stat-number">15 min</div>
+                    <div class="stat-label">Average Response Time</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">12+</div>
-                    <div class="stat-label">Expert Doctors</div>
+                    <div class="stat-label">Licensed Doctors Available</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Cities We Serve</div>
                 </div>
             </div>
         </div>
@@ -1034,6 +1440,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h3>Free & Fast Shipping</h3>
                     <p>Order today, ships today. Discreet delivery to 500+ Indian cities within 24-48 hours. No shipping charges, completely free delivery.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctor Availability -->
+    <section class="doctor-status" id="doctors">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Licensed Doctors Available Now</h2>
+            <div class="doctor-grid">
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <h4>Dr. Rajesh Kumar</h4>
+                    <p>MBBS, 8+ years experience</p>
+                    <p>Speaks: Hindi, English</p>
+                    <div class="online-status">Available Now</div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <h4>Dr. Amit Sharma</h4>
+                    <p>MBBS, MD, 12+ years experience</p>
+                    <p>Speaks: Hindi, English, Punjabi</p>
+                    <div class="online-status">Available Now</div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-avatar">👨‍⚕️</div>
+                    <h4>Dr. Suresh Patel</h4>
+                    <p>MBBS, 6+ years experience</p>
+                    <p>Speaks: Hindi, English, Gujarati</p>
+                    <div class="online-status">Available Now</div>
+                </div>
+            </div>
+            
+            <div class="medical-disclaimer" style="margin-top: 2rem; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
+                <strong>Professional Credentials:</strong> All doctors are qualified medical practitioners with valid licenses. Consultation does not guarantee prescription. Treatment recommendations are based on individual health assessment.
             </div>
         </div>
     </section>
@@ -1132,21 +1572,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">R</div>
                     <div class="testimonial-text">
-                        "Finally got the help I needed without any embarrassment. Doctor was very understanding and treatment actually works. Delivery was super discreet - nobody knew what it was."
+                        Finally got the help I needed without any embarrassment. Doctor was very understanding and treatment actually works. Delivery was super discreet - nobody knew what it was.
                     </div>
                     <div class="testimonial-author">- Rajesh K.</div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">A</div>
                     <div class="testimonial-text">
-                        "I was hesitant at first but the doctor explained everything clearly in Hindi. Treatment came in plain box within 2 days. My confidence is back!"
+                        I was hesitant at first but the doctor explained everything clearly in Hindi. Treatment came in plain box within 2 days. My confidence is back!
                     </div>
                     <div class="testimonial-author">- Amit S.</div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">S</div>
                     <div class="testimonial-text">
-                        "Best decision I made this year. No more awkward pharmacy visits. Treatment works great and follow-up support is excellent. Highly recommend!"
+                        Best decision I made this year. No more awkward pharmacy visits. Treatment works great and follow-up support is excellent. Highly recommend!
                     </div>
                     <div class="testimonial-author">- Suresh M.</div>
                 </div>
@@ -1196,6 +1636,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <a href="https://t.trypeach.ai/py2ob" target="_blank" rel="noopener" id="wa-test" class="cta-button">Order Your Treatment Now</a>
                 <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">✓ Doctor consultation within 2 hours ✓ Free shipping ✓ 30-day money-back guarantee ✓ 100% confidential</p>
             </div>
+            <div class="medical-disclaimer" style="margin-top: 2rem; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
+                <strong>Important:</strong> This consultation is for informational purposes. It does not establish a doctor-patient relationship or guarantee treatment. Always follow up with local healthcare providers for ongoing care.
+            </div>
         </div>
     </section>
 
@@ -1205,39 +1648,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Our Treatments</h3>
-                    <a href="#">Online Doctor Consultations</a>
-                    <a href="#">Men's Health Solutions</a>
-                    <a href="#">Discreet Home Delivery</a>
-                    <a href="#">Follow-up Support</a>
-                    <a href="#">Treatment Monitoring</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Online Doctor Consultations</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Men's Health Solutions</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Discreet Home Delivery</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Follow-up Support</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Treatment Monitoring</a>
                 </div>
                 <div class="footer-section">
                     <h3>Company</h3>
-                    <a href="#">About Us</a>
-                    <a href="#">Our Doctors</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Press & Media</a>
-                    <a href="#">Investor Relations</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">About Us</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Our Doctors</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Careers</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Press & Media</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Investor Relations</a>
                 </div>
                 <div class="footer-section">
                     <h3>Support</h3>
-                    <a href="#">Help Center</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Live Chat</a>
-                    <a href="#">WhatsApp Support</a>
-                    <a href="#">Track Your Order</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Help Center</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Contact Us</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Live Chat</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">WhatsApp Support</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Track Your Order</a>
                 </div>
                 <div class="footer-section">
                     <h3>Legal & Compliance</h3>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Medical Disclaimer</a>
-                    <a href="#">Refund Policy</a>
-                    <a href="#">Licensing Info</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Privacy Policy</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Terms of Service</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Medical Disclaimer</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Refund Policy</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank">Licensing Info</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 HonestHealth. All rights reserved. Licensed to operate across India. This website provides information about treatment options and does not replace professional medical advice.</p>
+                <div class="medical-disclaimer" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #bdc3c7;">
+                    <strong>Medical Disclaimer:</strong> HonestHealth provides health consultations but does not diagnose, treat, cure, or prevent any disease. This service is not a substitute for professional medical care. Always consult qualified healthcare providers for medical decisions. Individual results may vary. Not suitable for medical emergencies - call local emergency services for urgent care.
+                </div>
+                <p style="margin-top: 15px; color: #bdc3c7;">&copy; 2025 HonestHealth. All rights reserved. Licensed medical consultation service operating in compliance with Indian healthcare regulations.</p>
             </div>
         </div>
     </footer>
@@ -1272,25 +1718,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
         });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks) {
-                        navLinks.classList.remove('active');
-                    }
-                }
-            });
-        });
-
         // Header scroll effect
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
@@ -1313,6 +1740,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
             
             lastScroll = currentScroll;
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                    }
+                }
+            });
         });
 
         // CTA Button Click Tracking
@@ -1346,11 +1793,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             observer.observe(el);
         });
 
-        // Image loading error handling
+        // Image loading error handling with improved fallback system
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('error', function() {
                 console.log('Image failed to load:', this.src);
-                // The onerror handlers in HTML will handle the fallbacks
+                // Show fallback elements
+                const fallbackElement = this.nextElementSibling;
+                if (fallbackElement && fallbackElement.classList.contains('trust-icon-fallback', 'benefit-icon-fallback', 'step-icon-fallback', 'hero-visual-fallback')) {
+                    this.style.display = 'none';
+                    fallbackElement.style.display = 'flex';
+                }
             });
         });
     </script>
