@@ -1320,8 +1320,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <h1>Discreet <span class="highlight">Men's Health</span> Solutions</h1>
                     <p>Skip the embarrassing clinic visits. Get genuine treatments from licensed doctors delivered privately to your door across India. Thousands of men trust us for complete confidentiality.</p>
                     
-                    <div class="urgency-text">
-                        ⏰ Limited consultation slots available today - Only 7 immediate bookings left
+                    <div class="urgency-text" id="urgency-counter">
+                        ⏰ Limited consultation slots available today - Only <span id="slots-left">7</span> immediate bookings left
                     </div>
                     
                     <a href="https://t.trypeach.ai/py2ob" target="_blank" rel="noopener" id="wa-test" class="cta-button">Get Your Treatment Now</a>
@@ -1333,18 +1333,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <div class="hero-feature">30-Day Guarantee</div>
                     </div>
 
-                    <div class="live-activity">
+                    <div class="live-activity" id="live-activity">
                         <div class="activity-item">
                             <div class="activity-dot"></div>
-                            <span><strong>Raj from Mumbai</strong> just booked consultation - 2 min ago</span>
+                            <span id="activity-1"><strong>Loading...</strong> activity updates</span>
                         </div>
                         <div class="activity-item">
                             <div class="activity-dot"></div>
-                            <span><strong>Dr. Sharma</strong> completed consultation with Amit - 5 min ago</span>
+                            <span id="activity-2"><strong>Loading...</strong> activity updates</span>
                         </div>
                         <div class="activity-item">
                             <div class="activity-dot"></div>
-                            <span><strong>Suresh from Delhi</strong> received treatment plan - 8 min ago</span>
+                            <span id="activity-3"><strong>Loading...</strong> activity updates</span>
                         </div>
                     </div>
 
@@ -1681,6 +1681,128 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </footer>
 
     <script>
+        // Dynamic Data Arrays for realistic updates
+        const customerNames = [
+            'Raj', 'Amit', 'Suresh', 'Rohit', 'Vikash', 'Arjun', 'Deepak', 'Arun', 'Karan', 'Nikhil',
+            'Ravi', 'Manish', 'Sanjay', 'Rahul', 'Ankit', 'Pradeep', 'Ashish', 'Manoj', 'Vishal', 'Ajay'
+        ];
+
+        const cities = [
+            'Mumbai', 'Delhi', 'Bangalore', 'Pune', 'Chennai', 'Hyderabad', 'Kolkata', 'Ahmedabad',
+            'Jaipur', 'Lucknow', 'Kanpur', 'Nagpur', 'Indore', 'Thane', 'Bhopal', 'Visakhapatnam',
+            'Patna', 'Vadodara', 'Ghaziabad', 'Ludhiana', 'Agra', 'Nashik', 'Faridabad', 'Meerut'
+        ];
+
+        const doctors = [
+            'Dr. Rajesh Kumar', 'Dr. Amit Sharma', 'Dr. Suresh Patel', 'Dr. Vikash Singh', 'Dr. Arjun Gupta',
+            'Dr. Deepak Verma', 'Dr. Arun Mehta', 'Dr. Karan Joshi', 'Dr. Nikhil Agarwal', 'Dr. Ravi Pandey'
+        ];
+
+        const activityTypes = [
+            'just booked consultation',
+            'completed health assessment',
+            'received treatment plan',
+            'started consultation call',
+            'confirmed delivery address',
+            'downloaded treatment guide'
+        ];
+
+        const doctorActions = [
+            'completed consultation with',
+            'reviewed health assessment for',
+            'prescribed treatment for',
+            'sent follow-up message to',
+            'scheduled call with'
+        ];
+
+        // Initialize dynamic slot counter (between 3-12)
+        let slotsLeft = Math.floor(Math.random() * 10) + 3;
+        
+        // Update slots counter every 2-4 minutes
+        function updateSlotsCounter() {
+            const change = Math.random() < 0.7 ? -1 : 1; // 70% chance to decrease
+            slotsLeft = Math.max(2, Math.min(15, slotsLeft + change));
+            
+            const slotsElement = document.getElementById('slots-left');
+            if (slotsElement) {
+                slotsElement.textContent = slotsLeft;
+                
+                // Add flash effect
+                slotsElement.style.backgroundColor = '#FED500';
+                slotsElement.style.padding = '2px 6px';
+                slotsElement.style.borderRadius = '4px';
+                slotsElement.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    slotsElement.style.backgroundColor = 'transparent';
+                }, 1000);
+            }
+        }
+
+        // Generate realistic activity update
+        function generateActivity() {
+            const type = Math.random();
+            let activity;
+            
+            if (type < 0.6) {
+                // Customer activity
+                const name = customerNames[Math.floor(Math.random() * customerNames.length)];
+                const city = cities[Math.floor(Math.random() * cities.length)];
+                const action = activityTypes[Math.floor(Math.random() * activityTypes.length)];
+                const timeAgo = Math.floor(Math.random() * 15) + 1;
+                activity = `<strong>${name} from ${city}</strong> ${action} - ${timeAgo} min ago`;
+            } else {
+                // Doctor activity
+                const doctor = doctors[Math.floor(Math.random() * doctors.length)];
+                const action = doctorActions[Math.floor(Math.random() * doctorActions.length)];
+                const customer = customerNames[Math.floor(Math.random() * customerNames.length)];
+                const timeAgo = Math.floor(Math.random() * 20) + 2;
+                activity = `<strong>${doctor}</strong> ${action} ${customer} - ${timeAgo} min ago`;
+            }
+            
+            return activity;
+        }
+
+        // Update live activity feed
+        function updateLiveActivity() {
+            const activities = ['activity-1', 'activity-2', 'activity-3'];
+            const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+            const element = document.getElementById(randomActivity);
+            
+            if (element) {
+                const newActivity = generateActivity();
+                
+                // Fade out
+                element.style.opacity = '0.5';
+                element.style.transform = 'translateX(-10px)';
+                
+                setTimeout(() => {
+                    element.innerHTML = newActivity;
+                    // Fade back in
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateX(0)';
+                }, 300);
+            }
+        }
+
+        // Initialize on page load
+        function initializeDynamicContent() {
+            // Set initial slots
+            const slotsElement = document.getElementById('slots-left');
+            if (slotsElement) {
+                slotsElement.textContent = slotsLeft;
+            }
+            
+            // Set initial activities
+            document.getElementById('activity-1').innerHTML = generateActivity();
+            document.getElementById('activity-2').innerHTML = generateActivity();
+            document.getElementById('activity-3').innerHTML = generateActivity();
+            
+            // Start update intervals
+            setInterval(updateLiveActivity, 8000 + Math.random() * 7000); // 8-15 seconds
+            setInterval(updateSlotsCounter, 120000 + Math.random() * 120000); // 2-4 minutes
+        }
+
         // Mobile Menu Toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -1797,6 +1919,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 }
             });
         });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', initializeDynamicContent);
     </script>
 </body>
 </html>
