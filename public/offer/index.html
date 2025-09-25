@@ -113,14 +113,28 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        .logo-text {
             font-size: 2rem;
             font-weight: bold;
             color: #57B2B1;
             text-shadow: 0 2px 4px rgba(87, 178, 177, 0.2);
             position: relative;
+            display: none;
         }
 
-        .logo::after {
+        .logo-text::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -129,6 +143,15 @@
             height: 3px;
             background: #FED500;
             border-radius: 2px;
+        }
+
+        /* Show text logo if image fails to load */
+        .logo img:not([src]), .logo img[src=""] {
+            display: none;
+        }
+
+        .logo img:not([src]) + .logo-text, .logo img[src=""] + .logo-text {
+            display: block;
         }
 
         .nav-links {
@@ -346,13 +369,52 @@
             transition: all 0.5s ease;
             box-shadow: 0 35px 80px rgba(87, 178, 177, 0.3);
             background: linear-gradient(135deg, #57B2B1, #4A9E9D);
-            display: flex;
+        }
+
+        .hero-image-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.15) 0%,
+                transparent 50%,
+                rgba(0, 0, 0, 0.1) 100%
+            );
+            z-index: 3;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-visual-fallback {
+            width: 100%;
+            height: 100%;
+            display: none;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.5rem;
             font-weight: 700;
             text-align: center;
+            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
+            z-index: 2;
+        }
+
+        .hero-visual-fallback::before {
+            content: '💊📱✨';
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
         }
 
         .hero-image:hover .hero-image-inner {
@@ -1080,7 +1142,10 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">HonestHealth</div>
+            <div class="logo">
+                <img src="https://www.gethonesthealth.in/offer/logo.png" alt="HonestHealth Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text">HonestHealth</span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#process">Process</a></li>
@@ -1142,10 +1207,12 @@
                 
                 <div class="hero-image">
                     <div class="hero-image-inner">
-                        <div>
-                            💊📱✨<br><br>
-                            Online Health<br>Consultation<br>
-                            <small style="font-size: 1.2rem; opacity: 0.8;">Professional • Private • Convenient</small>
+                        <img src="https://www.gethonesthealth.in/offer/hero-man-phone.png" alt="Happy confident man using phone for online health consultation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hero-visual-fallback">
+                            <div>
+                                Online Health<br>Consultation<br>
+                                <small style="font-size: 1.2rem; opacity: 0.8;">Professional • Private • Convenient</small>
+                            </div>
                         </div>
                     </div>
                 </div>
