@@ -1,39 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KJD3B6R6');</script>
-<!-- End Google Tag Manager -->
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1907607630021659');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1907607630021659&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-    
-    <!-- Facebook Domain Verification -->
-    <meta name="facebook-domain-verification" content="gt6aureg961lxvv5s4pkoeygxnyp9v" />
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Health Solutions Online | Discreet Treatment Delivery India | HonestHealth</title>
-    <meta name="description" content="Get confidential men's health treatments delivered discreetly across India. Licensed doctors, genuine medicines, complete privacy. Order online today.">
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <title>Men's Health Solutions Delhi NCR | Discreet Treatment Delivery | HonestHealth</title>
+    <meta name="description" content="Get confidential men's health treatments delivered discreetly across Delhi NCR. Licensed doctors, genuine medicines, complete privacy. Order online today.">
     
     <style>
         * {
@@ -56,7 +27,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 0 20px;
         }
 
-        /* Floating WhatsApp Button */
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            z-index: 1001;
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            padding: 8px 12px;
+            background: rgba(87, 178, 177, 0.9);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #57B2B1;
+            transform: scale(1.05);
+        }
+
+        /* WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -77,7 +75,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
             color: white;
             text-decoration: none;
         }
@@ -96,24 +93,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: #2c3e50;
             font-weight: 600;
             font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .notification-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         /* Header */
@@ -121,12 +100,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: rgba(248, 252, 253, 0.95);
             backdrop-filter: blur(15px);
             padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 30px;
+            position: sticky;
+            top: 0;
             z-index: 1000;
             box-shadow: 0 4px 30px rgba(87, 178, 177, 0.15);
-            transition: all 0.3s ease;
         }
 
         nav {
@@ -136,28 +113,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            height: 60px;
-        }
-
-        .logo img {
-            height: 100px;
-            width: auto;
-            max-width: 180px;
-            object-fit: contain;
-        }
-
-        .logo-text {
             font-size: 2rem;
             font-weight: bold;
             color: #57B2B1;
             text-shadow: 0 2px 4px rgba(87, 178, 177, 0.2);
             position: relative;
-            display: none;
         }
 
-        .logo-text::after {
+        .logo::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -166,15 +129,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             height: 3px;
             background: #FED500;
             border-radius: 2px;
-        }
-
-        /* Show text logo if image fails to load */
-        .logo img:not([src]), .logo img[src=""] {
-            display: none;
-        }
-
-        .logo img:not([src]) + .logo-text, .logo img[src=""] + .logo-text {
-            display: block;
         }
 
         .nav-links {
@@ -200,10 +154,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-decoration: none;
         }
 
-        /* HERO SECTION - REMOVED ::BEFORE CIRCLE */
+        /* HERO SECTION */
         .hero {
             background: linear-gradient(135deg, #F8FCFD 0%, #E8F6F6 50%, #D5F2F2 100%);
-            padding: 120px 0 80px;
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
             min-height: 90vh;
@@ -211,7 +165,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             align-items: center;
         }
 
-        /* Only keep the bottom left animated element */
         .hero::after {
             content: '';
             position: absolute;
@@ -239,17 +192,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             z-index: 2;
         }
 
-        .hero-text {
-            position: relative;
-        }
-
         .hero-text h1 {
             font-size: 2.8rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             color: #2c3e50;
             line-height: 1.1;
-            position: relative;
         }
 
         .hero-text h1 .highlight {
@@ -283,83 +231,64 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin-bottom: 2rem;
             color: #555;
             line-height: 1.8;
-            font-weight: 400;
             max-width: 500px;
         }
 
-        /* CTA BUTTON */
+        .pricing-highlight {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.05));
+            border: 2px solid rgba(37, 211, 102, 0.3);
+            border-radius: 15px;
+            padding: 18px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pricing-highlight .price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #25D366;
+            margin-bottom: 8px;
+        }
+
+        .pricing-highlight .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+
+        .pricing-highlight .subtext {
+            font-size: 0.95rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
         .cta-button {
             position: relative;
-            display: inline-flex !important;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 50%, #3D8A89 100%) !important;
-            color: white !important;
+            background: linear-gradient(135deg, #57B2B1 0%, #4A9E9D 50%, #3D8A89 100%);
+            color: white;
             padding: 20px 40px;
-            text-decoration: none !important;
+            text-decoration: none;
             border-radius: 70px;
             font-weight: 800;
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 3px solid transparent;
-            box-shadow: 
-                0 15px 40px rgba(87, 178, 177, 0.4),
-                0 5px 20px rgba(87, 178, 177, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(87, 178, 177, 0.4);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            overflow: hidden;
-            cursor: pointer;
             margin: 1.5rem 0;
-            z-index: 10;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.7s;
-        }
-
-        .cta-button::after {
-            content: '→';
-            position: absolute;
-            right: 20px;
-            font-size: 1.5rem;
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.3s;
         }
 
         .cta-button:hover {
-            transform: translateY(-8px) scale(1.05) !important;
-            box-shadow: 
-                0 25px 60px rgba(87, 178, 177, 0.5),
-                0 10px 30px rgba(87, 178, 177, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            border-color: #FED500;
-            color: white !important;
-            text-decoration: none !important;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(87, 178, 177, 0.5);
+            color: white;
+            text-decoration: none;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover::after {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .cta-button:active {
-            transform: translateY(-4px) scale(1.02);
-        }
-
-        /* Enhanced hero features */
         .hero-features {
             display: flex;
             gap: 1rem;
@@ -379,14 +308,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-radius: 30px;
             box-shadow: 0 8px 25px rgba(87, 178, 177, 0.15);
             transition: all 0.3s;
-            border: 2px solid transparent;
         }
 
         .hero-feature:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(87, 178, 177, 0.25);
-            background: rgba(255, 255, 255, 1);
-            border-color: rgba(87, 178, 177, 0.2);
         }
 
         .hero-feature::before {
@@ -404,7 +330,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 2px 8px rgba(254, 213, 0, 0.3);
         }
 
-        /* Redesigned hero image container */
         .hero-image {
             position: relative;
             height: 500px;
@@ -419,73 +344,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             overflow: hidden;
             transform: rotateY(-10deg) rotateX(5deg);
             transition: all 0.5s ease;
-            box-shadow: 
-                0 35px 80px rgba(87, 178, 177, 0.3),
-                0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 35px 80px rgba(87, 178, 177, 0.3);
             background: linear-gradient(135deg, #57B2B1, #4A9E9D);
-        }
-
-        .hero-image:hover .hero-image-inner {
-            transform: rotateY(-5deg) rotateX(2deg) scale(1.02);
-            box-shadow: 
-                0 45px 100px rgba(87, 178, 177, 0.4),
-                0 20px 45px rgba(0, 0, 0, 0.15);
-        }
-
-        .hero-image-inner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.15) 0%,
-                transparent 50%,
-                rgba(0, 0, 0, 0.1) 100%
-            );
-            z-index: 3;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-visual-fallback {
-            width: 100%;
-            height: 100%;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 1.5rem;
             font-weight: 700;
             text-align: center;
-            background: linear-gradient(135deg, #57B2B1, #4A9E9D);
-            z-index: 2;
         }
 
-        .hero-visual-fallback::before {
-            content: '💊📱✨';
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            display: block;
-            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2));
+        .hero-image:hover .hero-image-inner {
+            transform: rotateY(-5deg) rotateX(2deg) scale(1.02);
         }
 
-        /* Live activity section */
+        .urgency-text {
+            background: linear-gradient(135deg, rgba(254, 213, 0, 0.15), rgba(254, 213, 0, 0.05));
+            border: 2px solid rgba(254, 213, 0, 0.3);
+            border-radius: 15px;
+            padding: 18px;
+            margin: 20px 0;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            font-size: 1rem;
+        }
+
         .live-activity {
             background: rgba(37, 211, 102, 0.1);
             border: 2px solid rgba(37, 211, 102, 0.2);
             border-radius: 20px;
             padding: 20px;
             margin: 25px 0;
-            backdrop-filter: blur(10px);
         }
 
         .activity-item {
@@ -509,35 +400,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: #25D366;
             border-radius: 50%;
             animation: blink 1.5s infinite;
-            box-shadow: 0 0 8px rgba(37, 211, 102, 0.5);
         }
 
         @keyframes blink {
             0%, 50% { opacity: 1; transform: scale(1); }
             51%, 100% { opacity: 0.5; transform: scale(0.9); }
-        }
-
-        .urgency-text {
-            background: linear-gradient(135deg, rgba(254, 213, 0, 0.15), rgba(254, 213, 0, 0.05));
-            border: 2px solid rgba(254, 213, 0, 0.3);
-            border-radius: 15px;
-            padding: 18px;
-            margin: 20px 0;
-            font-weight: 700;
-            color: #2c3e50;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .medical-disclaimer {
-            background: rgba(254, 213, 0, 0.1);
-            border: 2px solid rgba(254, 213, 0, 0.2);
-            border-radius: 15px;
-            padding: 18px;
-            margin: 20px 0;
-            font-size: 0.85rem;
-            color: #2c3e50;
-            line-height: 1.6;
         }
 
         /* Stats Section */
@@ -572,7 +439,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-weight: bold;
             color: #57B2B1;
             margin-bottom: 0.5rem;
-            display: block;
         }
 
         .stat-label {
@@ -628,29 +494,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: rgba(255, 255, 255, 0.25);
         }
 
-        .trust-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .trust-image img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .trust-icon-fallback {
-            font-size: 2rem;
-            display: none;
+        .trust-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
 
         .trust-item h3 {
@@ -664,8 +511,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 0.95rem;
         }
 
-        /* Doctor Availability */
-        .doctor-status {
+        /* Doctors Section */
+        .doctor-section {
             background: linear-gradient(135deg, #57B2B1, #4A9E9D);
             padding: 50px 0;
             color: white;
@@ -744,7 +591,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            position: relative;
         }
 
         .step {
@@ -776,33 +622,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             box-shadow: 0 8px 20px rgba(87, 178, 177, 0.3);
         }
 
-        .step-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 15px;
-            margin: 0 auto 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(87, 178, 177, 0.15);
-            position: relative;
-        }
-
-        .step-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .step-icon-fallback {
-            width: 100px;
-            height: 100px;
-            border-radius: 15px;
-            margin: 0 auto 1.5rem;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #F8FCFD, #E8F6F6);
-            font-size: 2.2rem;
-            box-shadow: 0 10px 25px rgba(87, 178, 177, 0.15);
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
 
         .step h3 {
@@ -854,29 +677,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             background: rgba(255, 255, 255, 0.2);
         }
 
-        .benefit-image {
-            width: 70px;
-            height: 70px;
-            border-radius: 15px;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(87, 178, 177, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefit-image img {
-            width: 45px;
-            height: 45px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .benefit-icon-fallback {
-            font-size: 1.8rem;
-            display: none;
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
 
         .benefit-card h3 {
@@ -1083,15 +887,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .final-cta .cta-button {
-            background: white !important;
-            color: #57B2B1 !important;
+            background: white;
+            color: #57B2B1;
             font-size: 1.1rem;
             padding: 18px 45px;
         }
 
         .final-cta .cta-button:hover {
-            background: #FED500 !important;
-            color: #2c3e50 !important;
+            background: #FED500;
+            color: #2c3e50;
         }
 
         /* Footer */
@@ -1138,21 +942,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: #bdc3c7;
         }
 
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #57B2B1;
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
+        .medical-disclaimer {
+            background: rgba(254, 213, 0, 0.1);
+            border: 2px solid rgba(254, 213, 0, 0.2);
+            border-radius: 15px;
+            padding: 18px;
+            margin: 20px 0;
+            font-size: 0.85rem;
+            color: #2c3e50;
+            line-height: 1.6;
         }
 
         /* Responsive Design */
@@ -1181,25 +979,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 5px 20px rgba(87, 178, 177, 0.2);
-                border-radius: 0 0 15px 15px;
-            }
-
-            .nav-links.active {
-                display: flex;
             }
 
             .hero-text h1 {
@@ -1238,12 +1019,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 60px 0;
                 min-height: auto;
             }
 
             .container {
                 padding: 0 15px;
+            }
+
+            .language-switcher {
+                top: 10px;
+                right: 15px;
             }
         }
 
@@ -1274,12 +1060,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KJD3B6R6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('hi')">HI</button>
+    </div>
 
-    <!-- Floating WhatsApp Button -->
+    <!-- WhatsApp Button -->
     <a href="https://t.trypeach.ai/py2ob" target="_blank" class="whatsapp-float">
         <span style="font-size: 1.2rem;">💬</span>
         Chat Now
@@ -1293,22 +1080,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">
-                <img src="https://www.gethonesthealth.in/offer/logo.png" alt="HonestHealth Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="logo-text">HonestHealth</span>
-            </div>
+            <div class="logo">HonestHealth</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#how-it-works">Process</a></li>
+                <li><a href="#process">Process</a></li>
                 <li><a href="#benefits">Benefits</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
@@ -1317,14 +1096,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Discreet <span class="highlight">Men's Health</span> Solutions</h1>
-                    <p>Skip the embarrassing clinic visits. Get genuine treatments from licensed doctors delivered privately to your door across India. Thousands of men trust us for complete confidentiality.</p>
+                    <h1>Discreet <span class="highlight">Men's Health</span> Solutions Delhi NCR</h1>
+                    <p>Skip the embarrassing clinic visits in Delhi, Gurgaon, and Noida. Get genuine treatments from licensed doctors delivered privately to your door. Trusted by men across the capital region for complete confidentiality.</p>
+                    
+                    <div class="pricing-highlight">
+                        <div class="price">
+                            <span class="old-price">₹2,500</span>
+                            FREE Consultation + ₹500-1000 Treatment
+                        </div>
+                        <div class="subtext">✓ 78% Success Rate ✓ 48hr Delivery in Delhi NCR</div>
+                    </div>
                     
                     <div class="urgency-text" id="urgency-counter">
                         ⏰ Limited consultation slots available today - Only <span id="slots-left">7</span> immediate bookings left
                     </div>
                     
-                    <a href="https://t.trypeach.ai/py2ob" target="_blank" rel="noopener" id="wa-test" class="cta-button">Get Your Treatment Now</a>
+                    <a href="https://t.trypeach.ai/py2ob" target="_blank" class="cta-button">Get Your Treatment Now</a>
                     
                     <div class="hero-features">
                         <div class="hero-feature">100% Confidential</div>
@@ -1336,15 +1123,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="live-activity" id="live-activity">
                         <div class="activity-item">
                             <div class="activity-dot"></div>
-                            <span id="activity-1"><strong>Loading...</strong> activity updates</span>
+                            <span id="activity-1">Rohit from Gurgaon just booked consultation - 3 min ago</span>
                         </div>
                         <div class="activity-item">
                             <div class="activity-dot"></div>
-                            <span id="activity-2"><strong>Loading...</strong> activity updates</span>
+                            <span id="activity-2">Dr. Archit Shukla completed consultation with Arjun - 8 min ago</span>
                         </div>
                         <div class="activity-item">
                             <div class="activity-dot"></div>
-                            <span id="activity-3"><strong>Loading...</strong> activity updates</span>
+                            <span id="activity-3">Vikash from Delhi received treatment plan - 12 min ago</span>
                         </div>
                     </div>
 
@@ -1355,12 +1142,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 
                 <div class="hero-image">
                     <div class="hero-image-inner">
-                        <img src="https://www.gethonesthealth.in/offer/hero-man-phone.png" alt="Happy confident man using phone for online health consultation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hero-visual-fallback">
-                            <div>
-                                Online Health<br>Consultation<br>
-                                <small style="font-size: 1.2rem; opacity: 0.8;">Professional • Private • Convenient</small>
-                            </div>
+                        <div>
+                            💊📱✨<br><br>
+                            Online Health<br>Consultation<br>
+                            <small style="font-size: 1.2rem; opacity: 0.8;">Professional • Private • Convenient</small>
                         </div>
                     </div>
                 </div>
@@ -1373,8 +1158,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">2,100+</div>
-                    <div class="stat-label">Consultations This Month</div>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Patients This Month</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">15 min</div>
@@ -1385,8 +1170,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="stat-label">Licensed Doctors Available</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Cities We Serve</div>
+                    <div class="stat-number">Delhi NCR</div>
+                    <div class="stat-label">Complete Coverage</div>
                 </div>
             </div>
         </div>
@@ -1396,63 +1181,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section class="trust-section">
         <div class="container">
             <div class="trust-header">
-                <h2>Why 8,500+ Indian Men Choose Us</h2>
+                <h2>Why Delhi NCR Men Choose Us</h2>
                 <p>Complete treatment solutions with absolute privacy and convenience</p>
             </div>
             <div class="trust-grid">
                 <div class="trust-item">
-                    <div class="trust-image">
-                        <img src="https://www.gethonesthealth.in/offer/doctor-consultation.png" alt="Licensed Indian Doctors" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="trust-icon-fallback">👨‍⚕️</div>
-                    </div>
+                    <div class="trust-icon">👨‍⚕️</div>
                     <h3>Licensed Indian Doctors</h3>
                     <p>Qualified medical doctors registered with Medical Council of India. Get expert advice in Hindi, English, or your preferred language.</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-image">
-                        <img src="https://www.gethonesthealth.in/offer/privacy-lock.png" alt="Complete Privacy Protection" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="trust-icon-fallback">🔒</div>
-                    </div>
+                    <div class="trust-icon">🔒</div>
                     <h3>100% Private & Secure</h3>
                     <p>Your personal information stays completely confidential. No data sharing, no records kept. Plain packaging with zero medical labels.</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-image">
-                        <img src="https://www.gethonesthealth.in/offer/science-treatments.png" alt="Science-backed treatments India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="trust-icon-fallback">⚕️</div>
-                    </div>
+                    <div class="trust-icon">⚕️</div>
                     <h3>Science-Backed Treatments</h3>
                     <p>Clinically proven treatments recommended by medical experts. Evidence-based solutions that actually work, sourced from trusted manufacturers.</p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-image">
-                        <img src="https://www.gethonesthealth.in/offer/delivery-box.png" alt="Free fast shipping India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="trust-icon-fallback">📦</div>
-                    </div>
-                    <h3>Free & Fast Shipping</h3>
-                    <p>Order today, ships today. Discreet delivery to 500+ Indian cities within 24-48 hours. No shipping charges, completely free delivery.</p>
+                    <div class="trust-icon">📦</div>
+                    <h3>48hr Delhi NCR Delivery</h3>
+                    <p>Order today, delivered within 48 hours across Delhi, Gurgaon, Noida, Faridabad, and Ghaziabad. Discreet packaging guaranteed.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Doctor Availability -->
-    <section class="doctor-status" id="doctors">
+    <!-- Doctor Section -->
+    <section class="doctor-section" id="doctors">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.2rem;">Licensed Doctors Available Now</h2>
             <div class="doctor-grid">
                 <div class="doctor-card">
                     <div class="doctor-avatar">👨‍⚕️</div>
-                    <h4>Dr. Rajesh Kumar</h4>
+                    <h4>Dr. Archit Shukla</h4>
                     <p>MBBS, 8+ years experience</p>
                     <p>Speaks: Hindi, English</p>
                     <div class="online-status">Available Now</div>
                 </div>
                 <div class="doctor-card">
                     <div class="doctor-avatar">👨‍⚕️</div>
-                    <h4>Dr. Amit Sharma</h4>
+                    <h4>Dr. Shashidhar</h4>
                     <p>MBBS, MD, 12+ years experience</p>
-                    <p>Speaks: Hindi, English, Punjabi</p>
+                    <p>Speaks: Hindi, English, Telugu</p>
                     <div class="online-status">Available Now</div>
                 </div>
                 <div class="doctor-card">
@@ -1471,45 +1244,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="how-it-works" id="process">
         <div class="container">
             <h2>Get Your <span class="highlight">Treatment</span> in 4 Simple Steps</h2>
             <div class="steps-grid">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <div class="step-image">
-                        <img src="https://www.gethonesthealth.in/offer/health-assessment.png" alt="Online health questionnaire India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="step-icon-fallback">📋</div>
-                    </div>
+                    <div class="step-icon">📋</div>
                     <h3>Quick Health Assessment</h3>
                     <p>Complete a simple 3-minute confidential questionnaire about your health. All information stays completely private.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <div class="step-image">
-                        <img src="https://www.gethonesthealth.in/offer/video-consultation.png" alt="Online doctor consultation India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="step-icon-fallback">📞</div>
-                    </div>
+                    <div class="step-icon">📞</div>
                     <h3>Talk to Licensed Doctor</h3>
                     <p>Get expert medical advice via phone or video call. Our doctors speak Hindi, English, and regional languages.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <div class="step-image">
-                        <img src="https://www.gethonesthealth.in/offer/science-treatments.png" alt="Personalized treatment plan India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="step-icon-fallback">💊</div>
-                    </div>
+                    <div class="step-icon">💊</div>
                     <h3>Get Your Treatment Plan</h3>
                     <p>Receive a customized treatment solution based on your specific needs. Choose what works best for your lifestyle.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <div class="step-image">
-                        <img src="https://www.gethonesthealth.in/offer/treatment-box.png" alt="Discreet medicine delivery India" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="step-icon-fallback">🚚</div>
-                    </div>
-                    <h3>Discreet Home Delivery</h3>
-                    <p>Your treatment arrives in plain packaging within 24-48 hours. No one will know what's inside. Complete privacy guaranteed.</p>
+                    <div class="step-icon">🚚</div>
+                    <h3>48hr Delhi NCR Delivery</h3>
+                    <p>Your treatment arrives in plain packaging within 48 hours across Delhi, Gurgaon, and Noida. No one will know what's inside. Complete privacy guaranteed.</p>
                 </div>
             </div>
         </div>
@@ -1518,37 +1279,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- Benefits -->
     <section class="benefits" id="benefits">
         <div class="container">
-            <h2>Why Indian Men Love HonestHealth</h2>
+            <h2>Why Delhi NCR Men Love HonestHealth</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="privacy-lock.png" alt="No embarrassment treatment India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="benefit-icon-fallback">😌</div>
-                    </div>
+                    <div class="benefit-icon">😌</div>
                     <h3>No More Embarrassment</h3>
                     <p>Skip awkward pharmacy visits and judgmental looks. Get treatment from the comfort of your home with complete dignity.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="privacy-lock.png" alt="Complete privacy protection India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="benefit-icon-fallback">🔐</div>
-                    </div>
+                    <div class="benefit-icon">🔐</div>
                     <h3>Absolute Privacy</h3>
                     <p>Your personal details stay 100% confidential. No medical history stored. No one will ever know about your treatment.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="science-treatments.png" alt="Affordable treatment India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="benefit-icon-fallback">💰</div>
-                    </div>
+                    <div class="benefit-icon">💰</div>
                     <h3>Affordable & Transparent</h3>
                     <p>Clear upfront pricing with no hidden costs. Pay only for what you need. Much cheaper than expensive clinic visits.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-image">
-                        <img src="doctor-consultation.png" alt="Expert medical support India" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="benefit-icon-fallback">💬</div>
-                    </div>
+                    <div class="benefit-icon">💬</div>
                     <h3>Expert Support Always</h3>
                     <p>Get unlimited follow-up consultations with your doctor. WhatsApp support available 24/7 for any questions or concerns.</p>
                 </div>
@@ -1564,23 +1313,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">R</div>
                     <div class="testimonial-text">
-                        Finally got the help I needed without any embarrassment. Doctor was very understanding and treatment actually works. Delivery was super discreet - nobody knew what it was.
+                        Finally got the help I needed without any embarrassment. Doctor was very understanding and treatment actually works. Delivery was super discreet - nobody in Gurgaon knew what it was.
                     </div>
-                    <div class="testimonial-author">- Rajesh K.</div>
+                    <div class="testimonial-author">- Rohit K., Gurgaon</div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">A</div>
                     <div class="testimonial-text">
-                        I was hesitant at first but the doctor explained everything clearly in Hindi. Treatment came in plain box within 2 days. My confidence is back!
+                        I was hesitant at first but the doctor explained everything clearly in Hindi. Treatment came in plain box within 2 days to Noida. My confidence is back!
                     </div>
-                    <div class="testimonial-author">- Amit S.</div>
+                    <div class="testimonial-author">- Arjun S., Noida</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-avatar">S</div>
+                    <div class="testimonial-avatar">V</div>
                     <div class="testimonial-text">
-                        Best decision I made this year. No more awkward pharmacy visits. Treatment works great and follow-up support is excellent. Highly recommend!
+                        Best decision I made this year. No more awkward pharmacy visits in Delhi. Treatment works great and follow-up support is excellent. Highly recommend!
                     </div>
-                    <div class="testimonial-author">- Suresh M.</div>
+                    <div class="testimonial-author">- Vikash M., Delhi</div>
                 </div>
             </div>
         </div>
@@ -1604,8 +1353,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="faq-answer">We offer unlimited follow-up consultations to adjust your treatment. If you're not completely satisfied within 30 days, we provide a full money-back guarantee.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How quickly will I receive my treatment?</div>
-                    <div class="faq-answer">Most orders ship within 24 hours and arrive within 1-3 days across India. We cover 500+ cities including Mumbai, Delhi, Bangalore, Pune, Chennai, Hyderabad, and more.</div>
+                    <div class="faq-question">How quickly will I receive my treatment in Delhi NCR?</div>
+                    <div class="faq-answer">Most orders ship within 24 hours and arrive within 48 hours across Delhi, Gurgaon, Noida, Faridabad, and Ghaziabad. Express delivery available for urgent cases.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">What payment methods do you accept?</div>
@@ -1624,8 +1373,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="container">
             <div class="final-cta-content">
                 <h2>Get Your Treatment Today - Results Guaranteed</h2>
-                <p>Join 8,500+ satisfied customers who got their confidence back. Start your completely confidential treatment journey now. Free shipping across India.</p>
-                <a href="https://t.trypeach.ai/py2ob" target="_blank" rel="noopener" id="wa-test" class="cta-button">Order Your Treatment Now</a>
+                <p>Join 200+ satisfied customers across Delhi NCR who got their confidence back. Start your completely confidential treatment journey now. Free shipping across Delhi NCR.</p>
+                <a href="https://t.trypeach.ai/py2ob" target="_blank" class="cta-button">Order Your Treatment Now</a>
                 <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">✓ Doctor consultation within 2 hours ✓ Free shipping ✓ 30-day money-back guarantee ✓ 100% confidential</p>
             </div>
             <div class="medical-disclaimer" style="margin-top: 2rem; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3);">
@@ -1681,57 +1430,87 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </footer>
 
     <script>
-        // Dynamic Data Arrays for realistic updates
+        // Language content
+        const content = {
+            en: {
+                heroTitle: 'Discreet <span class="highlight">Men\'s Health</span> Solutions Delhi NCR',
+                heroDesc: 'Skip the embarrassing clinic visits in Delhi, Gurgaon, and Noida. Get genuine treatments from licensed doctors delivered privately to your door. Trusted by men across the capital region for complete confidentiality.',
+                ctaButton: 'Get Your Treatment Now',
+                pricing: 'FREE Consultation + ₹500-1000 Treatment',
+                urgency: '⏰ Limited consultation slots available today - Only <span id="slots-left">7</span> immediate bookings left'
+            },
+            hi: {
+                heroTitle: 'दिल्ली NCR में गुप्त <span class="highlight">पुरुष स्वास्थ्य</span> समाधान',
+                heroDesc: 'दिल्ली, गुड़गांव और नोएडा में शर्मनाक क्लिनिक विज़िट से बचें। लाइसेंसी डॉक्टरों से असली इलाज घर पर गुप्त रूप से प्राप्त करें। पूर्ण गोपनीयता के लिए राजधानी क्षेत्र के पुरुषों द्वारा भरोसा किया गया।',
+                ctaButton: 'अपना इलाज अभी पाएं',
+                pricing: 'मुफ्त सलाह + ₹500-1000 इलाज',
+                urgency: '⏰ आज सीमित सलाह स्लॉट उपलब्ध - केवल <span id="slots-left">7</span> तत्काल बुकिंग बची हैं'
+            }
+        };
+
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            currentLang = lang;
+            updateContent(lang);
+        }
+
+        function updateContent(lang) {
+            const heroTitle = document.querySelector('.hero-text h1');
+            const heroDesc = document.querySelector('.hero-text p');
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            const pricingText = document.querySelector('.pricing-highlight .price');
+            const urgencyText = document.querySelector('.urgency-text');
+            
+            if (heroTitle) heroTitle.innerHTML = content[lang].heroTitle;
+            if (heroDesc) heroDesc.textContent = content[lang].heroDesc;
+            if (pricingText) pricingText.innerHTML = '<span class="old-price">₹2,500</span>' + content[lang].pricing;
+            if (urgencyText) urgencyText.innerHTML = content[lang].urgency;
+            
+            ctaButtons.forEach(btn => {
+                if (btn.textContent.includes('Get Your Treatment') || btn.textContent.includes('अपना इलाज')) {
+                    btn.textContent = content[lang].ctaButton;
+                }
+            });
+        }
+
+        // Dynamic Data Arrays for Delhi NCR
         const customerNames = [
-            'Raj', 'Amit', 'Suresh', 'Rohit', 'Vikash', 'Arjun', 'Deepak', 'Arun', 'Karan', 'Nikhil',
-            'Ravi', 'Manish', 'Sanjay', 'Rahul', 'Ankit', 'Pradeep', 'Ashish', 'Manoj', 'Vishal', 'Ajay'
+            'Rohit', 'Arjun', 'Vikash', 'Deepak', 'Karan', 'Nikhil', 'Ravi', 'Manish', 'Sanjay', 'Rahul'
         ];
 
-        const cities = [
-            'Mumbai', 'Delhi', 'Bangalore', 'Pune', 'Chennai', 'Hyderabad', 'Kolkata', 'Ahmedabad',
-            'Jaipur', 'Lucknow', 'Kanpur', 'Nagpur', 'Indore', 'Thane', 'Bhopal', 'Visakhapatnam',
-            'Patna', 'Vadodara', 'Ghaziabad', 'Ludhiana', 'Agra', 'Nashik', 'Faridabad', 'Meerut'
+        const delhiNCRCities = [
+            'Gurgaon', 'Noida', 'Delhi', 'Faridabad', 'Ghaziabad', 'Greater Noida', 
+            'Dwarka', 'Vasant Kunj', 'Sector 18 Noida', 'Cyber City'
         ];
 
         const doctors = [
-            'Dr. Rajesh Kumar', 'Dr. Amit Sharma', 'Dr. Suresh Patel', 'Dr. Vikash Singh', 'Dr. Arjun Gupta',
-            'Dr. Deepak Verma', 'Dr. Arun Mehta', 'Dr. Karan Joshi', 'Dr. Nikhil Agarwal', 'Dr. Ravi Pandey'
+            'Dr. Archit Shukla', 'Dr. Shashidhar', 'Dr. Suresh Patel'
         ];
 
         const activityTypes = [
             'just booked consultation',
             'completed health assessment',
             'received treatment plan',
-            'started consultation call',
-            'confirmed delivery address',
-            'downloaded treatment guide'
+            'started consultation call'
         ];
 
-        const doctorActions = [
-            'completed consultation with',
-            'reviewed health assessment for',
-            'prescribed treatment for',
-            'sent follow-up message to',
-            'scheduled call with'
-        ];
-
-        // Initialize dynamic slot counter (between 3-12)
         let slotsLeft = Math.floor(Math.random() * 10) + 3;
-        
-        // Update slots counter every 2-4 minutes
+
         function updateSlotsCounter() {
-            const change = Math.random() < 0.7 ? -1 : 1; // 70% chance to decrease
+            const change = Math.random() < 0.7 ? -1 : 1;
             slotsLeft = Math.max(2, Math.min(15, slotsLeft + change));
             
             const slotsElement = document.getElementById('slots-left');
             if (slotsElement) {
                 slotsElement.textContent = slotsLeft;
-                
-                // Add flash effect
                 slotsElement.style.backgroundColor = '#FED500';
                 slotsElement.style.padding = '2px 6px';
                 slotsElement.style.borderRadius = '4px';
-                slotsElement.style.transition = 'all 0.3s ease';
                 
                 setTimeout(() => {
                     slotsElement.style.backgroundColor = 'transparent';
@@ -1739,31 +1518,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
 
-        // Generate realistic activity update
         function generateActivity() {
-            const type = Math.random();
-            let activity;
-            
-            if (type < 0.6) {
-                // Customer activity
-                const name = customerNames[Math.floor(Math.random() * customerNames.length)];
-                const city = cities[Math.floor(Math.random() * cities.length)];
-                const action = activityTypes[Math.floor(Math.random() * activityTypes.length)];
-                const timeAgo = Math.floor(Math.random() * 15) + 1;
-                activity = `<strong>${name} from ${city}</strong> ${action} - ${timeAgo} min ago`;
-            } else {
-                // Doctor activity
-                const doctor = doctors[Math.floor(Math.random() * doctors.length)];
-                const action = doctorActions[Math.floor(Math.random() * doctorActions.length)];
-                const customer = customerNames[Math.floor(Math.random() * customerNames.length)];
-                const timeAgo = Math.floor(Math.random() * 20) + 2;
-                activity = `<strong>${doctor}</strong> ${action} ${customer} - ${timeAgo} min ago`;
-            }
-            
-            return activity;
+            const name = customerNames[Math.floor(Math.random() * customerNames.length)];
+            const city = delhiNCRCities[Math.floor(Math.random() * delhiNCRCities.length)];
+            const action = activityTypes[Math.floor(Math.random() * activityTypes.length)];
+            const timeAgo = Math.floor(Math.random() * 15) + 1;
+            return `${name} from ${city} ${action} - ${timeAgo} min ago`;
         }
 
-        // Update live activity feed
         function updateLiveActivity() {
             const activities = ['activity-1', 'activity-2', 'activity-3'];
             const randomActivity = activities[Math.floor(Math.random() * activities.length)];
@@ -1771,50 +1533,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             if (element) {
                 const newActivity = generateActivity();
-                
-                // Fade out
                 element.style.opacity = '0.5';
-                element.style.transform = 'translateX(-10px)';
-                
                 setTimeout(() => {
                     element.innerHTML = newActivity;
-                    // Fade back in
                     element.style.opacity = '1';
-                    element.style.transform = 'translateX(0)';
                 }, 300);
             }
         }
 
-        // Initialize on page load
-        function initializeDynamicContent() {
-            // Set initial slots
-            const slotsElement = document.getElementById('slots-left');
-            if (slotsElement) {
-                slotsElement.textContent = slotsLeft;
-            }
-            
-            // Set initial activities
-            document.getElementById('activity-1').innerHTML = generateActivity();
-            document.getElementById('activity-2').innerHTML = generateActivity();
-            document.getElementById('activity-3').innerHTML = generateActivity();
-            
-            // Start update intervals
-            setInterval(updateLiveActivity, 8000 + Math.random() * 7000); // 8-15 seconds
-            setInterval(updateSlotsCounter, 120000 + Math.random() * 120000); // 2-4 minutes
-        }
-
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (mobileMenuToggle) {
-            mobileMenuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                mobileMenuToggle.classList.toggle('active');
-            });
-        }
-
-        // FAQ Toggle with smooth animation
+        // FAQ Toggle functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
@@ -1832,96 +1559,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             });
         });
 
-        // Header scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.style.background = 'rgba(248, 252, 253, 0.98)';
-                header.style.boxShadow = '0 8px 40px rgba(87, 178, 177, 0.2)';
-            } else {
-                header.style.background = 'rgba(248, 252, 253, 0.95)';
-                header.style.boxShadow = '0 4px 30px rgba(87, 178, 177, 0.15)';
-            }
-            
-            // Hide/show header on scroll
-            if (currentScroll > lastScroll && currentScroll > 200) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-            }
-            
-            lastScroll = currentScroll;
-        });
+        // Initialize dynamic content
+        setInterval(updateLiveActivity, 10000);
+        setInterval(updateSlotsCounter, 180000);
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        mobileMenuToggle.classList.remove('active');
-                    }
-                }
-            });
-        });
-
-        // CTA Button Click Tracking
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Add analytics tracking here
-                console.log('CTA clicked:', this.textContent.trim());
-            });
-        });
-
-        // Add entrance animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Apply animation to cards and sections
-        document.querySelectorAll('.stat-card, .trust-item, .step, .benefit-card, .testimonial-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Image loading error handling with improved fallback system
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('error', function() {
-                console.log('Image failed to load:', this.src);
-                // Show fallback elements
-                const fallbackElement = this.nextElementSibling;
-                if (fallbackElement && fallbackElement.classList.contains('trust-icon-fallback', 'benefit-icon-fallback', 'step-icon-fallback', 'hero-visual-fallback')) {
-                    this.style.display = 'none';
-                    fallbackElement.style.display = 'flex';
-                }
-            });
-        });
-
-        // Initialize everything when page loads
-        document.addEventListener('DOMContentLoaded', initializeDynamicContent);
+        // Initial setup
+        document.getElementById('slots-left').textContent = slotsLeft;
     </script>
 </body>
 </html>
