@@ -1678,5 +1678,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         // Initial setup
         document.getElementById('slots-left').textContent = slotsLeft;
     </script>
+    <script>
+(function () {
+  // helper: read cookie
+  function readCookie(name){return document.cookie.split('; ').find(r=>r.startsWith(name+'='))?.split('=')[1];}
+
+  // delegate clicks on WhatsApp/Peach links
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="peach"]');
+    if (!a) return;
+
+    const btnId = a.id || a.getAttribute('data-button') || 'wa_cta';
+    const url = a.href;
+
+    // GA4
+    try { window.gtag && gtag('event', 'whatsapp_button_click', {
+      event_category: 'engagement',
+      event_label: btnId,
+      page_location: location.href,
+      wa_url: url
+    }); } catch(e){}
+
+    // Meta Pixel
+    try { window.fbq && fbq('trackCustom', 'whatsapp_button_click', {
+      button_id: btnId,
+      page_url: location.href
+    }); } catch(e){}
+
+    // store fbp/fbc locally (helps later if you do offline/CAPI)
+    try {
+      const fbp = readCookie('_fbp') || '';
+      const fbc = (new URLSearchParams(location.search).get('fbclid')) ? 'fb.1.'+Date.now()+'.'+new URLSearchParams(location.search).get('fbclid') : (readCookie('_fbc') || '');
+      sessionStorage.setItem('fbp', fbp); sessionStorage.setItem('fbc', fbc);
+    } catch(e){}
+
+    // small delay to let hits send
+    if (!a.target || a.target === '_self') { e.preventDefault(); setTimeout(() => location.href = url, 150); }
+  }, false);
+})();
+</script>
+
 </body>
 </html>
