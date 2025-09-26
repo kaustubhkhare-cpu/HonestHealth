@@ -656,7 +656,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 0.8rem;
             font-weight: bold;
             margin-top: 10px;
-            display: inline-block;
+            display: inline-block.
         }
 
         /* How It Works */
@@ -747,7 +747,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .benefits {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             padding: 80px 0;
-            color: white;
+            color: white.
         }
 
         .benefits h2 {
@@ -1653,77 +1653,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         }
 
-        // FAQ Toggle functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isActive = question.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    question.classList.add('active');
-                    answer.classList.add('active');
-                }
-            });
-        });
-
         // Initialize dynamic content
         setInterval(updateLiveActivity, 10000);
         setInterval(updateSlotsCounter, 180000);
 
         // Initial setup
         document.getElementById('slots-left').textContent = slotsLeft;
-  <script>
-(function () {
-  // helper: read cookie
-  function readCookie(name){return document.cookie.split('; ').find(r=>r.startsWith(name+'='))?.split('=')[1];}
+    </script>
 
-  // delegate clicks on WhatsApp/Peach links
-  document.addEventListener('click', function (e) {
-    const a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="peach"]');
-    if (!a) return;
+    <!-- CLICK TRACKING: GA4 + Meta Pixel + GTM push -->
+    <script>
+    (function () {
+      // helper: read cookie
+      function readCookie(name){return document.cookie.split('; ').find(r=>r.startsWith(name+'='))?.split('=')[1];}
 
-    const btnId = a.id || a.getAttribute('data-button') || 'wa_cta';
-    const url = a.href;
+      // delegate clicks on WhatsApp/Peach links
+      document.addEventListener('click', function (e) {
+        const a = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"], a[href*="peach"]');
+        if (!a) return;
 
-    // GA4 direct
-    try { window.gtag && gtag('event', 'whatsapp_button_click', {
-      event_category: 'engagement',
-      event_label: btnId,
-      page_location: location.href,
-      wa_url: url
-    }); } catch(e){}
+        const btnId = a.id || a.getAttribute('data-button') || 'wa_cta';
+        const url = a.href;
 
-    // Meta Pixel
-    try { window.fbq && fbq('trackCustom', 'whatsapp_button_click', {
-      button_id: btnId,
-      page_url: location.href
-    }); } catch(e){}
+        // GA4 direct
+        try { window.gtag && gtag('event', 'whatsapp_button_click', {
+          event_category: 'engagement',
+          event_label: btnId,
+          page_location: location.href,
+          wa_url: url
+        }); } catch(e){}
 
-    // GTM push (so you see it in GTM Preview)
-    try { window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: 'whatsapp_button_click',
-        button_id: btnId,
-        page_url: location.href
-      });
-    } catch(e){}
+        // Meta Pixel
+        try { window.fbq && fbq('trackCustom', 'whatsapp_button_click', {
+          button_id: btnId,
+          page_url: location.href
+        }); } catch(e){}
 
-    // store fbp/fbc locally (helps later if you do offline/CAPI)
-    try {
-      const fbp = readCookie('_fbp') || '';
-      const fbc = (new URLSearchParams(location.search).get('fbclid')) ? 'fb.1.'+Date.now()+'.'+new URLSearchParams(location.search).get('fbclid') : (readCookie('_fbc') || '');
-      sessionStorage.setItem('fbp', fbp); sessionStorage.setItem('fbc', fbc);
-    } catch(e){}
+        // GTM push (so you see it in GTM Preview)
+        try {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'whatsapp_button_click',
+            button_id: btnId,
+            page_url: location.href
+          });
+        } catch(e){}
 
-    // small delay to let hits send (increase to 300ms if still missing)
-    if (!a.target || a.target === '_self') { e.preventDefault(); setTimeout(() => location.href = url, 250); }
-  }, false);
-})();
-</script>
+        // store fbp/fbc locally (helps later if you do offline/CAPI)
+        try {
+          const fbp = readCookie('_fbp') || '';
+          const qs = new URLSearchParams(location.search);
+          const fbc = qs.get('fbclid') ? 'fb.1.'+Date.now()+'.'+qs.get('fbclid') : (readCookie('_fbc') || '');
+          sessionStorage.setItem('fbp', fbp); sessionStorage.setItem('fbc', fbc);
+        } catch(e){}
+
+        // small delay to let hits send (same-tab only)
+        if (!a.target || a.target === '_self') { e.preventDefault(); setTimeout(() => location.href = url, 250); }
+      }, false);
+    })();
+    </script>
+
 </body>
 </html>
