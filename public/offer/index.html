@@ -1677,8 +1677,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         // Initial setup
         document.getElementById('slots-left').textContent = slotsLeft;
-    </script>
-    <script>
+  <script>
 (function () {
   // helper: read cookie
   function readCookie(name){return document.cookie.split('; ').find(r=>r.startsWith(name+'='))?.split('=')[1];}
@@ -1691,7 +1690,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const btnId = a.id || a.getAttribute('data-button') || 'wa_cta';
     const url = a.href;
 
-    // GA4
+    // GA4 direct
     try { window.gtag && gtag('event', 'whatsapp_button_click', {
       event_category: 'engagement',
       event_label: btnId,
@@ -1705,6 +1704,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       page_url: location.href
     }); } catch(e){}
 
+    // GTM push (so you see it in GTM Preview)
+    try { window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'whatsapp_button_click',
+        button_id: btnId,
+        page_url: location.href
+      });
+    } catch(e){}
+
     // store fbp/fbc locally (helps later if you do offline/CAPI)
     try {
       const fbp = readCookie('_fbp') || '';
@@ -1712,11 +1720,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       sessionStorage.setItem('fbp', fbp); sessionStorage.setItem('fbc', fbc);
     } catch(e){}
 
-    // small delay to let hits send
-    if (!a.target || a.target === '_self') { e.preventDefault(); setTimeout(() => location.href = url, 150); }
+    // small delay to let hits send (increase to 300ms if still missing)
+    if (!a.target || a.target === '_self') { e.preventDefault(); setTimeout(() => location.href = url, 250); }
   }, false);
 })();
 </script>
-
 </body>
 </html>
