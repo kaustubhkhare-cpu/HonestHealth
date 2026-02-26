@@ -1,19 +1,7 @@
 "use client"
 
 import type React from "react"
-import {
-  CheckCircle,
-  Heart,
-  Activity,
-  Brain,
-  User,
-  Shield,
-  Truck,
-  MessageCircle,
-  Phone,
-  Lock,
-  Calendar,
-} from "lucide-react"
+import { CheckCircle, Heart, Activity, User, Shield, Truck, MessageCircle, Phone, Lock, Calendar } from "lucide-react"
 
 interface PricingPageProps {
   navigateTo: (page: string) => void
@@ -92,7 +80,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ navigateTo }) => (
       {/* Treatment Costs */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Treatment Costs (Per Month)</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-red-50 border border-red-200 rounded-xl p-8">
             <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
               <Heart className="w-6 h-6 text-red-600" />
@@ -117,19 +105,6 @@ export const PricingPage: React.FC<PricingPageProps> = ({ navigateTo }) => (
               <li>Dedicated health coach</li>
               <li>Nutrition planning</li>
               <li>Progress monitoring</li>
-            </ul>
-          </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-8">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-              <Brain className="w-6 h-6 text-blue-600" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Diabetes Support</h3>
-            <div className="text-2xl font-bold text-blue-600 mb-4">Starting ₹699/month</div>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li>Regular monitoring</li>
-              <li>Medicine auto-delivery</li>
-              <li>Specialist consultations</li>
-              <li>Lifestyle guidance</li>
             </ul>
           </div>
         </div>

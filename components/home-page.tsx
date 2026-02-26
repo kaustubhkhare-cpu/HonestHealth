@@ -47,7 +47,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigateTo, TrustBadges }) =
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="flex items-center">
-              <img src="/images/honest-health-logo.png" alt="Honest Health" className="h-16 w-auto" />
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honest%20Health%20Logo%20v1%20%28transparent%20bg%29-9zIvRD0EuakFnEAMmsVdKynHPApwL2.png"
+                alt="Honest Health"
+                className="h-16 w-auto"
+              />
             </div>
           </div>
 
@@ -842,7 +846,11 @@ export const HomePage: React.FC<HomePageProps> = ({ navigateTo, TrustBadges }) =
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <img src="/images/honest-health-logo.png" alt="Honest Health" className="h-12 w-auto" />
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Honest%20Health%20Logo%20v1%20%28transparent%20bg%29-9zIvRD0EuakFnEAMmsVdKynHPApwL2.png"
+                alt="Honest Health"
+                className="h-12 w-auto"
+              />
               <p className="text-gray-600">Science-backed health solutions with complete discretion and expert care.</p>
             </div>
 
